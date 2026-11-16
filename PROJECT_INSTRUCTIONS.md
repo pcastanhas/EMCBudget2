@@ -1,0 +1,56 @@
+# Project Instructions — Budget Redesign
+
+## Purpose
+Redesign the property budget workbook for budget year 2027 and every year after, as a **template**: budget preparers supply MRI data for a building and Claude produces a ready-to-use workbook for that building (target request: *"Create the 2027 budget file for <building name>"*). The legacy file (`Allwood-2026_Budget-FINAL_xlsm_v2.xlsm`, in project files) is a read-only reference. Audience of the finished workbook: property accountants and property managers.
+
+## Goals
+1. Fix broken or unused references and formulas.
+2. Separate user input from the budget schedules.
+3. Work for future years and other buildings: no hardcoded year, entity, or file names in formulas; the build script takes the building, year and source folder as parameters.
+4. Document the current and future state (technical record = `continuation.md`; preparer-facing = the User Guide, a Claude Doc).
+5. **VBA is allowed only to build the budget presentation schedules** (DETAIL, QTRLY SUM, future schedules). Entry sheets stay VBA-free. Macros write formulas and formatting, never values, so the workbook calculates correctly with macros disabled.
+
+## Session protocol
+- **Start of every session:** read `continuation.md` and every other project file first. Confirm the latest workbook matches the continuation file (version and sheet list) and report any mismatch before doing anything else. Do not re-ask questions the continuation file shows as settled. Re-create the build folder from the project files (continuation §0).
+- **Do not create or change any file until we agree on the change and I say go.** Discuss the design first (what the data is, what the input should look like, what the schedule will show), then build. A "can you…?" question is a request to explain and propose, not to build.
+- **During work:** one area at a time. Be concise, ask at most one question per reply, state assumptions and open decisions plainly. Tell me what a change affects (other sheets, totals) before building it.
+- **End of every session: Check documentation and code for consistency updated `PROJECT_INSTRUCTIONS.md` (if the working agreement changed), updated `continuation.md` (decisions, what is done, open to-do list, lessons learned, notes), the latest workbook, every changed build/test/render/lint script, `colors_detail.json`, and `VBA_modules/*.bas`
+
+## Workbook conventions (agreed, do not deviate)
+- **Tabs:** COVER first (navy); orange = input sheets, then purple = budget schedules, then blue = MRI reference or derived data.
+- **Cells (working sheets):** white = read-only; very light blue (`E6F0FF`) = user input; amber = flag or adjusted amount; light green (`E2EFDA`) = forecast created by a lease option (not MRI). Gridlines off. Every sheet is protected with no password; only input cells are unlocked.
+- **Budget schedules are presentation output** and use their own colours (Calibri 10, Accounting format, whole dollars unless INPUT "Show decimals" = Yes, section palettes from the original Allwood DETAIL). The white/blue rule does not apply to them.
+- **MRI data tabs are read-only** and replaced wholesale on refresh; each holds one building's rows. IDs (lease IDs, suites, charge codes, vendor IDs) are always text.
+- **GL account is the key.** Charge code → GL account → amount. No intermediate category layer. Sections follow the MRI Financial Format group of the account.
+- **Signs:** MRI stores credits negative; input sheets show revenue and expenses as positive; concessions negative. Tenant charges that post to expense or leasing-cost accounts are **offsets** and reduce that account on DETAIL. Accounts not on the Financial Format are flagged and ignored everywhere; accounts in groups with no DETAIL section yet are flagged and excluded until the section exists.
+- **Generated sheets expose only fixed cells** (for example `DETAIL!B3` status). Never reference generated rows by address.
+- **Inputs on calculated lines** use a read-only row (MRI or calculated) plus an adjustment row (numbers or formulas added to it). Calculated defaults (increase %, rates, "Use calc?" switches) are light-blue inputs with legacy values as defaults.
+- Expenses by vendor are never reconciled to the GL (journal-entry reclasses are expected); vendor lines are shown as paid.
+
+## Architecture (summary; details in `continuation.md`)
+COVER → INPUT → REVENUE (tenant, via TENANT_SCHEDULE; lease options) and OTHER_REVENUE (non-tenant, with User blocks) → six EXP_ sheets (account × vendor), TAXES, INSURANCE, PROF_FEES, OTHER_PROF_FEES, DEBT (mortgage roll-forward + debt service account blocks), REPAIRS_CAPITAL (major repairs by GL account + capital improvements; capital lines feed IMPRVMTS & COMMISSIONS), plus INPUT blocks for starting cash, maintenance reserve, partner distributions and payroll → macro-built DETAIL (sections, TOTAL EXPENSES, TOTAL OPERATING EXPENSES, N.O.I., OTHER PROFESSIONAL FEES, OPERATING INCOME BEFORE DEBT SERVICE, TOTAL DEBT SERVICE, N.O.I. BEFORE CAPITAL, NET CASH FLOW and the cash balance lines) and QTRLY SUM. MRI extracts live in DATA_ tabs (one building). Calculation sheets: TENANT_SCHEDULE, INCOME_ACCOUNTS, EXPENSE_ACCOUNTS. Section grouping comes from the MRI Financial Format (`FMT_GROUP` on DATA_COA).
+
+## Quality gates before delivering any workbook
+1. Rebuild from scripts and recalculate: zero formula errors; key totals tie to independent calculations (the test scripts do this).
+2. Run the workflow tests (status flips, rebuild, options, new input sheets, lease options, offsets, totals), in small batches.
+3. Compare the embedded VBA with the source modules line by line (identical, no `Option VBASupport`) **and run `vba_lint.py`** on both — LibreOffice accepts VBA that Excel rejects (for example module-level declarations after a procedure).
+4. Validate every XML part against the OOXML schema; exactly one `<tabColor>` per sheet.
+5. Reopen the finished file, import its VBA, and rerun the build macro.
+6. Check tab order, colours, protection, fonts and fills; confirm the Build Schedules button macro is still assigned; render and look at changed sheets.
+7. Say plainly what could not be tested without Excel. Ask me to open the file, click Build Schedules, and report any message verbatim.
+8. Version every deliverable (vX.Y), remove superseded versions, and keep `VBA_modules/*.bas` and `build_tools/` in sync with the delivered workbook.
+
+## Technical notes
+- The workbook is built with openpyxl (`build_v2.py --building …`), passed through LibreOffice (UNO) to embed and run the VBA and save `.xlsm`, then post-processed (tab colours, button assignment, font colours). Details, pipeline order and known pitfalls are in `continuation.md` §9–§10.
+- Before any LibreOffice test delete `.~lock.*` files; never `pkill -f soffice`; a tool call is limited to 300 s, so run tests one at a time with `timeout`.
+- MRI extracts come as Excel files (`MRIQRY` sheet plus a query tab) and now contain **all buildings**; the build filters to the selected building. Check each extract against the accounts the budget uses. Parameterize queries (entity, periods) for other buildings and years.
+- Dynamic-array formulas (`FILTER`, spill) are avoided. Notes written into cells must never start with `=`.
+
+## Do not
+- Hardcode amounts, years, or entity numbers in formulas. Put them on an input sheet or in the data.
+- Put user input on a budget schedule, or generated content on an input sheet.
+- Ship a file that has not passed the quality gates.
+- Use passwords on sheet protection.
+- Reintroduce macros on entry sheets.
+- Put project file names, query names or script names in preparer-facing documents (describe data as "MRI vendor payments", "MRI general-ledger actuals", and so on).
+- Tell preparers to "rebuild the workbook" themselves: they request a refreshed workbook from their budget administrator.
