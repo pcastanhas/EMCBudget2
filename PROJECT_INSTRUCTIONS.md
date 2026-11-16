@@ -58,7 +58,7 @@ COVER → INPUT → REVENUE (tenant, via TENANT_SCHEDULE; lease options) and OTH
 8. Version every deliverable (vX.Y) in the file name, delete the superseded version from `workbook/` (git history keeps it), and keep `VBA_modules/*.bas` and `build_tools/` in sync with the delivered workbook in the same commit.
 
 ## Technical notes
-- The workbook is built with openpyxl (`build_v2.py --building …`), passed through LibreOffice (UNO) to embed and run the VBA and save `.xlsm`, then post-processed (tab colours, button assignment, font colours). Details, pipeline order and known pitfalls are in `continuation.md` §9–§10.
+- The workbook is built with openpyxl (`build_v2.py --building …`), passed through LibreOffice (UNO) to embed and run the VBA and save `.xlsm`, then post-processed (tab colours, button assignment, font colours). Scripts run from `build_tools/` and find the VBA modules and MRI extracts through `build_tools/paths.py`; scratch outputs go outside the repository. Details, pipeline order and known pitfalls are in `continuation.md` §9–§10.
 - Before any LibreOffice test delete `.~lock.*` files; never `pkill -f soffice` (use `pkill -x soffice.bin`). A foreground command is limited to 600 s (default 120 s), so run the slow tests one per call with `timeout`, or as background commands.
 - MRI extracts come as Excel files (`MRIQRY` sheet plus a query tab) and now contain **all buildings**; the build filters to the selected building. Check each extract against the accounts the budget uses. Parameterize queries (entity, periods) for other buildings and years.
 - Dynamic-array formulas (`FILTER`, spill) are avoided. Notes written into cells must never start with `=`.

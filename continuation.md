@@ -16,7 +16,7 @@
 2. Confirm the latest workbook is v3.13 and that its sheet list matches §2 (29 sheets, COVER first). Report any mismatch before doing anything else.
 3. The repository is cloned fresh for each cloud session; work in place (no build folder to unpack). Check that `MRI_Files_2027/` holds the MRI extracts listed in §4 — without them nothing builds or tests.
 4. Check tools: `python3 -c "import oletools, uno, openpyxl, lxml, pandas, PIL"`. LibreOffice + Python UNO, `openpyxl`, `lxml`, `pandas`, `Pillow`, `pdftotext` are in the cloud image; `oletools` comes from the environment setup script — if it is missing, `pip install oletools`.
-5. **Script paths (open, §7):** the scripts still contain the old chat-sandbox paths (`/home/claude/build/` in `make_xlsm.py`, `final_build.py`, `parse_fin.py`, `render*.py`; `/mnt/project/` and `/mnt/user-data/uploads` in `build_v2.py` and seven `test_*.py`). Until they are changed to repo-relative paths, pass `--src MRI_Files_2027` to `build_v2.py`; the LibreOffice steps and tests will not run as-is.
+5. **Paths:** all scripts take their locations from `build_tools/paths.py` (repo-relative): VBA source `VBA_modules/`, MRI extracts `MRI_Files_2027/` (override with `--src` on `build_v2.py` or the environment variable `BUDGET_SRC` for every script), `colors_detail.json` in `build_tools/`. Run the scripts from `build_tools/`; put scratch outputs (base `.xlsx`, `lo.xlsm`, test copies, PDFs) **outside the repository** (e.g. the session scratchpad) so they are not committed.
 6. Before any LibreOffice test: `rm -f .~lock.*` in the folder of every file being loaded (stale lock files make `load()` return `None`; see §10). Never run `pkill -f soffice` (it kills your own shell because the command line contains "soffice"); use `pkill -x soffice.bin`.
 7. Run tests in small batches with `timeout`; a foreground command is limited to 600 s (default 120 s — pass a larger timeout), and long tests can run as background commands.
 8. Do not create or change files until the change is agreed and the user says go (standing rule). Ask at most one question per reply.
@@ -167,7 +167,8 @@ Navy title band (`=BuildingName`), year band, photo (`--image` or `building_<id>
 ### Session 5 (migration to Claude Code + GitHub)
 - **Done:** documents updated for the repository workflow (commit/push replaces the zip hand-off). `oletools` installed in the session; gate check on v3.13: embedded VBA identical to `VBA_modules/*.bas` (all 5), no `VBASupport`, `vba_lint.py` clean on both; workbook has the 29 sheets in §2.
 - **Done (user):** uploaded the ten MRI extracts (§4) and `building_42_image.jpg` to `MRI_Files_2027/` and the legacy workbook to `reference/`; added `pip install oletools` to the cloud environment's setup script (confirm at the start of Session 6 that `import oletools` works without a manual install). Check: every extract opens with its `MRIQRY` sheet and has entity 42 rows; `build_v2.py --building 42 --billing-sf 157500 --src ../MRI_Files_2027` builds the base workbook (29 sheets, cover photo found). Keep the repository private.
-- **Open (next build task, needs go):** change the hard-coded chat-sandbox paths in the scripts to repo-relative paths (scripts dir = `build_tools/`, VBA = `VBA_modules/`, default MRI source = `MRI_Files_2027/`, `colors_detail.json` next to the scripts; tests take the source folder from an argument or the same default), then rebuild and run all tests once to confirm the pipeline works in the new environment.
+- **Done (scripts):** chat-sandbox paths replaced by repo-relative ones (new `build_tools/paths.py`; `build_v2.py`, `final_build.py`, `make_xlsm.py`, `parse_fin.py`, the three render scripts and seven tests use it). `lo_driver.py` uses the optional `office.soffice` helper when present and a plain headless environment (`SAL_USE_VCLPLUGIN=svp`) otherwise. `.gitignore` added (`__pycache__`, lock files). **Pipeline check in the new environment:** build → `final_build.py` (status OK - schedules current) → `postprocess.py` reproduces v3.13: same 29 sheets, all 1,700 DETAIL cells identical, `colors_detail.json` unchanged.
+- **Tests:** full run of all 17 tests in the new environment in progress (results to be recorded here).
 
 ### Waiting on a user decision
 1. **July reset rule** for OE/electric reimbursement (flat in-place today).
@@ -214,7 +215,7 @@ Navy title band (`=BuildingName`), year band, photo (`--image` or `building_<id>
 
 ## 9. Build pipeline
 
-Scripts live in `build_tools/`; VBA source in `VBA_modules/`; MRI extracts in `MRI_Files_2027/` (old chat-sandbox paths still hard-coded in the scripts — see §0 step 5 and §7):
+Scripts live in `build_tools/`; VBA source in `VBA_modules/`; MRI extracts in `MRI_Files_2027/`; locations come from `build_tools/paths.py` (§0 step 5). Run from `build_tools/`:
 
 | Script | Purpose |
 |--------|---------|
@@ -231,7 +232,7 @@ Scripts live in `build_tools/`; VBA source in `VBA_modules/`; MRI extracts in `M
 | Session 4 tests | `test_outline` (reads the finished .xlsm, no LibreOffice: reference/VEND rows grouped+hidden, input/total rows visible, summary rows collapsed, vendor budget labels) — run as `python3 test_outline.py FILE.xlsm` (takes the finished workbook, not the base .xlsx) |
 | More tests (Session 3) | `test_fees` (OTHER_PROF_FEES: defaults, increase %, override, Use calc, adjustments, User blocks, flags, the two N.O.I. lines), `test_repairs` (Session 4; replaces `test_capital`: repairs → DETAIL accounts + EXP_ memo lines, capital → section 3, rebuild flips, all-or-nothing months, Include = No, flags, duplicate note, capital account change, protection), `test_cashflow` (payroll, distributions, reserves → cash lines); `test_debt` and `test_fees` take ~4 min each, so run them alone (chat tool calls were limited to 300 s; Claude Code allows up to 600 s per foreground command) |
 
-Run order: `build_v2.py base.xlsx --building 42 --billing-sf 157500 --src MRI_Files_2027` → `final_build.py base.xlsx lo.xlsm` → `postprocess.py lo.xlsm out.xlsm colors_detail.json` → gates (§12) → save to `workbook/` with the next version number, delete the superseded version, sync scripts → commit and push to `main`.
+Run order (from `build_tools/`, `$S` = a scratch folder outside the repo): `build_v2.py $S/base.xlsx --building 42 --billing-sf 157500` → `final_build.py $S/base.xlsx $S/lo.xlsm` → `postprocess.py $S/lo.xlsm $S/out.xlsm colors_detail.json` → gates (§12) → save to `workbook/` with the next version number, delete the superseded version, sync scripts → commit and push to `main`.
 
 ---
 

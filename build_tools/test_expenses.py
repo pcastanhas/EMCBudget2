@@ -3,7 +3,8 @@ import sys, pandas as pd
 from lo_driver import LO
 from make_xlsm import embed_vba, cell
 BLDG = sys.argv[2] if len(sys.argv) > 2 else "42"
-SRC = "/mnt/project/"
+from paths import MRI_DIR
+SRC = MRI_DIR.rstrip("/") + "/"
 MON = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
 v = pd.read_excel(SRC + "Q1-Q3_2026_EXPENSES_BY_VENDOR.xlsx", sheet_name="MRIQRY", dtype=str)
 for c in ("entityid","vendid","acctnum"): v[c] = v[c].str.strip()

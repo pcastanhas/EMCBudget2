@@ -5,11 +5,11 @@ Report structure (per the PDF):
   SU/TO = subtotal / total that rolls up the lines above it, BL = blank.
 Net membership of a line = included accounts minus excluded accounts.
 """
-import re, json, sys
+import re, json, sys, os
 from collections import defaultdict, OrderedDict
 
-SRC = sys.argv[1] if len(sys.argv) > 1 else "/home/claude/build/fin_layout.txt"
-OUT = sys.argv[2] if len(sys.argv) > 2 else "/home/claude/build/fin_groups.json"
+SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), "fin_layout.txt")
+OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(os.path.dirname(os.path.abspath(__file__)), "fin_groups.json")
 
 HDR = re.compile(r"^\s{0,8}(\d{1,3})\s{2,}(BL|TI|RA|SU|TO|SM)\b(.*)$")
 ACC = re.compile(r"^\s+([+-])\s+(\d{4})-(\d{3})\s+(.*?)\s*$")

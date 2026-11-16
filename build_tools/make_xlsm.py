@@ -1,9 +1,10 @@
 import sys, os, re, uno
 from lo_driver import LO
+from paths import VBA_DIR
 MODS = ["modBuildCommon", "modFormat", "modBuildDetail", "modBuildQtrly", "modBuildAll"]
 
 def module_source(name):
-    txt = open(f"/home/claude/build/vba/{name}.bas").read()
+    txt = open(os.path.join(VBA_DIR, f"{name}.bas")).read()
     lines = [l for l in txt.splitlines() if not l.startswith("Attribute VB_Name")]
     return "Option VBASupport 1\n" + "\n".join(lines) + "\n"
 

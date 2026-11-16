@@ -1,4 +1,5 @@
 import sys, uno
+from paths import COLORS_JSON
 from lo_driver import LO
 from make_xlsm import embed_vba, cell
 from com.sun.star.awt import Size, Point
@@ -53,7 +54,7 @@ if __name__ == "__main__":
         arr = doc.Sheets.getByName("DETAIL").getCellRangeByPosition(0, 0, 0, 200).getDataArray()
         for i, row in enumerate(arr, 1):
             if row[0] not in ("", None): last = i
-        print("coloured DETAIL cells exported:", export_font_colors(doc, "DETAIL", f"A1:U{last + 2}", "/home/claude/build/colors_detail.json"))
+        print("coloured DETAIL cells exported:", export_font_colors(doc, "DETAIL", f"A1:U{last + 2}", COLORS_JSON))
         add_button(doc)
         print("status:", cell(doc, "DETAIL", "B3").String)
         lo.save(doc, dst, "Calc MS Excel 2007 VBA XML")

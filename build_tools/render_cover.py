@@ -1,4 +1,4 @@
-import uno
+import os, uno
 from lo_driver import LO, pv
 from com.sun.star.table import CellRangeAddress
 lo=LO()
@@ -21,7 +21,7 @@ try:
         w,h=st.Width,st.Height
         if w<h: st.Width,st.Height=h,w
         st.ScaleToPagesX=1; st.ScaleToPagesY=1
-    url=uno.systemPathToFileUrl("/home/claude/build/render_cover.pdf")
+    url=uno.systemPathToFileUrl(os.path.abspath("render_cover.pdf"))
     doc.storeToURL(url,(pv("FilterName","calc_pdf_Export"),))
     doc.close(True)
 finally:

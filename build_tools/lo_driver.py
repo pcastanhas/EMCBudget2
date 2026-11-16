@@ -2,7 +2,13 @@ import os, sys, time, subprocess, tempfile
 from pathlib import Path
 sys.path.insert(0, "/mnt/skills/public/xlsx/scripts")
 sys.path.insert(0, "/usr/lib/python3/dist-packages")
-from office.soffice import get_soffice_env
+try:  # optional helper (LD_PRELOAD socket shim) when present; plain headless env otherwise
+    from office.soffice import get_soffice_env
+except ImportError:
+    def get_soffice_env():
+        env = os.environ.copy()
+        env["SAL_USE_VCLPLUGIN"] = "svp"
+        return env
 import uno
 from com.sun.star.beans import PropertyValue
 

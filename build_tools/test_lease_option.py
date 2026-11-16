@@ -3,7 +3,8 @@ import sys, datetime as dt, pandas as pd
 from lo_driver import LO
 from make_xlsm import embed_vba, cell
 BLDG = sys.argv[2] if len(sys.argv) > 2 else "42"
-SRC = "/mnt/project/"
+from paths import MRI_DIR
+SRC = MRI_DIR.rstrip("/") + "/"
 YEAR = 2027
 te = pd.read_excel(SRC + "TENANT_LIST.xlsx", sheet_name="MRIQRY", dtype=str)
 te["bldgid"] = te.bldgid.str.strip(); te = te[te.bldgid == BLDG].copy()

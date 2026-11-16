@@ -3,7 +3,8 @@ import sys, calendar, pandas as pd
 from lo_driver import LO
 from make_xlsm import embed_vba, cell
 BLDG = sys.argv[2] if len(sys.argv) > 2 else "42"
-SRC = "/mnt/project/"
+from paths import MRI_DIR
+SRC = MRI_DIR.rstrip("/") + "/"
 MON = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
 def load(f, cols_num):
     d = pd.read_excel(SRC + f, sheet_name="MRIQRY", dtype=str); d["entityid"] = d.entityid.str.strip(); d["acctnum"] = d.acctnum.str.strip()

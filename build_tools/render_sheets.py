@@ -3,7 +3,7 @@ Usage: python3 render_sheets.py book.xlsm out.pdf "COVER:0,0,11,62" "DETAIL:0,0,
   area = SHEET:firstCol,firstRow,lastCol,lastRow (zero-based). Sheets not listed print one empty cell (so pages = sheets).
   --set  sets a cell before rendering (numbers are parsed, everything else is text); --build runs BuildAllSchedulesQuiet first
   (needs a .xlsx base with the VBA embedded by make_xlsm.embed_vba, or an .xlsm that already carries the VBA project)."""
-import sys, uno
+import os, sys, uno
 from lo_driver import LO, pv
 from com.sun.star.table import CellRangeAddress
 args = sys.argv[1:]
@@ -38,7 +38,7 @@ try:
         w, h = st.Width, st.Height
         if w < h: st.Width, st.Height = h, w
         st.ScaleToPagesX = 1; st.ScaleToPagesY = 1
-    doc.storeToURL(uno.systemPathToFileUrl(out if out.startswith("/") else "/home/claude/build/" + out), (pv("FilterName", "calc_pdf_Export"),))
+    doc.storeToURL(uno.systemPathToFileUrl(os.path.abspath(out)), (pv("FilterName", "calc_pdf_Export"),))
     doc.close(True)
 finally:
     lo.close()

@@ -12,7 +12,7 @@ ap = argparse.ArgumentParser(description="Build the budget workbook (base .xlsx)
 ap.add_argument("out", help="output .xlsx path")
 ap.add_argument("--building", required=True, help="MRI building/entity ID (e.g. 05) or building name (e.g. 'WEST MOUNT PLEASANT ASSOCIATES')")
 ap.add_argument("--year", type=int, default=2027, help="budget year (default 2027)")
-ap.add_argument("--src", default=None, help="folder holding the MRI extract files (default: /mnt/user-data/uploads, then /mnt/project)")
+ap.add_argument("--src", default=None, help="folder holding the MRI extract files (default: $BUDGET_SRC, else <repo>/MRI_Files_2027)")
 ap.add_argument("--billing-sf", type=float, default=None, help="billing/CAM SF for INPUT!C5 (default: MRI leasable SF of the building)")
 ap.add_argument("--actuals-thru", type=int, default=None, help="months of prior-year-of-budget actuals for INPUT!C15 (default: last month with activity)")
 ap.add_argument("--image", default=None, help="building photo for the COVER sheet (default: building_<id>_image.jpg/.png in the source folder or next to this script)")
@@ -24,7 +24,8 @@ TEST = ARGS.test
 BUDGET_YEAR = ARGS.year
 HERE = os.path.dirname(os.path.abspath(__file__))
 FIN_GROUPS = ARGS.fin_groups or os.path.join(HERE, "fin_groups.json")
-SRC_DIR = ARGS.src or next(d for d in ("/mnt/user-data/uploads", "/mnt/project") if os.path.exists(os.path.join(d, "BUILDING_LIST.xlsx")))
+from paths import MRI_DIR
+SRC_DIR = ARGS.src or MRI_DIR
 UP = SRC_DIR.rstrip("/") + "/"
 
 FONT = "Arial"
