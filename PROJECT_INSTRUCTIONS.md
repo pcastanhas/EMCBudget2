@@ -17,7 +17,7 @@ The project lives in the GitHub repository `pcastanhas/EMCBudget2` and is worked
 |--------|----------|
 | `/` | `PROJECT_INSTRUCTIONS.md` (this file), `continuation.md` (technical record) |
 | `workbook/` | The current deliverable `.xlsm` (one version only; older versions live in git history) |
-| `VBA_modules/` | The five `.bas` modules (must match the VBA embedded in the workbook) |
+| `VBA_modules/` | The `.bas` modules (six since v3.15) (must match the VBA embedded in the workbook) |
 | `build_tools/` | Build, post-process, test, render and lint scripts; `fin_groups.json`, `fin_layout.txt`, `colors_detail.json` |
 | `MRI_Files_2027/` | MRI extracts (all buildings) and building photos (`building_<id>_image.jpg`) used to build the 2027 workbooks |
 | `reference/` | Legacy workbook (read-only) |
@@ -45,7 +45,7 @@ Tools the sessions need: Python 3 with `openpyxl`, `lxml`, `pandas`, `Pillow`, `
 - Expenses by vendor are never reconciled to the GL (journal-entry reclasses are expected); vendor lines are shown as paid.
 
 ## Architecture (summary; details in `continuation.md`)
-COVER → INPUT → REVENUE (tenant, via TENANT_SCHEDULE; lease options) and OTHER_REVENUE (non-tenant, with User blocks) → six EXP_ sheets (account × vendor), TAXES, INSURANCE, PROF_FEES, OTHER_PROF_FEES, DEBT (mortgage roll-forward + debt service account blocks), REPAIRS_CAPITAL (major repairs by GL account + capital improvements; capital lines feed IMPRVMTS & COMMISSIONS), plus INPUT blocks for starting cash, maintenance reserve, partner distributions and payroll → macro-built DETAIL (sections, TOTAL EXPENSES, TOTAL OPERATING EXPENSES, N.O.I., OTHER PROFESSIONAL FEES, OPERATING INCOME BEFORE DEBT SERVICE, TOTAL DEBT SERVICE, N.O.I. BEFORE CAPITAL, NET CASH FLOW and the cash balance lines) and QTRLY SUM. MRI extracts live in DATA_ tabs (one building). Calculation sheets: TENANT_SCHEDULE, INCOME_ACCOUNTS, EXPENSE_ACCOUNTS. Section grouping comes from the MRI Financial Format (`FMT_GROUP` on DATA_COA).
+COVER → INPUT → REVENUE (tenant, via TENANT_SCHEDULE; lease options) and OTHER_REVENUE (non-tenant, with User blocks) → six EXP_ sheets (account × vendor), TAXES, INSURANCE, PROF_FEES, OTHER_PROF_FEES, DEBT (mortgage roll-forward + debt service account blocks), REPAIRS_CAPITAL (major repairs by GL account + capital improvements; capital lines feed IMPRVMTS & COMMISSIONS), plus INPUT blocks for starting cash, maintenance reserve, partner distributions and payroll → macro-built DETAIL (sections, TOTAL EXPENSES, TOTAL OPERATING EXPENSES, N.O.I., OTHER PROFESSIONAL FEES, OPERATING INCOME BEFORE DEBT SERVICE, TOTAL DEBT SERVICE, N.O.I. BEFORE CAPITAL, NET CASH FLOW and the cash balance lines) PROFORMA (budget year vs prior-year forecast and budget, variance, % and $/SF change, down to NET CASH FLOW) and QTRLY SUM. MRI extracts live in DATA_ tabs (one building). Calculation sheets: TENANT_SCHEDULE, INCOME_ACCOUNTS, EXPENSE_ACCOUNTS. Section grouping comes from the MRI Financial Format (`FMT_GROUP` on DATA_COA).
 
 ## Quality gates before delivering any workbook
 1. Rebuild from scripts and recalculate: zero formula errors; key totals tie to independent calculations (the test scripts do this).

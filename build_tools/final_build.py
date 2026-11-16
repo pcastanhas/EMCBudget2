@@ -26,7 +26,7 @@ def col_letter(n):
         s = chr(65 + r) + s
     return s
 
-def export_font_colors(doc, sheet_name, rng, path):
+def font_colors(doc, sheet_name, rng):
     """LibreOffice 24.2 exports a stale theme colour instead of a macro-set font colour.
     Record every explicitly coloured cell (live document = what the VBA wrote) so that
     postprocess.py can write those colours into the file's styles."""
@@ -39,8 +39,21 @@ def export_font_colors(doc, sheet_name, rng, path):
             cc = sh.getCellByPosition(col, row).CharColor
             if cc not in (-1, 0):
                 out[f"{col_letter(col)}{row + 1}"] = "%06X" % cc
+    return out
+
+
+def last_used_row(doc, sheet_name, rows=400):
+    arr = doc.Sheets.getByName(sheet_name).getCellRangeByPosition(0, 0, 0, rows).getDataArray()
+    return max([i for i, row in enumerate(arr, 1) if row[0] not in ("", None)] + [1])
+
+
+def export_font_colors(doc, path):
+    """{sheet: {cell: rgb}} for the macro-built schedules that use coloured text (postprocess.py writes them into the styles)."""
+    import json
+    out = {"DETAIL": font_colors(doc, "DETAIL", f"A1:U{last_used_row(doc, 'DETAIL') + 2}"),
+           "PROFORMA": font_colors(doc, "PROFORMA", f"A1:J{last_used_row(doc, 'PROFORMA') + 2}")}
     json.dump(out, open(path, "w"))
-    return len(out)
+    return {k: len(v) for k, v in out.items()}
 
 if __name__ == "__main__":
     src, dst = sys.argv[1], sys.argv[2]
@@ -51,11 +64,7 @@ if __name__ == "__main__":
         embed_vba(lo, doc)
         lo.run_macro(doc, "VBAProject.modBuildAll.BuildAllSchedulesQuiet")
         doc.calculateAll()
-        last = 1
-        arr = doc.Sheets.getByName("DETAIL").getCellRangeByPosition(0, 0, 0, 200).getDataArray()
-        for i, row in enumerate(arr, 1):
-            if row[0] not in ("", None): last = i
-        print("coloured DETAIL cells exported:", export_font_colors(doc, "DETAIL", f"A1:U{last + 2}", colors_out))
+        print("coloured cells exported:", export_font_colors(doc, colors_out))
         add_button(doc)
         print("status:", cell(doc, "DETAIL", "B3").String)
         lo.save(doc, dst, "Calc MS Excel 2007 VBA XML")

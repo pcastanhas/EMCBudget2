@@ -55,16 +55,22 @@ rid2t.update({a: b for b, a in re.findall(r'Target="([^"]+)"[^>]*Id="([^"]+)"', 
 sheets = re.findall(r'<sheet name="([^"]+)"[^>]*r:id="([^"]+)"', wbx)
 part = {n.replace("&amp;", "&"): "xl/" + rid2t[r] for n, r in sheets}
 print("sheet parts:", part)
-colors = {"COVER": "FF1F497D", "INPUT": "FFFFA500", "REVENUE": "FFFFA500", "OTHER_REVENUE": "FFFFA500", "EXP_UTILITIES": "FFFFA500", "EXP_JANITORIAL": "FFFFA500", "EXP_ELEVATOR": "FFFFA500", "EXP_HVAC": "FFFFA500", "EXP_LANDSCAPING": "FFFFA500", "EXP_GENERAL_RM": "FFFFA500", "TAXES": "FFFFA500", "INSURANCE": "FFFFA500", "PROF_FEES": "FFFFA500", "DEBT": "FFFFA500", "OTHER_PROF_FEES": "FFFFA500", "REPAIRS_CAPITAL": "FFFFA500", "INCOME_ACCOUNTS": "FF0070C0", "EXPENSE_ACCOUNTS": "FF0070C0", "DETAIL": "FF7030A0", "QTRLY SUM": "FF7030A0", "TENANT_SCHEDULE": "FF0070C0"}
+colors = {"COVER": "FF1F497D", "INPUT": "FFFFA500", "REVENUE": "FFFFA500", "OTHER_REVENUE": "FFFFA500", "EXP_UTILITIES": "FFFFA500", "EXP_JANITORIAL": "FFFFA500", "EXP_ELEVATOR": "FFFFA500", "EXP_HVAC": "FFFFA500", "EXP_LANDSCAPING": "FFFFA500", "EXP_GENERAL_RM": "FFFFA500", "TAXES": "FFFFA500", "INSURANCE": "FFFFA500", "PROF_FEES": "FFFFA500", "DEBT": "FFFFA500", "OTHER_PROF_FEES": "FFFFA500", "REPAIRS_CAPITAL": "FFFFA500", "INCOME_ACCOUNTS": "FF0070C0", "EXPENSE_ACCOUNTS": "FF0070C0", "DETAIL": "FF7030A0", "PROFORMA": "FF7030A0", "QTRLY SUM": "FF7030A0", "TENANT_SCHEDULE": "FF0070C0"}
 for _n in ("DATA_COA", "DATA_CHARGECODES", "DATA_BUDGET_PY", "DATA_ACTUALS", "DATA_BALANCES", "DATA_SUITES", "DATA_TENANT_CHARGES", "DATA_VENDOR"):
     colors[_n] = "FF0070C0"          # protected sheets lose their tab colour in the LibreOffice export, so set all of them
 by_part = {part[n]: c for n, c in colors.items()}
 colors_file = sys.argv[3] if len(sys.argv) > 3 else None
-patched_styles = patched_detail = None
+patched_styles, patched_sheets = None, {}
 if colors_file:
-    detail_part = part["DETAIL"]
-    patched_styles, patched_detail, ncol = patch_colors(zin.read("xl/styles.xml"), zin.read(detail_part), json.load(open(colors_file)))
-    print("DETAIL font colours written:", ncol)
+    cmap = json.load(open(colors_file))
+    if cmap and not isinstance(next(iter(cmap.values())), dict):
+        cmap = {"DETAIL": cmap}                     # old format: DETAIL cells only
+    styles_b = zin.read("xl/styles.xml")
+    for sh_, cells_ in cmap.items():
+        if sh_ in part:
+            styles_b, patched_sheets[part[sh_]], ncol = patch_colors(styles_b, zin.read(part[sh_]), cells_)
+            print(f"{sh_} font colours written:", ncol)
+    patched_styles = styles_b
 btn_part = next((n for n in zin.namelist() if re.match(r"xl/drawings/drawing\d+\.xml$", n) and b"BuildSchedulesButton" in zin.read(n)), None)
 print("button drawing:", btn_part)
 zout = zipfile.ZipFile(dst, "w", zipfile.ZIP_DEFLATED)
@@ -72,8 +78,8 @@ for item in zin.infolist():
     data = zin.read(item.filename)
     if patched_styles is not None and item.filename == "xl/styles.xml":
         data = patched_styles
-    if patched_detail is not None and item.filename == part["DETAIL"]:
-        data = patched_detail
+    if item.filename in patched_sheets:
+        data = patched_sheets[item.filename]
     if item.filename in by_part:
         s = data.decode("utf-8")
         assert '<sheetPr filterMode="false">' in s, item.filename

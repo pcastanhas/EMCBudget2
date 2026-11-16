@@ -62,6 +62,7 @@ ws_opf = wb.create_sheet("OTHER_PROF_FEES")
 ws_debt = wb.create_sheet("DEBT")
 ws_cap = wb.create_sheet("REPAIRS_CAPITAL")
 ws_det = wb.create_sheet("DETAIL")
+ws_pf = wb.create_sheet("PROFORMA")
 ws_q = wb.create_sheet("QTRLY SUM")
 ws_ts = wb.create_sheet("TENANT_SCHEDULE")
 ws_ia = wb.create_sheet("INCOME_ACCOUNTS")
@@ -76,7 +77,7 @@ ws_ia.sheet_properties.tabColor = BLUE        # INCOME_ACCOUNTS is MRI-derived d
 ws_ea.sheet_properties.tabColor = BLUE
 for w in list(ws_exp.values()) + [ws_tax, ws_ins, ws_pro, ws_opf, ws_debt, ws_cap]:
     w.sheet_properties.tabColor = ORANGE      # expense / tax input sheets
-for w in (ws_det, ws_q):
+for w in (ws_det, ws_pf, ws_q):
     w.sheet_properties.tabColor = PURPLE      # budget schedules (macro-built)
 ws_ts.sheet_properties.tabColor = BLUE        # TENANT_SCHEDULE is MRI-derived data
 for w in ws_data.values():
@@ -535,7 +536,7 @@ ws["C69"].fill = PatternFill("solid", fgColor="FFD966")
 put(ws, "B70", "Light green = forecast from a lease option (not from MRI)")
 ws["C70"].fill = PatternFill("solid", fgColor="E2EFDA")
 put(ws, "B71", "Tabs: orange = input | purple = budget schedules | blue = MRI reference data")
-put(ws, "B72", "Budget schedules (DETAIL, QTRLY SUM) are presentation output and use their own color scheme.", f_note)
+put(ws, "B72", "Budget schedules (DETAIL, PROFORMA, QTRLY SUM) are presentation output and use their own color scheme.", f_note)
 ws.protection.sheet = True
 ws.protection.formatColumns = False
 ws.protection.formatRows = False
@@ -2240,11 +2241,12 @@ name("TaxMain", "INPUT!$C$64")
 
 # ------------------------------------------------------------------ DETAIL / QTRLY skeletons (macro builds the content)
 for w, widths in ((ws_det, (11, 46, 4) + (11,) * 12 + (13, 9, 12, 12, 12, 12)),
+                  (ws_pf, (10, 44, 13, 13, 13, 13, 11, 11, 11, 11)),
                   (ws_q, (11, 46, 4, 13, 13, 13, 13, 14, 10))):
     w.sheet_view.showGridLines = False
     for i, wd in enumerate(widths, 1):
         w.column_dimensions[CL(i)].width = wd
-    w.freeze_panes = "D6"
+    w.freeze_panes = "C6" if w is ws_pf else "D6"
     put(w, "A1", "Not built yet - click Build Schedules on the INPUT tab.", f_bold)
 
 # ------------------------------------------------------------------ TEST FILL (scratch copy only)
@@ -2280,6 +2282,7 @@ SHEET_INFO = {
     "REPAIRS_CAPITAL": ("Major repairs by GL account and capital improvements: cost, start month or monthly amounts", "Input"),
     "DEBT": ("Primary mortgage roll-forward (interest and principal) and debt service accounts", "Input"),
     "DETAIL": ("Budget by GL account and month, with section totals and N.O.I.", "Schedule"),
+    "PROFORMA": ("Budget year vs prior-year forecast and prior-year budget by GL account: variance, % and $/SF change", "Schedule"),
     "QTRLY SUM": ("Budget by GL account and quarter", "Schedule"),
     "TENANT_SCHEDULE": ("Calculation: MRI tenant charges by month for the budget year", "MRI data / calculation"),
     "INCOME_ACCOUNTS": ("Calculation: income accounts that get a block on OTHER_REVENUE", "MRI data / calculation"),

@@ -184,7 +184,8 @@ End Function
 
 ' DETAIL section for an account found on REVENUE / OTHER_REVENUE. 0 = ignored: the account is not on the
 ' MRI Financial Format, or its format group has no DETAIL section yet (flagged on REVENUE column V).
-Private Function RevSec(ByVal a As Double) As Long
+' Public so PROFORMA can classify prior-year-only accounts; CollectAccounts must run first (it loads the chart of accounts).
+Public Function RevSec(ByVal a As Double) As Long
     Dim k As Long, j As Long, grp As String
     RevSec = 0
     For k = 24 To 28                                   ' leasing-cost accounts listed on INPUT

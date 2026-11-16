@@ -7,9 +7,10 @@ Private Sub RunBuild(ByVal quiet As Boolean)
     On Error GoTo EH
     Application.ScreenUpdating = False
     BuildDetail
+    BuildProforma
     BuildQtrlySum
     Application.ScreenUpdating = True
-    If Not quiet Then MsgBox "DETAIL and QTRLY SUM have been rebuilt.", vbInformation, "Build Schedules"
+    If Not quiet Then MsgBox "DETAIL, PROFORMA and QTRLY SUM have been rebuilt.", vbInformation, "Build Schedules"
     Exit Sub
 EH:
     Application.ScreenUpdating = True
