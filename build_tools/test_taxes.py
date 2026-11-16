@@ -35,12 +35,14 @@ try:
     esc = max(a26[a26.acctnum == "MR1200000"][MON[:9]].sum().tolist())
     exp_esc = [round(esc - pay.get(m, 0), 2) for m in range(1, 13)]
     f45 = fcst(5745000); exp_bia = [round(x * 1.025, 2) for x in f45]
+    f35 = fcst(5735000); exp_con = [round(x * 1.025, 2) for x in f35]   # Use calc defaults to Yes on every non-main account (Session 5)
     print(f"1) defaults: prior-year tax {T('G9').Value:,.2f} (expect {py:,.2f}) | budget-year tax {T('G11').Value:,.2f} (expect {by:,.2f}) | escrow {T('G16').Value:,.2f} (expect {esc:,.2f})")
-    print("   5710000 months match:", months(5710000) == exp_tax, "| 1200000 match:", months(1200000) == exp_esc, "| 5745000 match:", months(5745000) == exp_bia)
+    print("   5710000 months match:", months(5710000) == exp_tax, "| 1200000 match:", months(1200000) == exp_esc, "| 5745000 match:", months(5745000) == exp_bia, "| 5735000 match:", months(5735000) == exp_con)
+    print("   blocks:", sorted(rowof), "(data-driven; 5730000 has no activity -> no block) | INPUT main account:", cell(doc, "INPUT", "C64").Value, cell(doc, "INPUT", "D64").String)
     d = lambda: doc.Sheets.getByName("DETAIL").getCellRangeByPosition(0, 0, 20, 120).getDataArray()
     heads = [r[0] for r in d() if r[0] in ("TAXES",)]; tot = [round(r[15], 2) for r in d() if r[1] == "TOTAL TAXES"]
     rows = {int(r[0]): round(r[15], 2) for r in d() if isinstance(r[0], float) and int(r[0]) in (1200000, 5710000, 5730000, 5735000, 5745000)}
-    print("   DETAIL TAXES section present:", bool(heads), "| rows:", rows, "| TOTAL TAXES:", tot, "| expect", round(sum(exp_esc) + sum(exp_tax) + sum(exp_bia), 2))
+    print("   DETAIL TAXES section present:", bool(heads), "| rows:", rows, "| TOTAL TAXES:", tot, "| expect", round(sum(exp_esc) + sum(exp_tax) + sum(exp_bia) + sum(exp_con), 2))
     # 2) legacy tie: assessed value x rate, 3.5% (2026 budget as prepared in Allwood file)
     T("G7").setValue(19000000); T("G8").setValue(0.02531); T("G10").setValue(0.035); T("G16").setValue(38729); doc.calculateAll()
     print(f"2) legacy inputs (19,000,000 x 2.531%, +3.5%, escrow 38,729): prior-year tax {T('G9').Value:,.2f} | budget-year {T('G11').Value:,.2f} | payments {[round(T('H'+str(r)).Value,2) for r in (12,13,14,15)]}")
@@ -51,10 +53,20 @@ try:
     T(f"C{cons}").setString("Tax consultant"); T(f"L{cons}").setValue(250)
     run(); print("   consulting typed, rebuilt ->", S())
     T("G16").setValue(0); T("G12").setValue(1); doc.calculateAll()
-    print("3) escrow 0 -> escrow row total:", round(sum(months(1200000)), 2), "| first payment moved to Jan ->", months(5710000)[:3], "| consulting Jun 250 ->", months(5735000)[5], "| status:", S())
+    print("3) escrow 0 -> escrow row total:", round(sum(months(1200000)), 2), "| first payment moved to Jan ->", months(5710000)[:3], "| consulting Jun calc+250 ->", months(5735000)[5], "(expect", round(exp_con[5] + 250, 2), ")", "| status:", S())
     T("G13").setValue(13); doc.calculateAll(); print("   payment month 13 ->", S())
     T("G13").setValue(5); T("G12").setValue(2); T("G16").setValue(38729); doc.calculateAll()
     print("   restored ->", S())
+    # 5) main tax account is an INPUT choice: switch to 5745000 and back; blank -> CHECK DATA
+    inp = doc.Sheets.getByName("INPUT"); C64 = inp.getCellRangeByName("C64")
+    exp_new = [round(x, 2) for x in (1.025 * v for v in fcst(5710000))]
+    T("G7").setString(""); T("G8").setString(""); doc.calculateAll(); base_tax = months(5710000)
+    C64.setValue(5745000); doc.calculateAll()   # clear the legacy assessed value/rate so G9 = forecast of the main account
+    print("5) main = 5745000 -> G9", round(T("G9").Value, 2), "(expect", round(sum(f45), 2), ") | 5710000 now forecast x 1.025:", months(5710000) == exp_new,
+          "| 5745000 = quarterly payments:", abs(sum(months(5745000)) - T("G18").Value) < 0.05, [x for x in months(5745000) if x])
+    run(); print("   rebuilt ->", S())
+    C64.setString(""); doc.calculateAll(); print("   main blank ->", S())
+    C64.setValue(5710000); doc.calculateAll(); print("   main restored ->", S(), "| 5710000 back to payments:", months(5710000) == base_tax)
     rows = {int(r[0]): round(r[15], 2) for r in d() if isinstance(r[0], float) and int(r[0]) in (1200000, 5710000, 5730000, 5735000, 5745000)}
     q = doc.Sheets.getByName("QTRLY SUM").getCellRangeByPosition(0, 0, 8, 120).getDataArray()
     print("4) QTRLY 5710000:", [round(r[7], 2) for r in q if r[0] == 5710000], "| DETAIL 5710000:", rows.get(5710000), "| QTRLY status:", cell(doc, "QTRLY SUM", "B3").String)

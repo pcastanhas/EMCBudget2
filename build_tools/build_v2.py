@@ -524,18 +524,18 @@ name("PayWeekMonths", "INPUT!$C$57:$D$58")
 name("PaySummerAmt", "INPUT!$C$59")
 name("PaySummerFrom", "INPUT!$C$60")
 name("PaySummerTo", "INPUT!$D$60")
-put(ws, "B63", "LEGEND", f_bold)
-ws["B63"].border = Border(bottom=thin)
-ws["C63"].border = Border(bottom=thin)
-put(ws, "B64", "Light blue background = user input")
-ws["C64"].fill = INPUT_FILL
-put(ws, "B65", "White background = read-only (locked)")
-put(ws, "B66", "Amber = flag / adjusted amount")
-ws["C66"].fill = PatternFill("solid", fgColor="FFD966")
-put(ws, "B67", "Light green = forecast from a lease option (not from MRI)")
-ws["C67"].fill = PatternFill("solid", fgColor="E2EFDA")
-put(ws, "B68", "Tabs: orange = input | purple = budget schedules | blue = MRI reference data")
-put(ws, "B69", "Budget schedules (DETAIL, QTRLY SUM) are presentation output and use their own color scheme.", f_note)
+put(ws, "B66", "LEGEND", f_bold)
+ws["B66"].border = Border(bottom=thin)
+ws["C66"].border = Border(bottom=thin)
+put(ws, "B67", "Light blue background = user input")
+ws["C67"].fill = INPUT_FILL
+put(ws, "B68", "White background = read-only (locked)")
+put(ws, "B69", "Amber = flag / adjusted amount")
+ws["C69"].fill = PatternFill("solid", fgColor="FFD966")
+put(ws, "B70", "Light green = forecast from a lease option (not from MRI)")
+ws["C70"].fill = PatternFill("solid", fgColor="E2EFDA")
+put(ws, "B71", "Tabs: orange = input | purple = budget schedules | blue = MRI reference data")
+put(ws, "B72", "Budget schedules (DETAIL, QTRLY SUM) are presentation output and use their own color scheme.", f_note)
 ws.protection.sheet = True
 ws.protection.formatColumns = False
 ws.protection.formatRows = False
@@ -2008,8 +2008,37 @@ def build_debt_sheet(ws, D):
 _end = build_debt_sheet(ws_debt, DEBT_DEF)
 print(f"DEBT: {len(DEBT_DEF['accts'])} account blocks, rows to {_end}")
 
-# ------------------------------------------------------------------ TAXES (input: real estate tax, escrow, assessments)
+# ------------------------------------------------------------------ TAXES (input: real estate tax, escrow, other tax accounts)
+TAX_GROUP = "TAXES"
+TAX_INC_DEFAULT = 0.025          # default Increase % for every tax account except the main one (was the BIA increase)
+TAX_PANEL_END = 18
+TAX_BLOCK_ROWS = 11              # header, ACT, BUD, FCST, CALC, 3 INPUT, FINAL, OFFSET, NET
+TAX_LIST_COL, TAX_FCST_COL, TAX_LIST_ROW = "W", "X", 7   # hidden helper list for the INPUT dropdown (account, prior-year forecast)
+
+
+def tax_accounts():
+    """TAXES-group accounts with prior-year actual, budget or vendor activity (fixed when the workbook is built).
+    Returns (expense-region accounts in account order, escrow account or None, default main tax account or None)."""
+    py = BUDGET_YEAR - 1
+    am, bm = list(act.columns[3:15]), list(bud.columns[4:16])
+    tot = {}
+    for df_, cols, flt in ((act, am, py), (bud, bm, py)):
+        d_ = df_[df_["Year"] == flt]
+        for a_, v_ in zip(d_["acctnum"], pd.DataFrame({c: pd.to_numeric(d_[c]) for c in cols}).abs().sum(axis=1)):
+            tot[a_] = tot.get(a_, 0) + v_
+    for a_, v_ in zip(ven["acctnum"], ven[VEN_MONTHS].abs().sum(axis=1)):
+        tot[a_] = tot.get(a_, 0) + v_
+    accs = [r_ for r_ in coa[coa["FMT_GROUP"] == TAX_GROUP].sort_values("ACCTNO").itertuples() if tot.get(r_.ACCTNUM, 0) > 0.004]
+    non_exp = [r_ for r_ in accs if r_.TYPE != "EXPENSE"]
+    esc = max(non_exp, key=lambda r_: tot[r_.ACCTNUM]) if non_exp else None          # escrow = the balance-sheet account with most activity
+    exp_ = [r_ for r_ in accs if r_.TYPE == "EXPENSE"]
+    main = next((r_ for r_ in exp_ if int(r_.ACCTNO) == 5710000), None) or (max(exp_, key=lambda r_: tot[r_.ACCTNUM]) if exp_ else None)
+    region = [(int(r_.ACCTNO), r_.TYPE == "EXPENSE") for r_ in accs if esc is None or r_.ACCTNUM != esc.ACCTNUM]
+    return region, (int(esc.ACCTNO) if esc is not None else None), (int(main.ACCTNO) if main is not None else None)
+
+
 def build_tax_sheet(ws):
+    region, esc_acct, main_def = tax_accounts()
     ws.sheet_view.showGridLines = False
     for col, w in zip("ABCDEF", (10, 2, 46, 11, 8, 2)):
         ws.column_dimensions[col].width = w
@@ -2020,8 +2049,9 @@ def build_tax_sheet(ws):
     ws.column_dimensions["U"].width = 7
     put(ws, "A1", '=BuildingName&" - TAXES"', f_title)
     put(ws, "A2", '="BUDGET FOR THE YEAR "&BudgetYear', f_bold)
-    put(ws, "A3", "Real estate tax payments and escrow. Light-blue cells are inputs. Each account below shows its prior-year actual/budget/forecast, the calculated amount (where the sheet calculates it) "
-                  "and three light-blue lines for amounts you add. Expenses are positive numbers.", f_sub)
+    put(ws, "A3", "Real estate tax payments, escrow and other tax accounts. Light-blue cells are inputs. Each account shows its prior-year actual/budget/forecast, a calculated line "
+                  "(main tax account: the quarterly payments below; escrow: deposit less tax paid; every other account: prior-year forecast x (1 + Increase %), switched off with Use calc = No) "
+                  "and three light-blue lines for amounts you add. Expenses are positive numbers. The main real estate tax account is chosen on INPUT.", f_sub)
     put(ws, "A4", '="Prior-year forecast = actuals Jan-"&TEXT(DATE(BudgetYear-1,ActualsThru,1),"mmm")&" plus budget for the remaining months (set on INPUT)."', f_sub)
     for col, t in {"A": "GL Acct", "C": "Account / Line", "D": "GL", "E": "Source"}.items():
         put(ws, f"{col}5", t, f_bold)
@@ -2031,25 +2061,35 @@ def build_tax_sheet(ws):
     put(ws, "T5", "$/SF", f_bold, align="right")
     for col in range(1, 22):
         ws.cell(5, col).border = Border(bottom=thin)
-    # ---- block layout (computed first: the escrow row refers to the real estate tax total row)
-    ACCTS = [(1200000, True), (5710000, True), (5730000, False), (5735000, False), (5745000, True)]   # (account, has a calculated row)
-    PANEL_END = 18
-    pos, r = {}, PANEL_END + 2
-    for a_, calc_ in ACCTS:
-        n_ = 4 + (1 if calc_ else 0) + 3 + 1 + 2
-        pos[a_] = dict(r0=r, ra=r + 1, rb=r + 2, rf=r + 3, rc=(r + 4 if calc_ else None), i1=r + 4 + (1 if calc_ else 0))
-        pos[a_]["rt"] = pos[a_]["i1"] + 3
-        r += n_ + 1
-    T5710, F5710 = pos[5710000]["rt"], pos[5710000]["rf"]
+    # ---- block layout: every account except escrow first (account order), escrow LAST so its formula can read the
+    #      other blocks without a range that contains itself (Excel flags such ranges as circular)
+    order = region + ([(esc_acct, False)] if esc_acct else [])
+    pos, r = {}, TAX_PANEL_END + 2
+    for a_, is_exp in order:
+        pos[a_] = dict(r0=r, ra=r + 1, rb=r + 2, rf=r + 3, rc=r + 4, i1=r + 5, rt=r + 8, exp=is_exp, esc=(a_ == esc_acct))
+        r += TAX_BLOCK_ROWS + 1
+    top = TAX_PANEL_END + 2
+    bot = (pos[region[-1][0]]["rt"] + 2) if region else top          # last row of the non-escrow region
+    # ---- helper list (hidden column W:X): expense accounts that can be the main tax account, with their prior-year forecast
+    exp_list = [a_ for a_, e_ in region if e_]
+    put(ws, f"{TAX_LIST_COL}{TAX_LIST_ROW - 1}", "Main-account list", f_lbl)
+    for k_, a_ in enumerate(exp_list):
+        put(ws, f"{TAX_LIST_COL}{TAX_LIST_ROW + k_}", a_, f_norm, "0")
+        put(ws, f"{TAX_FCST_COL}{TAX_LIST_ROW + k_}", f"=S{pos[a_]['rf']}", f_norm, NUM2)
+    last_ = TAX_LIST_ROW + max(len(exp_list), 1) - 1
+    name("TAX_MAIN_LIST", f"TAXES!${TAX_LIST_COL}${TAX_LIST_ROW}:${TAX_LIST_COL}${last_}")
+    ws.column_dimensions[TAX_LIST_COL].hidden = True
+    ws.column_dimensions[TAX_FCST_COL].hidden = True
+    MAIN_FCST = f"IFERROR(INDEX(${TAX_FCST_COL}${TAX_LIST_ROW}:${TAX_FCST_COL}${last_},MATCH(TaxMain,${TAX_LIST_COL}${TAX_LIST_ROW}:${TAX_LIST_COL}${last_},0)),0)"
     # ---- input panel
-    ws["A7"] = None
     put(ws, "C6", "REAL ESTATE TAX ESTIMATE AND PAYMENTS", f_bold)
+    put(ws, "I6", '="Main real estate tax account (set on INPUT): "&IF(COUNTIF(TAX_MAIN_LIST,TaxMain)=0,"NONE - choose one on INPUT",TaxMain&" "&IFERROR(INDEX(COA_NAME,MATCH(TaxMain,COA_ACCTNO,0)),""))', f_bold)
     for col in range(1, 22):
         ws.cell(6, col).border = Border(bottom=thin)
     rows = [
         (7, "Prior-year assessed value (optional)", None, "#,##0", True, "Optional. With the tax rate below it gives the prior-year tax; leave both blank to use the prior-year GL forecast instead."),
         (8, "Prior-year tax rate (optional)", None, "0.00000%", True, "Tax rate on the prior-year bill (e.g. 2.531%)."),
-        (9, "Prior-year annual tax (used)", f"=IF(AND(N(G7)>0,N(G8)>0),G7*G8,S{F5710})", NUM2, False, "Assessed value x rate when both are entered, otherwise the prior-year forecast for 5710000 (actual Jan-Sep + budget for the rest)."),
+        (9, "Prior-year annual tax (used)", f"=IF(AND(N(G7)>0,N(G8)>0),G7*G8,{MAIN_FCST})", NUM2, False, "Assessed value x rate when both are entered, otherwise the prior-year forecast of the main tax account (actuals + budget for the rest of the year)."),
         (10, "Assumed increase for the budget year", 0.035, "0.0%", True, "Assumption - change as needed."),
         (11, "Budget-year annual tax", "=G9*(1+G10)", NUM2, False, "Prior-year tax x (1 + increase)."),
     ]
@@ -2063,23 +2103,31 @@ def build_tax_sheet(ws):
     put(ws, "H6", "Amount", f_lbl, align="right")
     dv_m = DataValidation(type="whole", operator="between", formula1="1", formula2="12", allow_blank=False, showErrorMessage=True,
                           errorTitle="Payment month", error="Enter a month number from 1 to 12.")
-    ws.add_data_validation(dv_m)
+    dv_pct = DataValidation(type="decimal", operator="between", formula1="-1", formula2="1", allow_blank=False, showErrorMessage=True,
+                            errorTitle="Increase %", error="Enter a percentage between -100% and 100%.")
+    dv_yn = DataValidation(type="list", formula1='"Yes,No"', allow_blank=False, showErrorMessage=True)
+    for v_ in (dv_m, dv_pct, dv_yn):
+        ws.add_data_validation(v_)
     for rr, lbl, mo, fml in pay:
         put(ws, f"C{rr}", lbl)
         put(ws, f"G{rr}", mo, f_norm, "0", inp=True, align="right")
         put(ws, f"H{rr}", fml, f_norm, NUM2, align="right")
         dv_m.add(f"G{rr}")
-    put(ws, "I12", "Month numbers: 1 = Jan ... 12 = Dec. Payments are posted to 5710000 Real Estate Taxes.", f_note)
+    put(ws, "I12", "Month numbers: 1 = Jan ... 12 = Dec. Payments are posted to the main real estate tax account (INPUT).", f_note)
     put(ws, "C16", "Monthly escrow deposit", f_norm)
-    put(ws, "G16", f"=MAX(0,MAX(G{pos[1200000]['ra']}:R{pos[1200000]['ra']}))", f_norm, NUM2, inp=True, align="right")
-    put(ws, "I16", "Default = the largest monthly escrow posting this year. Type over it with the amount from the last mortgage statement; 0 = taxes are not paid from escrow.", f_note)
-    put(ws, "C17", "Business improvement assessment increase", f_norm)
-    put(ws, "G17", 0.025, f_norm, "0.0%", inp=True, align="right")
-    put(ws, "I17", "Applied to each month's prior-year forecast of 5710000-series assessment (5745000).", f_note)
+    if esc_acct:
+        put(ws, "G16", f"=MAX(0,MAX(G{pos[esc_acct]['ra']}:R{pos[esc_acct]['ra']}))", f_norm, NUM2, inp=True, align="right")
+        put(ws, "I16", f"Default = the largest monthly posting to escrow account {esc_acct} this year. Type over it with the amount from the last mortgage statement; 0 = taxes are not paid from escrow.", f_note)
+    else:
+        put(ws, "G16", 0, f_norm, NUM2, inp=True, align="right")
+        put(ws, "I16", "This building has no real estate tax escrow account with activity, so no escrow line is calculated.", f_note)
+    put(ws, "C17", "Default increase for the other tax accounts", f_norm)
+    put(ws, "G17", TAX_INC_DEFAULT, f_norm, "0.0%", inp=True, align="right")
+    dv_pct.add("G17")
+    put(ws, "I17", "Copied into the Increase % of every account below except the main tax account; type over it there to change one account.", f_note)
     put(ws, "C18", "Total real estate tax (calculated payments)", f_bold)
     put(ws, "G18", "=SUM(H12:H15)", f_bold, NUM2, align="right")
     put(ws, "I18", "Check: equals the budget-year annual tax.", f_note)
-    ws["I17"].value = "Applied to each month's prior-year forecast for 5745000 Business Improvement Assessment."
 
     def calc_cells(r, bold=False):
         for m in range(12):
@@ -2088,43 +2136,46 @@ def build_tax_sheet(ws):
             c.font = f_bold if bold else f_norm
             c.border = Border(bottom=hair)
 
-    for a_, calc_ in ACCTS:
+    for a_, _ in order:
         p = pos[a_]; r0, ra, rb, rf, rc, i1, rt = p["r0"], p["ra"], p["rb"], p["rf"], p["rc"], p["i1"], p["rt"]
         A = f"$A${r0}"
         put(ws, f"A{r0}", a_, f_bold, "0000\\-000", align="left")
         put(ws, f"C{r0}", f'=IFERROR(INDEX(COA_NAME,MATCH({A},COA_ACCTNO,0)),"(not in chart of accounts)")', f_bold)
         for col in range(1, 22):
             ws.cell(r0, col).border = Border(bottom=thin)
+        if not p["esc"]:
+            put(ws, f"G{r0}", "Increase %", f_lbl, align="right")
+            put(ws, f"H{r0}", "=$G$17", f_bold, "0.00%", inp=True, align="right")
+            dv_pct.add(f"H{r0}")
+            put(ws, f"I{r0}", "Use calc?", f_lbl, align="right")
+            put(ws, f"J{r0}", "Yes", f_bold, inp=True, align="center")
+            dv_yn.add(f"J{r0}")
+            put(ws, f"K{r0}", f'=IF({A}=TaxMain,"MAIN TAX ACCOUNT - calculated line = quarterly payments above (Increase % and Use calc not used)","")', f_note)
         put(ws, f"C{ra}", f'="  "&(BudgetYear-1)&" actual (Jan-"&TEXT(DATE(BudgetYear-1,ActualsThru,1),"mmm")&")"')
         put(ws, f"C{rb}", f'=IF(ActualsThru>=12,"  "&(BudgetYear-1)&" budget (none - full year actual)","  "&(BudgetYear-1)&" budget ("&TEXT(DATE(BudgetYear-1,ActualsThru+1,1),"mmm")&"-Dec)")')
         put(ws, f"C{rf}", f'="  "&(BudgetYear-1)&" forecast"', f_bold)
-        for rowi, tag in ((ra, "ACT"), (rb, "BUD"), (rf, "FCST")):
+        for rowi, tag in ((ra, "ACT"), (rb, "BUD"), (rf, "FCST"), (rc, "CALC")):
             put(ws, f"E{rowi}", tag, f_note)
+        if p["esc"]:
+            put(ws, f"C{rc}", '="  "&BudgetYear&" escrow deposit less tax paid from escrow (calculated)"', f_norm)
+        else:
+            put(ws, f"C{rc}", f'=IF({A}=TaxMain,"  "&BudgetYear&" quarterly payments (calculated - main tax account)",'
+                              f'"  "&BudgetYear&" prior-year forecast x (1 + increase) (calculated)")', f_norm)
         for m in range(12):
             col = CL(7 + m); ac, bc = CL(4 + m), CL(5 + m)
             ws[f"{col}{ra}"] = f'=IF(MONTH({col}$5)<=ActualsThru,SUMIFS({DA}{ac}$2:{ac}$2000,{DA}$C$2:$C$2000,"MR"&{A},{DA}$B$2:$B$2000,BudgetYear-1),0)'
             ws[f"{col}{rb}"] = f'=IF(MONTH({col}$5)>ActualsThru,SUMIFS({DB}{bc}$2:{bc}$2000,{DB}$D$2:$D$2000,"MR"&{A},{DB}$B$2:$B$2000,BudgetYear-1),0)'
             ws[f"{col}{rf}"] = f"={col}{ra}+{col}{rb}"
-        for rowi, bold in ((ra, False), (rb, False), (rf, True)):
+            if p["esc"]:
+                main_m = f'SUMIFS({col}${top}:{col}${bot},$D${top}:$D${bot},TaxMain,$E${top}:$E${bot},"FINAL")'
+                ws[f"{col}{rc}"] = f"=IF($G$16=0,0,$G$16-{main_m})"
+            else:
+                paym = "+".join(f"(MONTH({col}$5)=$G${q})*$H${q}" for q in (12, 13, 14, 15))
+                ws[f"{col}{rc}"] = f'=IF({A}=TaxMain,{paym},IF($J${r0}="Yes",{col}{rf}*(1+$H${r0}),0))'
+        for rowi, bold in ((ra, False), (rb, False), (rf, True), (rc, False)):
             calc_cells(rowi, bold)
             put(ws, f"S{rowi}", f"=SUM(G{rowi}:R{rowi})", f_bold if bold else f_norm, NUM0)
             put(ws, f"T{rowi}", f"=IF(BillingSF=0,0,S{rowi}/BillingSF)", f_bold if bold else f_norm, NUM2)
-        if calc_:
-            lbl = {1200000: "  escrow deposit less tax paid from escrow (calculated)", 5710000: "  quarterly payments (calculated)", 5745000: "  prior-year forecast x (1 + increase) (calculated)"}[a_]
-            put(ws, f"C{rc}", f'="  "&BudgetYear&" {lbl.strip()}"', f_norm)
-            put(ws, f"E{rc}", "CALC", f_note)
-            for m in range(12):
-                col = CL(7 + m)
-                if a_ == 5710000:
-                    f = "=" + "+".join(f"(MONTH({col}$5)=$G${q})*$H${q}" for q in (12, 13, 14, 15))
-                elif a_ == 1200000:
-                    f = f"=IF($G$16=0,0,$G$16-{col}{T5710})"
-                else:
-                    f = f"={col}{rf}*(1+$G$17)"
-                ws[f"{col}{rc}"] = f
-            calc_cells(rc)
-            put(ws, f"S{rc}", f"=SUM(G{rc}:R{rc})", f_norm, NUM0)
-            put(ws, f"T{rc}", f"=IF(BillingSF=0,0,S{rc}/BillingSF)", f_norm, NUM2)
         for k_ in range(3):
             rr = i1 + k_
             put(ws, f"C{rr}", None, inp=True)
@@ -2140,8 +2191,7 @@ def build_tax_sheet(ws):
         put(ws, f"E{rt}", "FINAL", f_note)
         for m in range(12):
             col = CL(7 + m)
-            base = f"{col}{rc}+" if calc_ else ""
-            put(ws, f"{col}{rt}", f"={base}SUM({col}{i1}:{col}{i1 + 2})", f_bold, NUM0)
+            put(ws, f"{col}{rt}", f"={col}{rc}+SUM({col}{i1}:{col}{i1 + 2})", f_bold, NUM0)
         put(ws, f"S{rt}", f"=SUM(G{rt}:R{rt})", f_bold, NUM0)
         put(ws, f"T{rt}", f"=IF(BillingSF=0,0,S{rt}/BillingSF)", f_bold, NUM2)
         for col in range(1, 22):
@@ -2165,11 +2215,28 @@ def build_tax_sheet(ws):
     ws.protection.sheet = True
     ws.protection.formatColumns = False
     ws.protection.formatRows = False
-    return pos
+    return pos, main_def, esc_acct
 
 
-TAX_POS = build_tax_sheet(ws_tax)
-print("TAXES: 5 account blocks, rows to", max(p["rt"] for p in TAX_POS.values()) + 1)
+TAX_POS, TAX_MAIN_DEFAULT, TAX_ESCROW = build_tax_sheet(ws_tax)
+print("TAXES: %d account blocks %s, main tax account %s, escrow %s, rows to %d" % (
+    len(TAX_POS), sorted(TAX_POS), TAX_MAIN_DEFAULT, TAX_ESCROW, max([p["rt"] for p in TAX_POS.values()] + [20]) + 2))
+
+# INPUT: main real estate tax account (rows 63-64; legend moved to row 66)
+put(ws_in, "B63", "REAL ESTATE TAXES", f_bold)
+for c_ in "BCDEF":
+    ws_in[f"{c_}63"].border = Border(bottom=thin)
+put(ws_in, "B64", "Main real estate tax account", f_bold)
+put(ws_in, "C64", TAX_MAIN_DEFAULT, f_bold, "0", inp=True, align="right")
+put(ws_in, "D64", '=IF(C64="","",IFERROR(INDEX(COA_NAME,MATCH(C64,COA_ACCTNO,0)),""))', f_norm)
+put(ws_in, "E65", "The account that receives the quarterly real estate tax payments calculated on TAXES (assessed value, rate, increase, pay months); "
+                  "escrow is calculated against it. Every other tax account is budgeted at its prior-year forecast x (1 + Increase %). "
+                  "Default = 5710000 Real Estate Taxes, or the tax expense account with the most activity.", f_note)
+dv_tax = DataValidation(type="list", formula1="=TAX_MAIN_LIST", allow_blank=True, showErrorMessage=True,
+                        errorTitle="Main tax account", error="Pick a tax expense account that has a block on TAXES.")
+ws_in.add_data_validation(dv_tax)
+dv_tax.add("C64")
+name("TaxMain", "INPUT!$C$64")
 
 # ------------------------------------------------------------------ DETAIL / QTRLY skeletons (macro builds the content)
 for w, widths in ((ws_det, (11, 46, 4) + (11,) * 12 + (13, 9, 12, 12, 12, 12)),

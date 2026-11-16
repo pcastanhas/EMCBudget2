@@ -224,8 +224,8 @@ Private Function DetailStatusFormula(ByVal endSched As Long, ByVal dec As Boolea
     Next j
     conds(11) = expT & ">0"
     msgs(11) = "CHECK DATA - a vendor in the vendor extract has no line on the EXP_ sheets (rebuild the workbook)"
-    conds(12) = "OR(COUNT(TAXES!$G$12:$G$15)<4,MIN(TAXES!$G$12:$G$15)<1,MAX(TAXES!$G$12:$G$15)>12)"
-    msgs(12) = "CHECK DATA - a tax payment month on TAXES is missing or not 1 to 12"
+    conds(12) = "OR(COUNT(TAXES!$G$12:$G$15)<4,MIN(TAXES!$G$12:$G$15)<1,MAX(TAXES!$G$12:$G$15)>12,AND(COUNT(TAX_MAIN_LIST)>0,COUNTIF(TAX_MAIN_LIST,TaxMain)=0))"
+    msgs(12) = "CHECK DATA - a tax payment month on TAXES is missing or not 1 to 12, or the main real estate tax account on INPUT is not a TAXES account"
     conds(13) = "COUNTIFS(REVENUE!$V$" & REV_FIRST & ":$V$" & REV_LAST & ",""IGNORED - NOT ON*"",REVENUE!$S$" & REV_FIRST & ":$S$" & REV_LAST & ",""<>0"")>0"
     msgs(13) = "CHECK DATA - a REVENUE charge posts to an account that is not on the MRI Financial Format (ignored) - see REVENUE column V"
     conds(14) = "COUNTIF(" & RC_SHEET & "!$AO$" & EXP_FIRST & ":$AO$" & EXP_LAST & ",""CHECK*"")>0"
