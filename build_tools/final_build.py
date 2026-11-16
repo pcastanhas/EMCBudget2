@@ -44,6 +44,7 @@ def export_font_colors(doc, sheet_name, rng, path):
 
 if __name__ == "__main__":
     src, dst = sys.argv[1], sys.argv[2]
+    colors_out = sys.argv[3] if len(sys.argv) > 3 else COLORS_JSON   # per-build file; default = build_tools/colors_detail.json
     lo = LO()
     try:
         doc = lo.load(src)
@@ -54,7 +55,7 @@ if __name__ == "__main__":
         arr = doc.Sheets.getByName("DETAIL").getCellRangeByPosition(0, 0, 0, 200).getDataArray()
         for i, row in enumerate(arr, 1):
             if row[0] not in ("", None): last = i
-        print("coloured DETAIL cells exported:", export_font_colors(doc, "DETAIL", f"A1:U{last + 2}", COLORS_JSON))
+        print("coloured DETAIL cells exported:", export_font_colors(doc, "DETAIL", f"A1:U{last + 2}", colors_out))
         add_button(doc)
         print("status:", cell(doc, "DETAIL", "B3").String)
         lo.save(doc, dst, "Calc MS Excel 2007 VBA XML")
