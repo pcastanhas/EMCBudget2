@@ -1,7 +1,7 @@
 # Project Instructions — Budget Redesign
 
 ## Purpose
-Redesign the property budget workbook for budget year 2027 and every year after, as a **template**: budget preparers supply MRI data for a building and Claude produces a ready-to-use workbook for that building (target request: *"Create the 2027 budget file for <building name>"*). The legacy file (`Allwood-2026_Budget-FINAL_xlsm_v2.xlsm`, kept in the repository under `reference/`) is a read-only reference. Audience of the finished workbook: property accountants and property managers.
+Redesign the property budget workbook for budget year 2027 and every year after, as a **template**: budget preparers supply MRI data for a building and Claude produces a ready-to-use workbook for that building (target request: *"Create the 2027 budget file for <building name>"*). The legacy file (`Allwood-2026 Budget-FINAL.xlsm v2.xlsm`, kept in the repository under `reference/`) is a read-only reference. Audience of the finished workbook: property accountants and property managers.
 
 ## Goals
 1. Fix broken or unused references and formulas.
