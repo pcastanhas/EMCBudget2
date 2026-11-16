@@ -27,7 +27,9 @@ try:
         if isinstance(t, str) and t and t not in col_of: col_of[t] = j
     codes = {str(hdr[1][j]): j for j in range(len(hdr[1])) if isinstance(hdr[1][j], str) and hdr[1][j] not in ("", "Charge code")}
     other = [j for j, t in enumerate(hdr[0]) if t == "(pick a code below)"]
-    FIRST = 15
+    colA = [r[0] for r in ld.getCellRangeByPosition(0, 0, 0, 300).getDataArray()]
+    FIRST = next(i for i, v in enumerate(colA, 1) if isinstance(v, float) and v == 1.0)      # deal line 1 (in-place rows above say "MRI")
+    INP = [i for i, v in enumerate(colA, 1) if v == "MRI"]
     def put(line, label, v, j=None):
         c = ld.getCellByPosition(col_of[label] if j is None else j, FIRST + line - 2)
         if isinstance(v, dt.date): c.setValue(serial(v))
@@ -44,6 +46,19 @@ try:
     kore = next((r[0], r[4]) for r in ts[1:] if str(r[1]).strip() == "1300")
     kore_id, kore_exp = str(kore[0]).strip(), LO_EPOCH + dt.timedelta(days=int(kore[1]))
     print("   renewal target: lease", kore_id, "expires", kore_exp)
+    # ---- in-place section: one read-only row per REVENUE lease block, rates and 2027 revenue
+    rva0 = rv.getCellRangeByPosition(0, 0, 20, 1500).getDataArray()
+    blocks = [r for r in rva0 if isinstance(r[20], float) and str(r[1]).strip()]
+    chk("in-place rows = REVENUE lease blocks", len(INP), len(blocks))
+    lr = ld.getCellRangeByPosition(0, INP[0] - 1, 40, INP[-1] - 1).getDataArray()
+    rc, rvc, stc, lc, sfc = col_of["Rent $/SF/yr"], col_of["2027 revenue ($)"], col_of["Line status"], col_of["MRI lease renewed"], col_of["Sq Ft"]
+    tot_rows = [r[18] for r in rva0 if r[2] == "Total Rent for Lease"]
+    chk("2027 revenue column = REVENUE lease totals", sum(r[rvc] for r in lr), sum(tot_rows[:len(INP)]))
+    kr = next(r for r in lr if str(r[lc]).strip() == kore_id)
+    tsd = sh("TENANT_SCHEDULE").getCellRangeByPosition(0, 0, 31, 400).getDataArray()
+    feb = sum(r[19 + kore_exp.month - 1] for r in tsd[1:] if str(r[0]).strip() == kore_id and str(r[6]).strip() == "00")
+    chk("expiring lease rent rate = expiry-month rent x 12 / SF", kr[rc], feb * 12 / kr[sfc])
+    print("   suite 1300 status before renewal:", kr[stc])
 
     # ---- deals
     d1 = dict(suite="1700", tenant="NEW TENANT A", type="New lease", sf=3000, start=dt.date(Y, 3, 1), end=dt.date(Y + 3, 2, 28), ner=28, rent=30, incr=0.03,
@@ -135,6 +150,8 @@ try:
     applied = {str(r[1]).strip(): r[8] for r in rva if str(r[1]).strip() and isinstance(r[8], str) and r[8] in ("Terminate", "MTM", "Renew")}
     chk("renewed lease applied option = Terminate under MTM", 0 if applied.get(kore_id) == "Terminate" else 1, 0)
     chk("other leases follow MTM", 0 if sum(v == "MTM" for k, v in applied.items() if k != kore_id) > 0 else 1, 0)
+    kr = next(r for r in ld.getCellRangeByPosition(0, INP[0] - 1, 40, INP[-1] - 1).getDataArray() if str(r[lc]).strip() == kore_id)
+    print("   suite 1300 status after renewal:", kr[stc]); chk("in-place row shows RENEWED", 0 if str(kr[stc]).startswith("RENEWED") else 1, 0)
     inp.getCellRangeByName("C31").setString("Terminate"); doc.calculateAll()
     # ---- line checks -> status
     print("3) line checks")
