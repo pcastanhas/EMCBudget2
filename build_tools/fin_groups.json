@@ -1,0 +1,8807 @@
+{
+ "accounts": {
+  "4320000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4235010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4100100": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4150020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4225030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4320010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4235020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4150030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4225040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4330000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4320020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4235030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4150040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4330010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4320030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4235040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4330020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4320040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4330030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4115000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4330040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4115010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4125000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4115020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4225100": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4230140": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4210000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4115030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4115040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4220000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4320100": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4220010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4320110": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4230000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4220020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4330100": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4155000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4320120": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4230010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4220030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4330110": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4155010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4320130": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4230020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4220040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4325000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4330120": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4155020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4320140": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4230030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4325010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4330130": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4155030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4230040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4335000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4325020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4330140": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4155040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4100000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4335010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4325030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4100010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4335020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4110000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4325040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4100020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4210100": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4335030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4110010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4100030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4120000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4335040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4110020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4220100": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4100040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4120010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4110030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4220110": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4120020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4230100": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4110040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4215000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4220120": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4120030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4230110": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4220130": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4120040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4225000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4230120": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4220140": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4150000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4225010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4230130": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4235000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4150010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4225020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 4,
+   "source": "main",
+   "note": ""
+  },
+  "4400000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4480000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4720000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4410000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4426000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4490000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4810000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4510100": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4415000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4420000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4500000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4820000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4425000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4505000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4420010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4350000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4430000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4510000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4910000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4420020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4435000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4515000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4430010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4420030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4440000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4520000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4600000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4430020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4540100": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4420040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4440010": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4430030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4450000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4530000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4610000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4850000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4440020": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4430040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4535000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4440030": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4540000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4440040": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4470000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4550000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4710000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "4475000": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 5,
+   "source": "main",
+   "note": ""
+  },
+  "5260100": {
+   "group": "INCOME",
+   "parent": "",
+   "subtotal": "TOTAL INCOME",
+   "line": 6,
+   "source": "main",
+   "note": ""
+  },
+  "7240000": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET ELECTRIC",
+   "line": 12,
+   "source": "main",
+   "note": ""
+  },
+  "5110000": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET ELECTRIC",
+   "line": 12,
+   "source": "main",
+   "note": ""
+  },
+  "5110100": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET ELECTRIC",
+   "line": 12,
+   "source": "main",
+   "note": ""
+  },
+  "5115000": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET ELECTRIC",
+   "line": 12,
+   "source": "main",
+   "note": ""
+  },
+  "5600110": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET ELECTRIC",
+   "line": 12,
+   "source": "main",
+   "note": ""
+  },
+  "4310000": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET ELECTRIC",
+   "line": 13,
+   "source": "main",
+   "note": ""
+  },
+  "5120000": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET GAS",
+   "line": 16,
+   "source": "main",
+   "note": ""
+  },
+  "5120100": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET GAS",
+   "line": 16,
+   "source": "main",
+   "note": ""
+  },
+  "5125000": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET GAS",
+   "line": 16,
+   "source": "main",
+   "note": ""
+  },
+  "4315000": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET GAS",
+   "line": 17,
+   "source": "main",
+   "note": ""
+  },
+  "5130000": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET WATER/SEWER/SEPTIC",
+   "line": 20,
+   "source": "main",
+   "note": ""
+  },
+  "5130050": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET WATER/SEWER/SEPTIC",
+   "line": 20,
+   "source": "main",
+   "note": ""
+  },
+  "5130100": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET WATER/SEWER/SEPTIC",
+   "line": 20,
+   "source": "main",
+   "note": ""
+  },
+  "5130200": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET WATER/SEWER/SEPTIC",
+   "line": 20,
+   "source": "main",
+   "note": ""
+  },
+  "5135000": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET WATER/SEWER/SEPTIC",
+   "line": 20,
+   "source": "main",
+   "note": ""
+  },
+  "5130300": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET WATER/SEWER/SEPTIC",
+   "line": 20,
+   "source": "main",
+   "note": ""
+  },
+  "4340000": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET WATER/SEWER/SEPTIC",
+   "line": 21,
+   "source": "main",
+   "note": ""
+  },
+  "5140000": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET FUEL OIL",
+   "line": 23,
+   "source": "main",
+   "note": ""
+  },
+  "5150000": {
+   "group": "UTILITIES",
+   "parent": "EXPENSES",
+   "subtotal": "NET FUEL OIL",
+   "line": 23,
+   "source": "main",
+   "note": ""
+  },
+  "5216000": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5240000": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5280000": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5245000": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5285000": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5225100": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5210000": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5250000": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5259000": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5230100": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5255000": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5215000": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5220000": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5225000": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5285100": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5230000": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5235000": {
+   "group": "JANITORIAL & CLEANING",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL JANITORIAL & CLEANING",
+   "line": 28,
+   "source": "main",
+   "note": ""
+  },
+  "5270000": {
+   "group": "ELEVATOR",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL ELEVATOR",
+   "line": 32,
+   "source": "main",
+   "note": ""
+  },
+  "5270100": {
+   "group": "ELEVATOR",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL ELEVATOR",
+   "line": 32,
+   "source": "main",
+   "note": ""
+  },
+  "5265000": {
+   "group": "ELEVATOR",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL ELEVATOR",
+   "line": 32,
+   "source": "main",
+   "note": ""
+  },
+  "5265100": {
+   "group": "ELEVATOR",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL ELEVATOR",
+   "line": 32,
+   "source": "main",
+   "note": ""
+  },
+  "5270200": {
+   "group": "ELEVATOR",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL ELEVATOR",
+   "line": 32,
+   "source": "main",
+   "note": ""
+  },
+  "5296000": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5300100": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296010": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296020": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5295000": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296413": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5300000": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5300130": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296424": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5305000": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296426": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296811": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5310000": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5315000": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5320000": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5325000": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5295050": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5330000": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296210": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5300050": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296215": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5335000": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5340000": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296614": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296616": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296621": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296111": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296112": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296113": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296114": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296115": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296116": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296117": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296118": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5296624": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5295100": {
+   "group": "HVAC & PAYROLL",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL HVAC & PAYROLL",
+   "line": 36,
+   "source": "main",
+   "note": ""
+  },
+  "5365000": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5365385": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5357000": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5373000": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5385100": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5365450": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5345100": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5370000": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5378000": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5375000": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5380000": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5356000": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5385000": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5465000": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5345000": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5365480": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5365100": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5358000": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5350000": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5355000": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5365435": {
+   "group": "LANDSCAPING & GROUNDS",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL LANDSCAPING & GROUNDS",
+   "line": 40,
+   "source": "main",
+   "note": ""
+  },
+  "5440000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5395200": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5493000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5290000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5450000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5460000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5485600": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5395500": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5470000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5395000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5478200": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5363000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5480000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5488200": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5405000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5505100": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5490000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5285200": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5415000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5485400": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5500000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5468000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5395300": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5425000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5478000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5510000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5435000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5467000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5275000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5395320": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5520000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5360000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5395330": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5600135": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5445000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5765000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5600140": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5466000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5600145": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5600150": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5455000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5423000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5487000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5540000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5600160": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5433000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5600170": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5550000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5600180": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5475000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5291000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5485500": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5400000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5395400": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5410000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5478100": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5510100": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5495000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5275100": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5260000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5420000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5473000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5505000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5430000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5590000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5515000": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "5487100": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "TOTAL GENERAL R&M",
+   "line": 44,
+   "source": "main",
+   "note": ""
+  },
+  "1200000": {
+   "group": "TAXES",
+   "parent": "",
+   "subtotal": "TOTAL TAXES",
+   "line": 50,
+   "source": "main",
+   "note": ""
+  },
+  "5720000": {
+   "group": "TAXES",
+   "parent": "",
+   "subtotal": "TOTAL TAXES",
+   "line": 51,
+   "source": "main",
+   "note": ""
+  },
+  "5740000": {
+   "group": "TAXES",
+   "parent": "",
+   "subtotal": "TOTAL TAXES",
+   "line": 51,
+   "source": "main",
+   "note": ""
+  },
+  "5725000": {
+   "group": "TAXES",
+   "parent": "",
+   "subtotal": "TOTAL TAXES",
+   "line": 51,
+   "source": "main",
+   "note": ""
+  },
+  "5745000": {
+   "group": "TAXES",
+   "parent": "",
+   "subtotal": "TOTAL TAXES",
+   "line": 51,
+   "source": "main",
+   "note": ""
+  },
+  "5735000": {
+   "group": "TAXES",
+   "parent": "",
+   "subtotal": "TOTAL TAXES",
+   "line": 51,
+   "source": "main",
+   "note": ""
+  },
+  "5745100": {
+   "group": "TAXES",
+   "parent": "",
+   "subtotal": "TOTAL TAXES",
+   "line": 51,
+   "source": "main",
+   "note": ""
+  },
+  "5710000": {
+   "group": "TAXES",
+   "parent": "",
+   "subtotal": "TOTAL TAXES",
+   "line": 51,
+   "source": "main",
+   "note": ""
+  },
+  "5730000": {
+   "group": "TAXES",
+   "parent": "",
+   "subtotal": "TOTAL TAXES",
+   "line": 51,
+   "source": "main",
+   "note": ""
+  },
+  "5710100": {
+   "group": "TAXES",
+   "parent": "",
+   "subtotal": "TOTAL TAXES",
+   "line": 51,
+   "source": "main",
+   "note": ""
+  },
+  "5715000": {
+   "group": "TAXES",
+   "parent": "",
+   "subtotal": "TOTAL TAXES",
+   "line": 51,
+   "source": "main",
+   "note": ""
+  },
+  "5750000": {
+   "group": "INSURANCE",
+   "parent": "",
+   "subtotal": "TOTAL INSURANCE",
+   "line": 55,
+   "source": "main",
+   "note": ""
+  },
+  "5755000": {
+   "group": "INSURANCE",
+   "parent": "",
+   "subtotal": "TOTAL INSURANCE",
+   "line": 55,
+   "source": "main",
+   "note": ""
+  },
+  "5856000": {
+   "group": "PROFESSIONAL FEES/G&A",
+   "parent": "",
+   "subtotal": "TOTAL PROFESSIONAL FEES/G&A",
+   "line": 59,
+   "source": "main",
+   "note": ""
+  },
+  "5800000": {
+   "group": "PROFESSIONAL FEES/G&A",
+   "parent": "",
+   "subtotal": "TOTAL PROFESSIONAL FEES/G&A",
+   "line": 59,
+   "source": "main",
+   "note": ""
+  },
+  "5805000": {
+   "group": "PROFESSIONAL FEES/G&A",
+   "parent": "",
+   "subtotal": "TOTAL PROFESSIONAL FEES/G&A",
+   "line": 59,
+   "source": "main",
+   "note": ""
+  },
+  "5853000": {
+   "group": "PROFESSIONAL FEES/G&A",
+   "parent": "",
+   "subtotal": "TOTAL PROFESSIONAL FEES/G&A",
+   "line": 59,
+   "source": "main",
+   "note": ""
+  },
+  "5857000": {
+   "group": "PROFESSIONAL FEES/G&A",
+   "parent": "",
+   "subtotal": "TOTAL PROFESSIONAL FEES/G&A",
+   "line": 59,
+   "source": "main",
+   "note": ""
+  },
+  "5853100": {
+   "group": "PROFESSIONAL FEES/G&A",
+   "parent": "",
+   "subtotal": "TOTAL PROFESSIONAL FEES/G&A",
+   "line": 59,
+   "source": "main",
+   "note": ""
+  },
+  "5859000": {
+   "group": "PROFESSIONAL FEES/G&A",
+   "parent": "",
+   "subtotal": "TOTAL PROFESSIONAL FEES/G&A",
+   "line": 59,
+   "source": "main",
+   "note": ""
+  },
+  "5858000": {
+   "group": "PROFESSIONAL FEES/G&A",
+   "parent": "",
+   "subtotal": "TOTAL PROFESSIONAL FEES/G&A",
+   "line": 59,
+   "source": "main",
+   "note": ""
+  },
+  "5855000": {
+   "group": "PROFESSIONAL FEES/G&A",
+   "parent": "",
+   "subtotal": "TOTAL PROFESSIONAL FEES/G&A",
+   "line": 59,
+   "source": "main",
+   "note": ""
+  },
+  "5910000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 68,
+   "source": "main",
+   "note": ""
+  },
+  "2635000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 69,
+   "source": "main",
+   "note": "Also included by line 78 (DEBT SERVICE); first line used"
+  },
+  "1205000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 70,
+   "source": "main",
+   "note": ""
+  },
+  "1216000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 71,
+   "source": "main",
+   "note": ""
+  },
+  "1400000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 72,
+   "source": "main",
+   "note": ""
+  },
+  "1217000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 73,
+   "source": "main",
+   "note": ""
+  },
+  "1213000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 74,
+   "source": "main",
+   "note": ""
+  },
+  "1215000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 74,
+   "source": "main",
+   "note": ""
+  },
+  "1214000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 74,
+   "source": "main",
+   "note": ""
+  },
+  "1230000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 75,
+   "source": "main",
+   "note": ""
+  },
+  "1235000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 75,
+   "source": "main",
+   "note": ""
+  },
+  "1410000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 76,
+   "source": "main",
+   "note": ""
+  },
+  "5920000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 77,
+   "source": "main",
+   "note": ""
+  },
+  "2640000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2600000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2632000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2696000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2627000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2725000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2605000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2621000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2637000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2602000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2618000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2650000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": "Also included by line 107 (OTHER DISB/(RECEIPTS)); first line used"
+  },
+  "2610000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2626000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2623000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2639000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2631000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2615000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2695000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2603000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2620000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2636000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2632100": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2601000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2617000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2633000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2625000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2638000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "2630000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 78,
+   "source": "main",
+   "note": ""
+  },
+  "5912000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 79,
+   "source": "main",
+   "note": ""
+  },
+  "1223000": {
+   "group": "DEBT SERVICE",
+   "parent": "",
+   "subtotal": "TOTAL DEBT SERVICE",
+   "line": 80,
+   "source": "main",
+   "note": ""
+  },
+  "5815040": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5835010": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5828100": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5485060": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5845000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5813000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5815050": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5817100": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5835020": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5485070": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5815060": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5823000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5820700": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5815070": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5780000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5835300": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5815080": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5820200": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5805100": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5485100": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5843000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5815100": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5736000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5825100": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5829200": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5810000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5835600": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5820500": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5835100": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5820000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5393000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5817200": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5830000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5840000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5820800": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5488000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5780100": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5835400": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5829000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5820300": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5835150": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5485200": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5850000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5395100": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5815200": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5828000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5600420": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5817000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5815210": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5817005": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5829300": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5815220": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5820600": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5816000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5835200": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5820100": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5340100": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5485000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5817300": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5815000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5911000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5817050": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5815005": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5815006": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5815010": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5820900": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5488100": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5780200": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5825000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5815020": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5835500": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5765100": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5820400": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5485300": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5815030": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5835000": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "5485050": {
+   "group": "OTHER PROFESSIONAL FEES",
+   "parent": "",
+   "subtotal": "TOTAL OTHER PROFESSIONAL FEES",
+   "line": 86,
+   "source": "main",
+   "note": ""
+  },
+  "2105000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 90,
+   "source": "main",
+   "note": ""
+  },
+  "2105100": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 90,
+   "source": "main",
+   "note": ""
+  },
+  "1420000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 91,
+   "source": "main",
+   "note": ""
+  },
+  "1440000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 91,
+   "source": "main",
+   "note": ""
+  },
+  "1470000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 91,
+   "source": "main",
+   "note": ""
+  },
+  "1430000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 91,
+   "source": "main",
+   "note": ""
+  },
+  "5865000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 92,
+   "source": "main",
+   "note": ""
+  },
+  "5860000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 93,
+   "source": "main",
+   "note": ""
+  },
+  "5860100": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 93,
+   "source": "main",
+   "note": ""
+  },
+  "5390000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 94,
+   "source": "main",
+   "note": ""
+  },
+  "5770000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 95,
+   "source": "main",
+   "note": ""
+  },
+  "7600000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 96,
+   "source": "main",
+   "note": ""
+  },
+  "5860300": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 96,
+   "source": "main",
+   "note": ""
+  },
+  "5863000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 97,
+   "source": "main",
+   "note": ""
+  },
+  "1335300": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1365000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "5877000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1335310": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1330200": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1375000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "5876000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1300000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1330210": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1340200": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1325100": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1310000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1340210": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1325110": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "5875000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1335100": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1365310": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1335110": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1405000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1345100": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1330000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1325400": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1415000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1340000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1325410": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1335400": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1425000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1350000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1335410": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1365110": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1435000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1330300": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1360000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "5876100": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1330310": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1445000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1340300": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1325200": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1370000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1340310": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1325210": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1335200": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1316000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1365410": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1325050": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1305000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1335210": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1345200": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1330100": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1315000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1330110": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1340100": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1325000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1340110": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1335000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1495000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1365210": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1330400": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1345000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1330410": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1340400": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1325300": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1355000": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1340410": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "1325310": {
+   "group": "TENANT IMP. & COMM",
+   "parent": "",
+   "subtotal": "TOTAL IMPVTS & COMM",
+   "line": 98,
+   "source": "main",
+   "note": ""
+  },
+  "2100000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 104,
+   "source": "main",
+   "note": ""
+  },
+  "5397000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 104,
+   "source": "main",
+   "note": ""
+  },
+  "2750100": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 104,
+   "source": "main",
+   "note": ""
+  },
+  "2000000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 105,
+   "source": "main",
+   "note": ""
+  },
+  "2040000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 105,
+   "source": "main",
+   "note": ""
+  },
+  "2030000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 105,
+   "source": "main",
+   "note": ""
+  },
+  "2035000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 105,
+   "source": "main",
+   "note": ""
+  },
+  "2755000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 105,
+   "source": "main",
+   "note": ""
+  },
+  "2745000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 105,
+   "source": "main",
+   "note": ""
+  },
+  "1750000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 106,
+   "source": "main",
+   "note": ""
+  },
+  "1755000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 106,
+   "source": "main",
+   "note": ""
+  },
+  "1850000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 106,
+   "source": "main",
+   "note": ""
+  },
+  "2880000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 107,
+   "source": "main",
+   "note": ""
+  },
+  "2744000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 107,
+   "source": "main",
+   "note": ""
+  },
+  "1243030": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 107,
+   "source": "main",
+   "note": ""
+  },
+  "2721000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 107,
+   "source": "main",
+   "note": ""
+  },
+  "1460000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 108,
+   "source": "main",
+   "note": ""
+  },
+  "1210000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 108,
+   "source": "main",
+   "note": ""
+  },
+  "1465000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 108,
+   "source": "main",
+   "note": ""
+  },
+  "1508000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 108,
+   "source": "main",
+   "note": ""
+  },
+  "1500000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 109,
+   "source": "main",
+   "note": ""
+  },
+  "1280000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 109,
+   "source": "main",
+   "note": ""
+  },
+  "4800000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 109,
+   "source": "main",
+   "note": ""
+  },
+  "2020000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 109,
+   "source": "main",
+   "note": ""
+  },
+  "2752000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 109,
+   "source": "main",
+   "note": ""
+  },
+  "1219000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 109,
+   "source": "main",
+   "note": ""
+  },
+  "2101000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 109,
+   "source": "main",
+   "note": ""
+  },
+  "2050000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 109,
+   "source": "main",
+   "note": ""
+  },
+  "1218000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 109,
+   "source": "main",
+   "note": ""
+  },
+  "2835000": {
+   "group": "OTHER DISB/(RECEIPTS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 109,
+   "source": "main",
+   "note": ""
+  },
+  "3200000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3520000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3780100": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3285000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3413000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3605000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3050000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3306000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3370000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3498000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3626000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3135000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3647000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3775000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3220000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3540000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3305000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3625000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3390000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3646000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3774000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3155000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3283000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3240000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3560000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3325000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3645000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3410000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3111000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3495000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3815000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3260000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3644000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3900000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3345000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3110000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3430000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3750000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3515000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3643000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3280000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3600000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3365000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3130000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3450000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3642000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3770000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3215000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3279000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3535000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3627000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3300000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3620000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3385000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3641000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3150000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3278000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3235000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3555000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3000000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3000001": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3000002": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3000003": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3320000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3640000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3704000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3277000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3405000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3106000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3170000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3810000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3255000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3319000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3575000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3639000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3703000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3020000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3340000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3105000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3425000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3510000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3510001": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3638000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3702000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3770100": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3147000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3275000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3360000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3317000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3445000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3637000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3701000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3210000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3530000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3103000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3295000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3615000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3999000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3235100": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3380000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3636000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3700000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3145000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3435000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3102000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3230000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3550000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3806000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3315000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3443000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3635000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3336000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3400000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3101000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3165000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3805000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3250000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3314000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3570000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3634000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3271000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3335000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3770200": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3770205": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3100000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3420000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3770210": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3770215": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3505000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3633000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3770220": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3270000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3910000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3355000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3120000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3248000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3312000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3440000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3632000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3760000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3205000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3525000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3290000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3610000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3247000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3375000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3631000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3140000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3780000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3225000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3545000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3246000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3310000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3630000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3950000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3395000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3770300": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3160000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3288000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3608000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3245000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3565000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3330000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3010000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3010001": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3010002": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3010003": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3650000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3223000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3223001": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3415000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3244000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3500000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3628000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3820000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3265000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3777000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3030000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3350000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3606000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "3115000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 112,
+   "source": "main",
+   "note": ""
+  },
+  "2750080": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 113,
+   "source": "main",
+   "note": ""
+  },
+  "2750050": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 113,
+   "source": "main",
+   "note": ""
+  },
+  "2750020": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 113,
+   "source": "main",
+   "note": ""
+  },
+  "2785000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 113,
+   "source": "main",
+   "note": ""
+  },
+  "2750090": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 113,
+   "source": "main",
+   "note": ""
+  },
+  "2750060": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 113,
+   "source": "main",
+   "note": ""
+  },
+  "2750030": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 113,
+   "source": "main",
+   "note": ""
+  },
+  "2750070": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 113,
+   "source": "main",
+   "note": ""
+  },
+  "2750040": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 113,
+   "source": "main",
+   "note": ""
+  },
+  "2750010": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 113,
+   "source": "main",
+   "note": ""
+  },
+  "1536000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1529600": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1557000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1525000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1529100": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520400": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1610000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520402": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520403": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520405": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520150": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1535000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520410": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520155": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520160": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1620000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1524000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1528100": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520165": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1705000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1545000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1529900": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520175": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1630000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520180": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1529400": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520185": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1555000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1523000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520700": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1640000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520200": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1565000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520205": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1528400": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1554000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520210": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1522000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1650000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1565010": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1511000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1575000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1530200": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1565020": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1529700": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1565030": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1553000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1521000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1585000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520750": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1510000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1529200": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1565040": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520500": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1595000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520250": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520510": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520255": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1552000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520005": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520520": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1528200": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1541000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1605000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1530000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520530": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1551000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1615000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1519000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1529500": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520540": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520800": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1700000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1540000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1529000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1625000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520300": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1550000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520305": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520050": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1528500": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520310": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1635000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1575100": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1528000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1560000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1529800": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1570000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1538000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1529300": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1527000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520600": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520350": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1516000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1580000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520100": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1537000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520105": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1520110": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1526000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1590000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1530100": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "1515000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 114,
+   "source": "main",
+   "note": ""
+  },
+  "2060000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 115,
+   "source": "main",
+   "note": ""
+  },
+  "2102000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 115,
+   "source": "main",
+   "note": ""
+  },
+  "2103000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 115,
+   "source": "main",
+   "note": ""
+  },
+  "1296000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1243010": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1253000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1285000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1243020": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1242000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1290000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1295000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1243040": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1240100": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1225000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1241000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1240500": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1283000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1240000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1288000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1245000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1240010": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1288010": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1250000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1288020": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1255000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1287000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1288030": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1260000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1280100": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1265000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1288040": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1297000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1270000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1243000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "1275000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 116,
+   "source": "main",
+   "note": ""
+  },
+  "2700000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 117,
+   "source": "main",
+   "note": ""
+  },
+  "2716000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 117,
+   "source": "main",
+   "note": ""
+  },
+  "2710000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 117,
+   "source": "main",
+   "note": ""
+  },
+  "2715000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 117,
+   "source": "main",
+   "note": ""
+  },
+  "2711000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 117,
+   "source": "main",
+   "note": ""
+  },
+  "2705000": {
+   "group": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "parent": "",
+   "subtotal": "TOTAL OTHR DISB/(RECEIPTS)",
+   "line": 117,
+   "source": "main",
+   "note": ""
+  },
+  "1024000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1040000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1099000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1120000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1092100": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1156100": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1045000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1093000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1125000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1050000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1066000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1130000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1146000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1039000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1023000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1055000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1087000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1027100": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1135000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1155100": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1060000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1092000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1140000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1156000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1065000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1097000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1145000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1038000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1070000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1086000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1150000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1027000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1075000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1091000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1155000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1195000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1048000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1080000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1096000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1160000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1037000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1069000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1085000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1010000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1026000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1090000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1047000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1015000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1090010": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1095000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1020000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1068000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1100000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1090020": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1105000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1137000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1030000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1046000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1110000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1190000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1115000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "1035000": {
+   "group": "CASH BALANCES",
+   "parent": "",
+   "subtotal": "",
+   "line": 122,
+   "source": "cash",
+   "note": "Cash block only (line 122)"
+  },
+  "5397100": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "",
+   "line": 142,
+   "source": "summary",
+   "note": "Summary block only (line 142: Repairs & Maintenance)"
+  },
+  "5397200": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "",
+   "line": 142,
+   "source": "summary",
+   "note": "Summary block only (line 142: Repairs & Maintenance)"
+  },
+  "5285110": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "",
+   "line": 142,
+   "source": "summary",
+   "note": "Summary block only (line 142: Repairs & Maintenance)"
+  },
+  "5285120": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "",
+   "line": 142,
+   "source": "summary",
+   "note": "Summary block only (line 142: Repairs & Maintenance)"
+  },
+  "5395310": {
+   "group": "GENERAL R&M",
+   "parent": "EXPENSES",
+   "subtotal": "",
+   "line": 142,
+   "source": "summary",
+   "note": "Summary block only (line 142: Repairs & Maintenance)"
+  },
+  "7425000": {
+   "group": "PROFESSIONAL FEES/G&A",
+   "parent": "",
+   "subtotal": "",
+   "line": 143,
+   "source": "summary",
+   "note": "Summary block only (line 143: Management Fees)"
+  },
+  "5760000": {
+   "group": "INSURANCE",
+   "parent": "",
+   "subtotal": "",
+   "line": 148,
+   "source": "summary",
+   "note": "Summary block only (line 148: Insurance)"
+  }
+ },
+ "conflicts": {
+  "2635000": [
+   69,
+   78
+  ],
+  "2650000": [
+   78,
+   107
+  ]
+ },
+ "lines": [
+  {
+   "seq": 1,
+   "type": "BL",
+   "label": "",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 2,
+   "type": "TI",
+   "label": "INCOME",
+   "title": "INCOME",
+   "n": 0
+  },
+  {
+   "seq": 3,
+   "type": "BL",
+   "label": "",
+   "title": "INCOME",
+   "n": 0
+  },
+  {
+   "seq": 4,
+   "type": "RA",
+   "label": "",
+   "title": "INCOME",
+   "n": 96
+  },
+  {
+   "seq": 5,
+   "type": "RA",
+   "label": "",
+   "title": "INCOME",
+   "n": 46
+  },
+  {
+   "seq": 6,
+   "type": "RA",
+   "label": "",
+   "title": "INCOME",
+   "n": 1
+  },
+  {
+   "seq": 7,
+   "type": "SU",
+   "label": "TOTAL INCOME",
+   "title": "INCOME",
+   "n": 0
+  },
+  {
+   "seq": 8,
+   "type": "BL",
+   "label": "",
+   "title": "INCOME",
+   "n": 0
+  },
+  {
+   "seq": 9,
+   "type": "TI",
+   "label": "EXPENSES",
+   "title": "EXPENSES",
+   "n": 0
+  },
+  {
+   "seq": 10,
+   "type": "BL",
+   "label": "",
+   "title": "EXPENSES",
+   "n": 0
+  },
+  {
+   "seq": 11,
+   "type": "TI",
+   "label": "UTILITIES",
+   "title": "UTILITIES",
+   "n": 0
+  },
+  {
+   "seq": 12,
+   "type": "RA",
+   "label": "",
+   "title": "UTILITIES",
+   "n": 5
+  },
+  {
+   "seq": 13,
+   "type": "RA",
+   "label": "",
+   "title": "UTILITIES",
+   "n": 1
+  },
+  {
+   "seq": 14,
+   "type": "SU",
+   "label": "NET ELECTRIC",
+   "title": "UTILITIES",
+   "n": 0
+  },
+  {
+   "seq": 15,
+   "type": "BL",
+   "label": "",
+   "title": "UTILITIES",
+   "n": 0
+  },
+  {
+   "seq": 16,
+   "type": "RA",
+   "label": "",
+   "title": "UTILITIES",
+   "n": 3
+  },
+  {
+   "seq": 17,
+   "type": "RA",
+   "label": "",
+   "title": "UTILITIES",
+   "n": 1
+  },
+  {
+   "seq": 18,
+   "type": "SU",
+   "label": "NET GAS",
+   "title": "UTILITIES",
+   "n": 0
+  },
+  {
+   "seq": 19,
+   "type": "BL",
+   "label": "",
+   "title": "UTILITIES",
+   "n": 0
+  },
+  {
+   "seq": 20,
+   "type": "RA",
+   "label": "",
+   "title": "UTILITIES",
+   "n": 6
+  },
+  {
+   "seq": 21,
+   "type": "RA",
+   "label": "",
+   "title": "UTILITIES",
+   "n": 1
+  },
+  {
+   "seq": 22,
+   "type": "SU",
+   "label": "NET WATER/SEWER/SEPTIC",
+   "title": "UTILITIES",
+   "n": 0
+  },
+  {
+   "seq": 23,
+   "type": "RA",
+   "label": "",
+   "title": "UTILITIES",
+   "n": 2
+  },
+  {
+   "seq": 24,
+   "type": "SU",
+   "label": "NET FUEL OIL",
+   "title": "UTILITIES",
+   "n": 0
+  },
+  {
+   "seq": 25,
+   "type": "TO",
+   "label": "TOTAL UTILITIES",
+   "title": "UTILITIES",
+   "n": 0
+  },
+  {
+   "seq": 26,
+   "type": "BL",
+   "label": "",
+   "title": "UTILITIES",
+   "n": 0
+  },
+  {
+   "seq": 27,
+   "type": "TI",
+   "label": "JANITORIAL & CLEANING",
+   "title": "JANITORIAL & CLEANING",
+   "n": 0
+  },
+  {
+   "seq": 28,
+   "type": "RA",
+   "label": "",
+   "title": "JANITORIAL & CLEANING",
+   "n": 17
+  },
+  {
+   "seq": 29,
+   "type": "SU",
+   "label": "TOTAL JANITORIAL & CLEANING",
+   "title": "JANITORIAL & CLEANING",
+   "n": 0
+  },
+  {
+   "seq": 30,
+   "type": "BL",
+   "label": "",
+   "title": "JANITORIAL & CLEANING",
+   "n": 0
+  },
+  {
+   "seq": 31,
+   "type": "TI",
+   "label": "ELEVATOR",
+   "title": "ELEVATOR",
+   "n": 0
+  },
+  {
+   "seq": 32,
+   "type": "RA",
+   "label": "",
+   "title": "ELEVATOR",
+   "n": 5
+  },
+  {
+   "seq": 33,
+   "type": "SU",
+   "label": "TOTAL ELEVATOR",
+   "title": "ELEVATOR",
+   "n": 0
+  },
+  {
+   "seq": 34,
+   "type": "BL",
+   "label": "",
+   "title": "ELEVATOR",
+   "n": 0
+  },
+  {
+   "seq": 35,
+   "type": "TI",
+   "label": "HVAC & PAYROLL",
+   "title": "HVAC & PAYROLL",
+   "n": 0
+  },
+  {
+   "seq": 36,
+   "type": "RA",
+   "label": "",
+   "title": "HVAC & PAYROLL",
+   "n": 36
+  },
+  {
+   "seq": 37,
+   "type": "SU",
+   "label": "TOTAL HVAC & PAYROLL",
+   "title": "HVAC & PAYROLL",
+   "n": 0
+  },
+  {
+   "seq": 38,
+   "type": "BL",
+   "label": "",
+   "title": "HVAC & PAYROLL",
+   "n": 0
+  },
+  {
+   "seq": 39,
+   "type": "TI",
+   "label": "LANDSCAPING & GROUNDS",
+   "title": "LANDSCAPING & GROUNDS",
+   "n": 0
+  },
+  {
+   "seq": 40,
+   "type": "RA",
+   "label": "",
+   "title": "LANDSCAPING & GROUNDS",
+   "n": 21
+  },
+  {
+   "seq": 41,
+   "type": "SU",
+   "label": "TOTAL LANDSCAPING & GROUNDS",
+   "title": "LANDSCAPING & GROUNDS",
+   "n": 0
+  },
+  {
+   "seq": 42,
+   "type": "BL",
+   "label": "",
+   "title": "LANDSCAPING & GROUNDS",
+   "n": 0
+  },
+  {
+   "seq": 43,
+   "type": "TI",
+   "label": "GENERAL R&M",
+   "title": "GENERAL R&M",
+   "n": 0
+  },
+  {
+   "seq": 44,
+   "type": "RA",
+   "label": "",
+   "title": "GENERAL R&M",
+   "n": 67
+  },
+  {
+   "seq": 45,
+   "type": "RA",
+   "label": "",
+   "title": "GENERAL R&M",
+   "n": 0
+  },
+  {
+   "seq": 46,
+   "type": "SU",
+   "label": "TOTAL GENERAL R&M",
+   "title": "GENERAL R&M",
+   "n": 0
+  },
+  {
+   "seq": 47,
+   "type": "BL",
+   "label": "",
+   "title": "GENERAL R&M",
+   "n": 0
+  },
+  {
+   "seq": 48,
+   "type": "TI",
+   "label": "TAXES",
+   "title": "TAXES",
+   "n": 0
+  },
+  {
+   "seq": 49,
+   "type": "BL",
+   "label": "",
+   "title": "TAXES",
+   "n": 0
+  },
+  {
+   "seq": 50,
+   "type": "SM",
+   "label": "Real Estate Tax Escrow",
+   "title": "TAXES",
+   "n": 1
+  },
+  {
+   "seq": 51,
+   "type": "RA",
+   "label": "",
+   "title": "TAXES",
+   "n": 10
+  },
+  {
+   "seq": 52,
+   "type": "SU",
+   "label": "TOTAL TAXES",
+   "title": "TAXES",
+   "n": 0
+  },
+  {
+   "seq": 53,
+   "type": "BL",
+   "label": "",
+   "title": "TAXES",
+   "n": 0
+  },
+  {
+   "seq": 54,
+   "type": "TI",
+   "label": "INSURANCE",
+   "title": "INSURANCE",
+   "n": 0
+  },
+  {
+   "seq": 55,
+   "type": "RA",
+   "label": "",
+   "title": "INSURANCE",
+   "n": 2
+  },
+  {
+   "seq": 56,
+   "type": "SU",
+   "label": "TOTAL INSURANCE",
+   "title": "INSURANCE",
+   "n": 0
+  },
+  {
+   "seq": 57,
+   "type": "BL",
+   "label": "",
+   "title": "INSURANCE",
+   "n": 0
+  },
+  {
+   "seq": 58,
+   "type": "TI",
+   "label": "PROFESSIONAL FEES/G&A",
+   "title": "PROFESSIONAL FEES/G&A",
+   "n": 0
+  },
+  {
+   "seq": 59,
+   "type": "RA",
+   "label": "",
+   "title": "PROFESSIONAL FEES/G&A",
+   "n": 9
+  },
+  {
+   "seq": 60,
+   "type": "SU",
+   "label": "TOTAL PROFESSIONAL FEES/G&A",
+   "title": "PROFESSIONAL FEES/G&A",
+   "n": 0
+  },
+  {
+   "seq": 61,
+   "type": "BL",
+   "label": "",
+   "title": "PROFESSIONAL FEES/G&A",
+   "n": 0
+  },
+  {
+   "seq": 62,
+   "type": "BL",
+   "label": "",
+   "title": "PROFESSIONAL FEES/G&A",
+   "n": 0
+  },
+  {
+   "seq": 63,
+   "type": "TO",
+   "label": "TOTAL OPERATING EXPENSES",
+   "title": "PROFESSIONAL FEES/G&A",
+   "n": 0
+  },
+  {
+   "seq": 64,
+   "type": "BL",
+   "label": "",
+   "title": "PROFESSIONAL FEES/G&A",
+   "n": 0
+  },
+  {
+   "seq": 65,
+   "type": "TO",
+   "label": "OPER INC BEFORE DEBT SVC",
+   "title": "PROFESSIONAL FEES/G&A",
+   "n": 0
+  },
+  {
+   "seq": 66,
+   "type": "BL",
+   "label": "",
+   "title": "PROFESSIONAL FEES/G&A",
+   "n": 0
+  },
+  {
+   "seq": 67,
+   "type": "TI",
+   "label": "DEBT SERVICE",
+   "title": "DEBT SERVICE",
+   "n": 0
+  },
+  {
+   "seq": 68,
+   "type": "RA",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 1
+  },
+  {
+   "seq": 69,
+   "type": "RA",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 1
+  },
+  {
+   "seq": 70,
+   "type": "RA",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 1
+  },
+  {
+   "seq": 71,
+   "type": "RA",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 1
+  },
+  {
+   "seq": 72,
+   "type": "RA",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 1
+  },
+  {
+   "seq": 73,
+   "type": "RA",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 1
+  },
+  {
+   "seq": 74,
+   "type": "RA",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 3
+  },
+  {
+   "seq": 75,
+   "type": "RA",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 2
+  },
+  {
+   "seq": 76,
+   "type": "RA",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 1
+  },
+  {
+   "seq": 77,
+   "type": "RA",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 1
+  },
+  {
+   "seq": 78,
+   "type": "RA",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 30
+  },
+  {
+   "seq": 79,
+   "type": "RA",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 1
+  },
+  {
+   "seq": 80,
+   "type": "RA",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 1
+  },
+  {
+   "seq": 81,
+   "type": "SU",
+   "label": "TOTAL DEBT SERVICE",
+   "title": "DEBT SERVICE",
+   "n": 0
+  },
+  {
+   "seq": 82,
+   "type": "BL",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 0
+  },
+  {
+   "seq": 83,
+   "type": "TO",
+   "label": "N.O.I After Debt Service",
+   "title": "DEBT SERVICE",
+   "n": 0
+  },
+  {
+   "seq": 84,
+   "type": "BL",
+   "label": "",
+   "title": "DEBT SERVICE",
+   "n": 0
+  },
+  {
+   "seq": 85,
+   "type": "TI",
+   "label": "OTHER PROFESSIONAL FEES",
+   "title": "OTHER PROFESSIONAL FEES",
+   "n": 0
+  },
+  {
+   "seq": 86,
+   "type": "RA",
+   "label": "",
+   "title": "OTHER PROFESSIONAL FEES",
+   "n": 77
+  },
+  {
+   "seq": 87,
+   "type": "SU",
+   "label": "TOTAL OTHER PROFESSIONAL FEES",
+   "title": "OTHER PROFESSIONAL FEES",
+   "n": 0
+  },
+  {
+   "seq": 88,
+   "type": "BL",
+   "label": "",
+   "title": "OTHER PROFESSIONAL FEES",
+   "n": 0
+  },
+  {
+   "seq": 89,
+   "type": "TI",
+   "label": "TENANT IMP. & COMM",
+   "title": "TENANT IMP. & COMM",
+   "n": 0
+  },
+  {
+   "seq": 90,
+   "type": "RA",
+   "label": "",
+   "title": "TENANT IMP. & COMM",
+   "n": 2
+  },
+  {
+   "seq": 91,
+   "type": "RA",
+   "label": "",
+   "title": "TENANT IMP. & COMM",
+   "n": 4
+  },
+  {
+   "seq": 92,
+   "type": "RA",
+   "label": "",
+   "title": "TENANT IMP. & COMM",
+   "n": 1
+  },
+  {
+   "seq": 93,
+   "type": "RA",
+   "label": "",
+   "title": "TENANT IMP. & COMM",
+   "n": 2
+  },
+  {
+   "seq": 94,
+   "type": "RA",
+   "label": "",
+   "title": "TENANT IMP. & COMM",
+   "n": 1
+  },
+  {
+   "seq": 95,
+   "type": "RA",
+   "label": "",
+   "title": "TENANT IMP. & COMM",
+   "n": 1
+  },
+  {
+   "seq": 96,
+   "type": "RA",
+   "label": "",
+   "title": "TENANT IMP. & COMM",
+   "n": 2
+  },
+  {
+   "seq": 97,
+   "type": "RA",
+   "label": "",
+   "title": "TENANT IMP. & COMM",
+   "n": 1
+  },
+  {
+   "seq": 98,
+   "type": "RA",
+   "label": "",
+   "title": "TENANT IMP. & COMM",
+   "n": 65
+  },
+  {
+   "seq": 99,
+   "type": "SU",
+   "label": "TOTAL IMPVTS & COMM",
+   "title": "TENANT IMP. & COMM",
+   "n": 0
+  },
+  {
+   "seq": 100,
+   "type": "BL",
+   "label": "",
+   "title": "TENANT IMP. & COMM",
+   "n": 0
+  },
+  {
+   "seq": 101,
+   "type": "TO",
+   "label": "NET OPERATING CASH FLOW",
+   "title": "TENANT IMP. & COMM",
+   "n": 0
+  },
+  {
+   "seq": 102,
+   "type": "TI",
+   "label": "",
+   "title": "TENANT IMP. & COMM",
+   "n": 0
+  },
+  {
+   "seq": 103,
+   "type": "TI",
+   "label": "OTHER DISB/(RECEIPTS)",
+   "title": "OTHER DISB/(RECEIPTS)",
+   "n": 0
+  },
+  {
+   "seq": 104,
+   "type": "RA",
+   "label": "",
+   "title": "OTHER DISB/(RECEIPTS)",
+   "n": 3
+  },
+  {
+   "seq": 105,
+   "type": "RA",
+   "label": "",
+   "title": "OTHER DISB/(RECEIPTS)",
+   "n": 6
+  },
+  {
+   "seq": 106,
+   "type": "RA",
+   "label": "",
+   "title": "OTHER DISB/(RECEIPTS)",
+   "n": 3
+  },
+  {
+   "seq": 107,
+   "type": "RA",
+   "label": "",
+   "title": "OTHER DISB/(RECEIPTS)",
+   "n": 5
+  },
+  {
+   "seq": 108,
+   "type": "RA",
+   "label": "",
+   "title": "OTHER DISB/(RECEIPTS)",
+   "n": 4
+  },
+  {
+   "seq": 109,
+   "type": "RA",
+   "label": "",
+   "title": "OTHER DISB/(RECEIPTS)",
+   "n": 10
+  },
+  {
+   "seq": 110,
+   "type": "BL",
+   "label": "",
+   "title": "OTHER DISB/(RECEIPTS)",
+   "n": 0
+  },
+  {
+   "seq": 111,
+   "type": "TI",
+   "label": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "title": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "n": 0
+  },
+  {
+   "seq": 112,
+   "type": "SM",
+   "label": "CAPITAL ACCOUNTS",
+   "title": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "n": 181
+  },
+  {
+   "seq": 113,
+   "type": "RA",
+   "label": "",
+   "title": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "n": 10
+  },
+  {
+   "seq": 114,
+   "type": "RA",
+   "label": "",
+   "title": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "n": 104
+  },
+  {
+   "seq": 115,
+   "type": "RA",
+   "label": "",
+   "title": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "n": 3
+  },
+  {
+   "seq": 116,
+   "type": "RA",
+   "label": "",
+   "title": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "n": 32
+  },
+  {
+   "seq": 117,
+   "type": "RA",
+   "label": "",
+   "title": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "n": 6
+  },
+  {
+   "seq": 118,
+   "type": "SU",
+   "label": "TOTAL OTHR DISB/(RECEIPTS)",
+   "title": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "n": 0
+  },
+  {
+   "seq": 119,
+   "type": "BL",
+   "label": "",
+   "title": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "n": 0
+  },
+  {
+   "seq": 120,
+   "type": "TO",
+   "label": "NET CASH FLOW",
+   "title": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "n": 0
+  },
+  {
+   "seq": 121,
+   "type": "BL",
+   "label": "",
+   "title": "DISTRIBUTIONS/(CONTRIBUTIONS)",
+   "n": 0
+  },
+  {
+   "seq": 122,
+   "type": "SM",
+   "label": "Ending CASH BALANCE",
+   "title": "",
+   "n": 62
+  },
+  {
+   "seq": 123,
+   "type": "BL",
+   "label": "",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 124,
+   "type": "BL",
+   "label": "",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 125,
+   "type": "BL",
+   "label": "",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 126,
+   "type": "SM",
+   "label": "Proof of Cash",
+   "title": "",
+   "n": 62
+  },
+  {
+   "seq": 127,
+   "type": "BL",
+   "label": "",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 128,
+   "type": "TI",
+   "label": "CASH BALANCES",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 129,
+   "type": "RA",
+   "label": "",
+   "title": "",
+   "n": 62
+  },
+  {
+   "seq": 130,
+   "type": "BL",
+   "label": "",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 131,
+   "type": "SM",
+   "label": "TOTAL CASH BALANCES",
+   "title": "",
+   "n": 62
+  },
+  {
+   "seq": 132,
+   "type": "BL",
+   "label": "",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 133,
+   "type": "SU",
+   "label": "",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 134,
+   "type": "TI",
+   "label": "",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 135,
+   "type": "SU",
+   "label": "",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 136,
+   "type": "TI",
+   "label": "UTILITIES",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 137,
+   "type": "SM",
+   "label": "Gas Reimbursement",
+   "title": "",
+   "n": 1
+  },
+  {
+   "seq": 138,
+   "type": "SM",
+   "label": "Electric Reimbursement",
+   "title": "",
+   "n": 1
+  },
+  {
+   "seq": 139,
+   "type": "SM",
+   "label": "Utilities",
+   "title": "",
+   "n": 14
+  },
+  {
+   "seq": 140,
+   "type": "SU",
+   "label": "Net Utilities",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 141,
+   "type": "BL",
+   "label": "",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 142,
+   "type": "SM",
+   "label": "Repairs & Maintenance",
+   "title": "",
+   "n": 145
+  },
+  {
+   "seq": 143,
+   "type": "SM",
+   "label": "Management Fees",
+   "title": "",
+   "n": 2
+  },
+  {
+   "seq": 144,
+   "type": "SM",
+   "label": "Accounting",
+   "title": "",
+   "n": 1
+  },
+  {
+   "seq": 145,
+   "type": "SM",
+   "label": "Bank Charges",
+   "title": "",
+   "n": 1
+  },
+  {
+   "seq": 146,
+   "type": "SU",
+   "label": "Total Operating Expenses",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 147,
+   "type": "BL",
+   "label": "",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 148,
+   "type": "SM",
+   "label": "Insurance",
+   "title": "",
+   "n": 3
+  },
+  {
+   "seq": 149,
+   "type": "SM",
+   "label": "Taxes",
+   "title": "",
+   "n": 11
+  },
+  {
+   "seq": 150,
+   "type": "SU",
+   "label": "",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 151,
+   "type": "BL",
+   "label": "",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 152,
+   "type": "TO",
+   "label": "Total Expenses",
+   "title": "",
+   "n": 0
+  },
+  {
+   "seq": 153,
+   "type": "BL",
+   "label": "",
+   "title": "",
+   "n": 0
+  }
+ ]
+}
