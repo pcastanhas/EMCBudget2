@@ -40,12 +40,12 @@ A = ap.parse_args()
 SCHEMA = "/mnt/skills/public/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd"
 NSM = "http://schemas.openxmlformats.org/spreadsheetml/2006/main"
 ORANGE, PURPLE, BLUE, NAVY = "FFFFA500", "FF7030A0", "FF0070C0", "FF1F497D"
-EXPECTED_TABS = ["COVER", "INPUT", "REVENUE", "LEASE_DEALS", "OTHER_REVENUE", "EXP_UTILITIES", "EXP_JANITORIAL", "EXP_ELEVATOR", "EXP_HVAC",
+EXPECTED_TABS = ["COVER", "INPUT", "LEASE_DEALS", "OTHER_REVENUE", "EXP_UTILITIES", "EXP_JANITORIAL", "EXP_ELEVATOR", "EXP_HVAC",
                  "EXP_LANDSCAPING", "EXP_GENERAL_RM", "TAXES", "INSURANCE", "PROF_FEES", "OTHER_PROF_FEES", "DEBT",
-                 "REPAIRS_CAPITAL", "DETAIL", "PROFORMA", "QTRLY SUM", "TENANT_SCHEDULE", "DEAL_SCHEDULE", "INCOME_ACCOUNTS", "EXPENSE_ACCOUNTS",
-                 "DATA_COA", "DATA_CHARGECODES", "DATA_BUDGET_PY", "DATA_ACTUALS", "DATA_BALANCES", "DATA_SUITES",
-                 "DATA_TENANT_CHARGES", "DATA_VENDOR"]
-_first_sched, _first_blue = EXPECTED_TABS.index("DETAIL"), EXPECTED_TABS.index("TENANT_SCHEDULE")
+                 "REPAIRS_CAPITAL", "REVENUE", "DETAIL", "PROFORMA", "QTRLY SUM", "TENANT_SCHEDULE", "DEAL_SCHEDULE", "LEASE_CALC",
+                 "INCOME_ACCOUNTS", "EXPENSE_ACCOUNTS", "DATA_COA", "DATA_CHARGECODES", "DATA_BUDGET_PY", "DATA_ACTUALS", "DATA_BALANCES",
+                 "DATA_SUITES", "DATA_TENANT_CHARGES", "DATA_VENDOR"]
+_first_sched, _first_blue = EXPECTED_TABS.index("REVENUE"), EXPECTED_TABS.index("TENANT_SCHEDULE")
 TAB_COLOUR = {n: (NAVY if i == 0 else ORANGE if i < _first_sched else PURPLE if i < _first_blue else BLUE) for i, n in enumerate(EXPECTED_TABS)}
 
 results = []          # (gate, "PASS"/"WARN"/"FAIL"/"SKIP", detail)

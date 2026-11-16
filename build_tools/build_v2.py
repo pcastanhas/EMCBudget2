@@ -50,7 +50,6 @@ wb = Workbook()
 ws_in = wb.active
 ws_in.title = "INPUT"
 ws_cov = wb.create_sheet("COVER", 0)
-ws_rev = wb.create_sheet("REVENUE")
 ws_ld = wb.create_sheet("LEASE_DEALS")
 ws_or = wb.create_sheet("OTHER_REVENUE")
 EXP_SECTIONS = [(4, "UTILITIES", "EXP_UTILITIES"), (5, "JANITORIAL & CLEANING", "EXP_JANITORIAL"), (6, "ELEVATOR", "EXP_ELEVATOR"),
@@ -62,18 +61,20 @@ ws_pro = wb.create_sheet("PROF_FEES")
 ws_opf = wb.create_sheet("OTHER_PROF_FEES")
 ws_debt = wb.create_sheet("DEBT")
 ws_cap = wb.create_sheet("REPAIRS_CAPITAL")
+ws_revp = wb.create_sheet("REVENUE")       # purple: built by Build Schedules from LEASE_CALC / DEAL_SCHEDULE
 ws_det = wb.create_sheet("DETAIL")
 ws_pf = wb.create_sheet("PROFORMA")
 ws_q = wb.create_sheet("QTRLY SUM")
 ws_ts = wb.create_sheet("TENANT_SCHEDULE")
 ws_ds = wb.create_sheet("DEAL_SCHEDULE")
+ws_rev = wb.create_sheet("LEASE_CALC")       # calculation layer DETAIL reads (formerly the REVENUE input sheet)
 ws_ia = wb.create_sheet("INCOME_ACCOUNTS")
 ws_ea = wb.create_sheet("EXPENSE_ACCOUNTS")
 data_names = ["DATA_COA", "DATA_CHARGECODES", "DATA_BUDGET_PY", "DATA_ACTUALS",
               "DATA_BALANCES", "DATA_SUITES", "DATA_TENANT_CHARGES", "DATA_VENDOR"]
 ws_data = {n: wb.create_sheet(n) for n in data_names}
 ws_in.sheet_properties.tabColor = ORANGE      # input sheets: orange, at the front
-ws_rev.sheet_properties.tabColor = ORANGE     # REVENUE is an input sheet
+ws_rev.sheet_properties.tabColor = BLUE       # LEASE_CALC: calculation (read-only)
 ws_ld.sheet_properties.tabColor = ORANGE      # LEASE_DEALS: one line per deal (input)
 ws_ds.sheet_properties.tabColor = BLUE        # DEAL_SCHEDULE: calculation
 ws_or.sheet_properties.tabColor = ORANGE      # OTHER_REVENUE is an input sheet
@@ -81,7 +82,7 @@ ws_ia.sheet_properties.tabColor = BLUE        # INCOME_ACCOUNTS is MRI-derived d
 ws_ea.sheet_properties.tabColor = BLUE
 for w in list(ws_exp.values()) + [ws_tax, ws_ins, ws_pro, ws_opf, ws_debt, ws_cap]:
     w.sheet_properties.tabColor = ORANGE      # expense / tax input sheets
-for w in (ws_det, ws_pf, ws_q):
+for w in (ws_revp, ws_det, ws_pf, ws_q):
     w.sheet_properties.tabColor = PURPLE      # budget schedules (macro-built)
 ws_ts.sheet_properties.tabColor = BLUE        # TENANT_SCHEDULE is MRI-derived data
 for w in ws_data.values():
@@ -345,7 +346,7 @@ put(ws, "E19", "Click the Build Schedules button, or press Alt+F8 and run BuildA
 ws.row_dimensions[20].height = 22
 ws.row_dimensions[21].height = 22
 ws.conditional_formatting.add("C18", FormulaRule(formula=['LEFT($C$18,2)<>"OK"'], fill=AMBER))
-put(ws, "B23", "LEASING COST ACCOUNTS (GL numbers used on REVENUE cost rows)", f_bold)
+put(ws, "B23", "LEASING COST ACCOUNTS (GL numbers for leasing costs on LEASE_DEALS)", f_bold)
 ws["B23"].border = Border(bottom=thin)
 ws["C23"].border = Border(bottom=thin)
 LC = [("Tenant improvements", 1365000), ("Commissions payable", 2105000), ("Legal - leasing", 5820400),
@@ -366,7 +367,7 @@ ws.add_data_validation(dv_opt)
 dv_opt.add("C31")
 put(ws, "B32", "Renewal increase % (one-time step)", f_bold)
 put(ws, "C32", 0.03, f_bold, "0.0%", inp=True, align="right")
-put(ws, "E32", "Applies to the Renew option. Each lease can override both settings on its REVENUE block header (light-blue cells).", f_note)
+put(ws, "E32", "Applies to the Renew option. Each lease can override both settings on its LEASE_DEALS row (If expired / Renewal %).", f_note)
 dv_pct = DataValidation(type="decimal", operator="between", formula1="0", formula2="1", allow_blank=False)
 ws.add_data_validation(dv_pct)
 dv_pct.add("C32")
@@ -628,7 +629,6 @@ ws.sheet_view.showGridLines = False
 COSTS = [("Tenant Improvements", 24), ("Commissions Payable", 25), ("Legal", 26), ("Architecture", 27),
          ("Permits - Space Alterations", 28)]
 G0 = 7
-N_ADD = 3
 
 
 def lease_block_sizes(te_df):
@@ -661,10 +661,11 @@ for m in range(12):
 ws.column_dimensions["S"].width = 13
 ws.column_dimensions["T"].width = 11
 ws.column_dimensions["U"].width = 7
-put(ws, "A1", '=BuildingName&" - PROJECTED REVENUES"', f_title)
+put(ws, "A1", '=BuildingName&" - LEASE CALCULATION (read-only; feeds DETAIL)"', f_title)
 put(ws, "A2", '="BUDGET FOR THE YEAR "&BudgetYear', f_bold)
-put(ws, "A3", "Each lease lists its MRI charge codes (one line per code). Every MRI line has an adjustment row: budget amount = MRI + adjustment. "
-              "Type numbers or formulas (e.g. =G11*0.1) in the light-blue rows. Light green = forecast from the Lease Options on INPUT (not from MRI).", f_sub)
+put(ws, "A3", "Calculation sheet (no inputs). In-place leases: one line per MRI charge code (TENANT_SCHEDULE), with the lease option after expiry "
+              "(light green) and leasing costs typed on the lease's LEASE_DEALS row; then the LEASE DEALS section (DEAL_SCHEDULE). DETAIL, PROFORMA and QTRLY SUM read this sheet; "
+              "the purple REVENUE tab presents it by lease.", f_sub)
 for col, t in {"B": "Code", "C": "Tenant / Charge", "D": "GL Acct", "E": "Source"}.items():
     put(ws, f"{col}5", t, f_bold)
 for m in range(12):
@@ -708,29 +709,11 @@ def acct_f(r):
     return f'=IF($B{r}="","",IFERROR(VALUE(MID(INDEX(CC_ACCT,MATCH($B{r},CC_CODE,0)),3,7)),"CODE?"))'
 
 
-def adj_row(ra, rm):
-    put(ws, f"C{ra}", "      adjustment (+/-)", f_note)
-    put(ws, f"D{ra}", f'=IF($B{rm}="","",$D{rm})')
-    put(ws, f"E{ra}", "ADJ", f_note)
-    line_cells(ra, "input")
-    flag(ra, "ADJUSTED")
+INPLACE_COSTS = [("Tenant Improvements", 24, "ti"), ("Legal", 26, "legal"), ("Architecture", 27, "arch"), ("Permits - Space Alterations", 28, "permit")]
 
 
-def add_rows(ra0):
-    for i in range(N_ADD):
-        r = ra0 + i
-        put(ws, f"B{r}", None, inp=True)
-        ws[f"B{r}"].number_format = "@"
-        put(ws, f"C{r}", None, f_note)
-        ws[f"C{r}"] = desc_f(r)
-        put(ws, f"D{r}", acct_f(r))
-        put(ws, f"E{r}", "ADD", f_note)
-        line_cells(r, "input")
-        flag(r, "ADDED")
-        ADD_ROWS.append(r)
-
-
-def total_and_costs(rt, first, last):
+def total_and_costs(rt, first, last, v, ld_r):
+    """Lease total row, then the lease's leasing-cost rows: SF x $/SF typed on its LEASE_DEALS in-place row, in the 'costs paid in month' month."""
     put(ws, f"C{rt}", "Total Rent for Lease", f_bold)
     put(ws, f"D{rt}", "TOTAL", f_note)
     for m in range(12):
@@ -739,22 +722,20 @@ def total_and_costs(rt, first, last):
     put(ws, f"S{rt}", f"=SUM(G{rt}:R{rt})", f_bold, NUM0)
     for col in range(1, 22):
         ws.cell(rt, col).border = Border(top=thin)
-    for i, (nm, irow) in enumerate(COSTS):
+    cm = f'LEASE_DEALS!${DLC["costm"]}${ld_r}'
+    for i, (nm, irow, key) in enumerate(INPLACE_COSTS):
         r = rt + 1 + i
-        put(ws, f"C{r}", nm)
+        put(ws, f"C{r}", nm + " (from LEASE_DEALS)")
         put(ws, f"D{r}", f"=INPUT!$C${irow}", fmt="0")
         put(ws, f"E{r}", "COST", f_note)
-        line_cells(r, "input")
-    return rt + 1 + len(COSTS) + 1
+        for m in range(12):
+            col = CL(G0 + m)
+            ws[f"{col}{r}"] = f'=IF(AND(N({cm})>=1,N({cm})<=12,MONTH({col}$5)=N({cm})),N($D${v})*N(LEASE_DEALS!${DLC[key]}${ld_r}),0)'
+        line_cells(r, "calc")
+    return rt + 1 + len(INPLACE_COSTS) + 1
 
 
-ADD_ROWS = []
-CODE_CELLS = []
 GREEN_RULES = []
-OPT_DV = DataValidation(type="list", formula1='"Terminate,MTM,Renew"', allow_blank=True)
-PCT_DV = DataValidation(type="decimal", operator="between", formula1="0", formula2="1", allow_blank=True)
-ws.add_data_validation(OPT_DV)
-ws.add_data_validation(PCT_DV)
 
 
 REV_HDR, REV_TOT = {}, {}                      # in-place block k -> REVENUE header row / 'Total Rent for Lease' row (read by LEASE_DEALS)
@@ -774,17 +755,16 @@ def write_inplace(r0, k, n_lines):
     put(ws, f"F{v}", f'=IF($B{v}="","",INDEX(TS_EXPIRY,MATCH($B{v},TS_LEASE,0)))', f_bold, DATEF)
     for col, t in {"G": "If expired:", "H": "Renewal %", "I": "Applied", "J": "Applied %"}.items():
         put(ws, f"{col}{r0}", t, f_lbl, align="right")
-    put(ws, f"G{v}", None, f_bold, inp=True, align="right")
-    put(ws, f"H{v}", None, f_bold, "0.0%", inp=True, align="right")
+    ld_r = DL_INP_FIRST + k - 1                                                     # this lease's row on LEASE_DEALS (inputs live there)
+    put(ws, f"G{v}", f'=IF(LEASE_DEALS!${DLC["ifexp"]}${ld_r}="","",LEASE_DEALS!${DLC["ifexp"]}${ld_r})', f_bold, align="right")
+    put(ws, f"H{v}", f'=IF(LEASE_DEALS!${DLC["renpct"]}${ld_r}="","",LEASE_DEALS!${DLC["renpct"]}${ld_r})', f_bold, "0.0%", align="right")
     put(ws, f"I{v}", f'=IF($B{v}="","",IF(SUMPRODUCT((DEAL_LEASEID=$B{v}&"")*(DEAL_TYPE="Renewal"))>0,"Terminate",IF(OR($G{v}="MTM",$G{v}="Renew"),$G{v},IF($G{v}="Terminate","Terminate",IF(OR(LeaseOption="MTM",LeaseOption="Renew"),LeaseOption,"Terminate")))))', f_bold, align="right")
     put(ws, f"J{v}", f'=IF($B{v}="","",IF(ISNUMBER($H{v}),$H{v},RenewPct))', f_bold, "0.0%", align="right")
-    OPT_DV.add(f"G{v}")
-    PCT_DV.add(f"H{v}")
     for col in range(1, 22):
         ws.cell(v, col).border = Border(bottom=thin)
     base = r0 + 2
     for i in range(n_lines):
-        rm, ra = base + 2 * i, base + 2 * i + 1
+        rm = base + i
         put(ws, f"F{rm}", i + 1, f_lbl)
         put(ws, f"B{rm}", f'=IF($B${v}="","",IFERROR(INDEX(TS_CODE,MATCH("L"&$B${v}&"|"&$F{rm},TS_KEYRANK,0)),""))')
         put(ws, f"C{rm}", desc_f(rm))
@@ -799,19 +779,15 @@ def write_inplace(r0, k, n_lines):
                                 f'*IF($I${v}="Renew",1+$J${v},1)))')
         line_cells(rm, "calc")
         ws.cell(rm, 20, f'=IF(AND($I${v}<>"Terminate",SUMPRODUCT((G$5:R$5>$F${v})*(G{rm}:R{rm}<>0))>0),"FORECAST - "&IF($I${v}="Renew","RENEWAL","MTM"),"")').font = f_bold
-        adj_row(ra, rm)
-    GREEN_RULES.append((v, base, base + 2 * n_lines - 1))
-    ra0 = base + 2 * n_lines
+    GREEN_RULES.append((v, base, base + n_lines - 1))
+    ra0 = base + n_lines
     # capacity flag: the lease has more distinct charge codes in MRI than this block has MRI lines
     ws[f"T{v}"] = (f'=IF($B{v}="","",IF(COUNTIFS(TENANT_SCHEDULE!$L$2:$L$401,"L"&$B{v},TENANT_SCHEDULE!$N$2:$N$401,1)'
                    f'>COUNTIF($E{base}:$E{ra0 - 1},"MRI"),"MORE CODES THAN LINES",""))')
     ws[f"T{v}"].font = f_bold
-    add_rows(ra0)
-    rt = ra0 + N_ADD
+    rt = ra0
     REV_TOT[k] = rt
-    for i in range(N_ADD):
-        CODE_CELLS.append(f"B{ra0 + i}")
-    return total_and_costs(rt, base, ra0 + N_ADD - 1)
+    return total_and_costs(rt, base, ra0 - 1, v, DL_INP_FIRST + k - 1)
 
 
 # ------------------------------------------------------------------ LEASE_DEALS (input: one line per new lease / renewal / expansion) and DEAL_SCHEDULE (calc)
@@ -832,12 +808,12 @@ DL_INP_LAST = DL_INP_FIRST + N_INPLACE - 1
 DL_DEAL_LABEL = DL_INP_LAST + 2                                                                # NEW LEASES / RENEWALS / EXPANSIONS (input)
 DL_FIRST = DL_DEAL_LABEL + 1
 DL_LAST = DL_FIRST + N_DEALS - 1
-DLC = {k: CL(i) for i, k in enumerate(["no", "suite", "tenant", "type", "lease", "sf", "start", "end", "term", "ner", "rent", "incr",
+DLC = {k: CL(i) for i, k in enumerate(["no", "suite", "tenant", "type", "lease", "sf", "start", "end", "ifexp", "renpct", "term", "ner", "rent", "incr",
                                         "f1m", "f1n", "f1p", "f2m", "f2n", "f2p"], 1)}
-_c0 = 19                                                                                       # first charge-code column (S)
+_c0 = len(DLC) + 1                                                                             # first charge-code column
 DL_CODECOLS = [CL(_c0 + j) for j in range(N_DL_CODES)]
 _c1 = _c0 + N_DL_CODES
-for _k in ["legal", "arch", "permit", "ti", "commpct", "emcpct", "rev", "check", "notes"]:
+for _k in ["legal", "arch", "permit", "ti", "costm", "commpct", "emcpct", "rev", "check", "notes"]:
     DLC[_k] = CL(_c1)
     _c1 += 1
 DL_LASTCOL = _c1 - 1
@@ -863,7 +839,7 @@ def build_lease_deals(ws):
     ws.sheet_view.showGridLines = False
     widths = {"no": 4, "suite": 8, "tenant": 30, "type": 11, "lease": 11, "sf": 9, "start": 11, "end": 11, "term": 6, "ner": 8, "rent": 9,
               "incr": 7, "f1m": 6, "f1n": 6, "f1p": 6, "f2m": 6, "f2n": 6, "f2p": 6, "legal": 8, "arch": 8, "permit": 8, "ti": 8,
-              "commpct": 8, "emcpct": 8, "rev": 12, "check": 46, "notes": 30}
+              "costm": 8, "commpct": 8, "emcpct": 8, "rev": 12, "check": 46, "notes": 30, "ifexp": 10, "renpct": 8}
     for k, w in widths.items():
         ws.column_dimensions[DLC[k]].width = w
     for c in DL_CODECOLS:
@@ -871,7 +847,7 @@ def build_lease_deals(ws):
     put(ws, "A1", '=BuildingName&" - LEASE DEALS (new leases, renewals, expansions)"', f_title)
     put(ws, "A2", "In-place MRI leases are listed first (read-only). Enter one line per new lease, renewal or expansion below them. Light-blue cells are inputs. Amounts are calculated on DEAL_SCHEDULE and appear on REVENUE (section LEASE DEALS) and DETAIL. "
                   "Charges start the first month on or after the lease start date and end in the month of the lease end date; amounts are $ per square foot per year "
-                  "(costs: $ per square foot, paid once). In-place MRI leases stay on REVENUE.", f_sub)
+                  "(costs: $ per square foot, paid once). In-place rows: only If expired, Renewal % and leasing costs (with the month they are paid) are inputs.", f_sub)
     put(ws, "B3", "SETTINGS", f_bold)
     for col in range(2, 9):
         ws.cell(3, col).border = Border(bottom=thin)
@@ -885,7 +861,10 @@ def build_lease_deals(ws):
                             errorTitle="Percent", error="Enter a percentage between 0% and 100%.")
     dv_lm = DataValidation(type="whole", operator="between", formula1="1", formula2="240", allow_blank=True, showErrorMessage=True,
                            errorTitle="Lease month", error="Enter a lease month number (1 = first month of rent).")
-    for v_ in (dv_code, dv_m, dv_type, dv_lease, dv_pct, dv_lm):
+    dv_opt = DataValidation(type="list", formula1='"Terminate,MTM,Renew"', allow_blank=True)
+    dv_m12 = DataValidation(type="whole", operator="between", formula1="1", formula2="12", allow_blank=True, showErrorMessage=True,
+                            errorTitle="Month", error="Enter a month number from 1 to 12.")
+    for v_ in (dv_code, dv_m, dv_type, dv_lease, dv_pct, dv_lm, dv_opt, dv_m12):
         ws.add_data_validation(v_)
     rows = [("rent", "Base rent charge code", DL_RENT_DEFAULT, None, "@", "The annual increase % applies to this code."),
             ("free", "Free-rent (concession) charge code", DL_FREE_DEFAULT, None, "@", "Free rent posts here as a negative amount."),
@@ -918,7 +897,8 @@ def build_lease_deals(ws):
     hdr = {"no": "#", "suite": "Suite", "tenant": "Tenant / description", "type": "Type", "lease": "MRI lease renewed", "sf": "Sq Ft",
            "start": "Lease start", "end": "Lease end", "term": "Term (yrs)", "ner": "NER $/SF (opt.)", "rent": "Rent $/SF/yr", "incr": "Annual incr %",
            "f1m": "From lease month", "f1n": "Months", "f1p": "% of rent (blank = 100%)", "f2m": "From lease month", "f2n": "Months", "f2p": "% of rent (blank = 100%)",
-           "legal": "Legal", "arch": "Architect", "permit": "Permits", "ti": "TI", "commpct": "Broker %", "emcpct": "EMC %",
+           "legal": "Legal", "arch": "Architect", "permit": "Permits", "ti": "TI", "costm": "Costs paid in month (in-place)", "commpct": "Broker %", "emcpct": "EMC %",
+           "ifexp": "If expired (in-place)", "renpct": "Renewal % (in-place)",
            "rev": "2027 revenue ($)", "check": "Line status", "notes": "Notes"}
     for k, t in hdr.items():
         c = put(ws, f"{DLC[k]}{DL_HDR}", t, f_bold, align="center")
@@ -952,7 +932,7 @@ def build_lease_deals(ws):
         v = REV_HDR[k]
         put(ws, f"A{r}", "MRI", f_lbl, align="center")
         for key, src, fmt in (("suite", "A", "@"), ("lease", "B", "@"), ("tenant", "C", None), ("sf", "D", "#,##0"), ("start", "E", DATEF), ("end", "F", DATEF)):
-            put(ws, f"{DLC[key]}{r}", f"=REVENUE!${src}${v}", f_norm, fmt)
+            put(ws, f"{DLC[key]}{r}", f"=LEASE_CALC!${src}${v}", f_norm, fmt)
         put(ws, f"{DLC['type']}{r}", "In place", f_note)
         g, h, f_, ls = (f"${DLC[k_]}{r}" for k_ in ("start", "end", "sf", "lease"))
         put(ws, f"{DLC['term']}{r}", f'=IF(AND(ISNUMBER({g}),ISNUMBER({h})),ROUND(({h}-{g})/365,2),"")', f_norm, "0.00")
@@ -961,9 +941,18 @@ def build_lease_deals(ws):
         put(ws, f"{DLC['rent']}{r}", rate("DL_RENTCODE"), f_norm, "#,##0.00;-#,##0.00;\"-\"")
         for c in DL_CODECOLS:
             put(ws, f"{c}{r}", rate(f"{c}${DL_CODEROW}"), f_norm, "#,##0.00;-#,##0.00;\"-\"")
-        put(ws, f"{DLC['rev']}{r}", f"=REVENUE!$S${REV_TOT[k]}", f_norm, NUM0)
-        ws[f"{DLC['check']}{r}"] = (f'=IF({ls}="","",IF(SUMPRODUCT((DEAL_LEASEID={ls}&"")*(DEAL_TYPE="Renewal"))>0,"RENEWED on a deal line below",'
-                                    f'IF(AND(ISNUMBER({h}),YEAR({h})=BudgetYear),"EXPIRES "&TEXT({h},"mm/dd/yyyy")&" - "&IF(REVENUE!$I${v}="Terminate","charges stop (enter a renewal below if expected)","lease option "&REVENUE!$I${v}),"")))')
+        put(ws, f"{DLC['rev']}{r}", f"=LEASE_CALC!$S${REV_TOT[k]}", f_norm, NUM0)
+        put(ws, f"{DLC['ifexp']}{r}", None, f_norm, inp=True, align="center")
+        dv_opt.add(f"{DLC['ifexp']}{r}")
+        put(ws, f"{DLC['renpct']}{r}", None, f_norm, "0.0%", inp=True)
+        dv_pct.add(f"{DLC['renpct']}{r}")
+        for k_ in ("legal", "arch", "permit", "ti"):
+            put(ws, f"{DLC[k_]}{r}", None, f_norm, "#,##0.00", inp=True)
+        put(ws, f"{DLC['costm']}{r}", None, f_norm, "0", inp=True, align="center")
+        dv_m12.add(f"{DLC['costm']}{r}")
+        costs_ = f"N(${DLC['legal']}{r})+N(${DLC['arch']}{r})+N(${DLC['permit']}{r})+N(${DLC['ti']}{r})"
+        ws[f"{DLC['check']}{r}"] = (f'=IF({ls}="","",IF(AND({costs_}<>0,OR(N(${DLC["costm"]}{r})<1,N(${DLC["costm"]}{r})>12)),"CHECK - leasing costs need a month (1-12) in Costs paid in month",IF(SUMPRODUCT((DEAL_LEASEID={ls}&"")*(DEAL_TYPE="Renewal"))>0,"RENEWED on a deal line below",'
+                                    f'IF(AND(ISNUMBER({h}),YEAR({h})=BudgetYear),"EXPIRES "&TEXT({h},"mm/dd/yyyy")&" - "&IF(LEASE_CALC!$I${v}="Terminate","charges stop (enter a renewal below if expected)","lease option "&LEASE_CALC!$I${v}),""))))')
         ws[f"{DLC['check']}{r}"].font = f_bold
         for col in range(1, DL_LASTCOL + 1):
             ws.cell(r, col).border = Border(bottom=hair)
@@ -1009,11 +998,11 @@ def build_lease_deals(ws):
             f'IF(OR({h}<DATE({ys},1,1),{g}>DATE({ys},12,31)),"NOTE - no months in the budget year (costs before the start may still fall in it)",'
             f'IF({ty}="","NOTE - no type chosen",""))))))))')
         ws[f"{DLC['check']}{r}"].font = f_bold
-    ws.conditional_formatting.add(f"{DLC['check']}{DL_FIRST}:{DLC['check']}{DL_LAST}",
-                                  FormulaRule(formula=[f'LEFT(${DLC["check"]}{DL_FIRST},5)="CHECK"'], fill=AMBER))
+    ws.conditional_formatting.add(f"{DLC['check']}{DL_INP_FIRST}:{DLC['check']}{DL_LAST}",
+                                  FormulaRule(formula=[f'LEFT(${DLC["check"]}{DL_INP_FIRST},5)="CHECK"'], fill=AMBER))
     name("DEAL_TYPE", f"LEASE_DEALS!${DLC['type']}${DL_FIRST}:${DLC['type']}${DL_LAST}")
     name("DEAL_LEASEID", f"LEASE_DEALS!${DLC['lease']}${DL_FIRST}:${DLC['lease']}${DL_LAST}")
-    name("DEAL_CHECK", f"LEASE_DEALS!${DLC['check']}${DL_FIRST}:${DLC['check']}${DL_LAST}")
+    name("DEAL_CHECK", f"LEASE_DEALS!${DLC['check']}${DL_INP_FIRST}:${DLC['check']}${DL_LAST}")   # in-place and deal lines
     ws.freeze_panes = f"D{DL_INP_LABEL}"
     ws.protection.sheet = True
     ws.protection.formatColumns = False
@@ -1183,15 +1172,10 @@ build_deal_schedule(ws_ds)
 print(f"LEASE_DEALS: {N_DEALS} deal lines, charge columns {DL_CODES} + {DL_OTHER} pick-a-code | DEAL_SCHEDULE rows {DS_FIRST}-{DS_LAST}")
 assert REV_END < LAST, REV_END
 ws.freeze_panes = "D6"
-dvl = DataValidation(type="list", formula1="=CC_CODE", allow_blank=True, showErrorMessage=False)
-ws.add_data_validation(dvl)
-for ref in CODE_CELLS:
-    dvl.add(ref)
 GREEN = PatternFill("solid", bgColor="E2EFDA", fgColor="E2EFDA")
 for _v, _b0, _b1 in GREEN_RULES:
     ws.conditional_formatting.add(f"G{_b0}:R{_b1}", FormulaRule(
         formula=[f'AND($E{_b0}="MRI",$I${_v}<>"Terminate",G$5>$F${_v},G{_b0}<>0)'], fill=GREEN))
-ws.conditional_formatting.add(f"G9:S{REV_END}", FormulaRule(formula=['AND(OR($E9="ADJ",$E9="ADD"),G9<>0)'], fill=AMBER))
 # ---- DETAIL status per account line: is the account on the MRI Financial Format and does it have a DETAIL section? (V) and the signed amount DETAIL uses (W)
 put(ws, "V5", "Detail status", f_bold)
 put(ws, "W5", "Detail amount", f_bold, align="right")
@@ -1358,7 +1342,7 @@ for k in range(1, N_OR + 1):
         ws[f"{col}{ra}"] = (f'=IF({A}="","",IF(MONTH({col}$5)<=ActualsThru,-SUMIFS({DA}{ac}$2:{ac}$2000,{DA}$C$2:$C$2000,"MR"&{A},{DA}$B$2:$B$2000,BudgetYear-1),0))')
         ws[f"{col}{rb}"] = (f'=IF({A}="","",IF(MONTH({col}$5)>ActualsThru,-SUMIFS({DB}{bc}$2:{bc}$2000,{DB}$D$2:$D$2000,"MR"&{A},{DB}$B$2:$B$2000,BudgetYear-1),0))')
         ws[f"{col}{rf}"] = f'=IF({A}="","",{col}{ra}+{col}{rb})'
-        ws[f"{col}{rr_}"] = f'=IF({A}="","",SUMIFS(REVENUE!{col}$8:{col}$1500,REVENUE!$D$8:$D$1500,{A}))'
+        ws[f"{col}{rr_}"] = f'=IF({A}="","",SUMIFS(LEASE_CALC!{col}$8:{col}$1500,LEASE_CALC!$D$8:$D$1500,{A}))'
         ws[f"{col}{rt}"] = f'=IF({A}="","",{col}{rr_}+SUM({col}{i1}:{col}{i3}))'
     for rowi, bold in ((ra, False), (rb, False), (rf, True), (rr_, False), (rt, True)):
         or_calc_cells(rowi, bold=bold)
@@ -1662,7 +1646,7 @@ def build_exp_sheet(ws, sec_title, blocks, ins=False, pro=False):
                 col = CL(7 + m)
                 if is_mgmt:
                     def rent_(cell):
-                        return (f'IF({cell}="",0,SUMIFS(REVENUE!{col}$8:{col}$1500,REVENUE!$D$8:$D$1500,{cell})'
+                        return (f'IF({cell}="",0,SUMIFS(LEASE_CALC!{col}$8:{col}$1500,LEASE_CALC!$D$8:$D$1500,{cell})'
                                 f'+SUMIFS(OTHER_REVENUE!{col}$9:{col}$600,OTHER_REVENUE!$D$9:$D$600,{cell},OTHER_REVENUE!$E$9:$E$600,"INPUT"))')
                     ws[f"{col}{rc}"] = (f'=IF($J${r0}="No",0,$G$10*({rent_("$G$12")}+{rent_("$H$12")})+$G$11*{rent_("$G$13")})')
                 else:
@@ -1731,7 +1715,7 @@ def build_exp_sheet(ws, sec_title, blocks, ins=False, pro=False):
         put(ws, f"E{rn}", "NET", f_note)
         for m in range(12):
             col = CL(7 + m)
-            ws[f"{col}{ro}"] = f'=-SUMIFS(REVENUE!{col}$8:{col}$1500,REVENUE!$D$8:$D$1500,{A},REVENUE!$V$8:$V$1500,"<>IGNORED*",REVENUE!$E$8:$E$1500,"<>COST")'
+            ws[f"{col}{ro}"] = f'=-SUMIFS(LEASE_CALC!{col}$8:{col}$1500,LEASE_CALC!$D$8:$D$1500,{A},LEASE_CALC!$V$8:$V$1500,"<>IGNORED*",LEASE_CALC!$E$8:$E$1500,"<>COST")'
             if rr_:
                 rcc = CL(RC_M0 + m)
                 ws[f"{col}{rr_}"] = (f'=SUMIFS(REPAIRS_CAPITAL!{rcc}${RC_REP_FIRST}:{rcc}${RC_REP_LAST},REPAIRS_CAPITAL!$D${RC_REP_FIRST}:$D${RC_REP_LAST},{A},'
@@ -1956,7 +1940,7 @@ def build_rc_sheet(ws):
     put(ws, "A4", "Budget-year amount: leave blank to use total cost less amount already spent, or type the amount for this budget year (0 is allowed). It is spread evenly from the start month "
                   "over the number of months (any remainder goes in the last month).", f_sub)
     put(ws, "A5", "For uneven timing type amounts in the light-blue month cells (P to AA). If ANY month cell has a number, those 12 cells ARE the schedule (a blank month = $0) and the start month "
-                  "and months are ignored. Tenant improvements, commissions, legal, architectural and permits stay on the REVENUE lease cost lines.", f_sub)
+                  "and months are ignored. Tenant improvements, commissions, legal, architectural and permits are entered on LEASE_DEALS.", f_sub)
     for rr, lbl, src in ((7, "MAJOR REPAIRS - budget-year total by month", RC_REP_TOT), (8, "CAPITAL IMPROVEMENTS - budget-year total by month", RC_CAP_TOT)):
         put(ws, f"C{rr}", lbl, f_bold)
         for m in range(12):
@@ -2515,7 +2499,7 @@ def build_tax_sheet(ws):
         put(ws, f"E{rn}", "NET", f_note)
         for m in range(12):
             col = CL(7 + m)
-            ws[f"{col}{ro}"] = f'=-SUMIFS(REVENUE!{col}$8:{col}$1500,REVENUE!$D$8:$D$1500,{A},REVENUE!$V$8:$V$1500,"<>IGNORED*",REVENUE!$E$8:$E$1500,"<>COST")'
+            ws[f"{col}{ro}"] = f'=-SUMIFS(LEASE_CALC!{col}$8:{col}$1500,LEASE_CALC!$D$8:$D$1500,{A},LEASE_CALC!$V$8:$V$1500,"<>IGNORED*",LEASE_CALC!$E$8:$E$1500,"<>COST")'
             ws[f"{col}{rn}"] = f"={col}{rt}+{col}{ro}"
         calc_cells(ro)
         calc_cells(rn, True)
@@ -2551,13 +2535,14 @@ dv_tax.add("C64")
 name("TaxMain", "INPUT!$C$64")
 
 # ------------------------------------------------------------------ DETAIL / QTRLY skeletons (macro builds the content)
-for w, widths in ((ws_det, (11, 46, 4) + (11,) * 12 + (13, 9, 12, 12, 12, 12)),
+for w, widths in ((ws_revp, (8, 12, 40, 10) + (11,) * 12 + (13, 9)),
+                  (ws_det, (11, 46, 4) + (11,) * 12 + (13, 9, 12, 12, 12, 12)),
                   (ws_pf, (10, 44, 13, 13, 13, 13, 11, 11, 11, 11)),
                   (ws_q, (11, 46, 4, 13, 13, 13, 13, 14, 10))):
     w.sheet_view.showGridLines = False
     for i, wd in enumerate(widths, 1):
         w.column_dimensions[CL(i)].width = wd
-    w.freeze_panes = "C6" if w is ws_pf else "D6"
+    w.freeze_panes = "C6" if w is ws_pf else ("E6" if w is ws_revp else "D6")
     put(w, "A1", "Not built yet - click Build Schedules on the INPUT tab.", f_bold)
 
 # ------------------------------------------------------------------ TEST FILL (scratch copy only)
@@ -2575,7 +2560,8 @@ import io
 NAVY, MID, LIGHT = "1F497D", "4F81BD", "DCE6F1"
 SHEET_INFO = {
     "INPUT": ("Budget year, building, billing SF, lease options and the Build Schedules button", "Input"),
-    "REVENUE": ("Tenant revenue by lease: MRI charges, your adjustments and leasing costs; lease deals summarised from LEASE_DEALS", "Input"),
+    "REVENUE": ("Revenue by lease and charge code by month: in-place leases and lease deals, with leasing costs (built from LEASE_DEALS)", "Schedule"),
+    "LEASE_CALC": ("Calculation: in-place lease charges by month (MRI + lease options), leasing costs and lease-deal totals (feeds DETAIL)", "MRI data / calculation"),
     "LEASE_DEALS": ("One line per new lease, renewal or expansion: rent, free rent, this building's charge codes, leasing costs and commissions", "Input"),
     "OTHER_REVENUE": ("Non-tenant income by GL account, plus blocks for any other income account", "Input"),
     "EXP_UTILITIES": ("Utilities expenses by GL account and vendor", "Input"),
@@ -2765,4 +2751,4 @@ OUTLINE_SHEETS = list(ws_exp.values()) + [ws_tax, ws_ins, ws_pro, ws_opf, ws_deb
 print("outline groups (rows grouped):", {w.title: add_outline(w) for w in OUTLINE_SHEETS})
 
 wb.save(OUT)
-print("saved", OUT, "| revenue rows", REV_END, "| code input cells", len(CODE_CELLS))
+print("saved", OUT, "| LEASE_CALC rows", REV_END)

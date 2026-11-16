@@ -172,13 +172,15 @@ try:
     setc(rc, f"D{CAPACCT}", 1234567); doc.calculateAll(); print("   capital account not in chart ->", flag(CAPACCT), "|", S())
     truth("flag + CHECK DATA for an unknown capital account", flag(CAPACCT).startswith("CHECK - CAPITAL GL") and S().startswith("CHECK DATA"))
     setc(rc, f"D{CAPACCT}", 1345000); run()
-    # ---- 9) section 3 combination with a REVENUE cost line + starting cash input
-    top = sh("REVENUE").getCellRangeByPosition(0, 0, 20, 60).getDataArray()
-    cost = [i + 1 for i, r in enumerate(top) if r[4] == "COST" and r[3] == 5860000][0]
+    # ---- 9) section 3 combination with a leasing cost typed on an in-place lease's LEASE_DEALS row + starting cash input
+    ld = sh("LEASE_DEALS"); lda = ld.getCellRangeByPosition(0, 0, 40, 300).getDataArray(); hdr_ = list(lda[11])
+    c_arch, c_cm, c_sf = hdr_.index("Architect"), hdr_.index("Costs paid in month (in-place)"), hdr_.index("Sq Ft")
+    ldr = [i for i, r in enumerate(lda) if r[0] == "MRI" and isinstance(r[c_sf], float) and r[c_sf] > 0][0]
+    sf_ = lda[ldr][c_sf]
     before = dacct(5860000)
-    for c in "GHI": sh("REVENUE").getCellRangeByName(f"{c}{cost}").setValue(4000)
-    doc.calculateAll(); run(); chk("9) 5860000: capital lines now on 1345000; REVENUE cost line 4,000 x 3 months", dacct(5860000), [a + (4000 if i < 3 else 0) for i, a in enumerate(before)])
-    for c in "GHI": sh("REVENUE").getCellRangeByName(f"{c}{cost}").setString("")
+    ld.getCellByPosition(c_arch, ldr).setValue(2.0); ld.getCellByPosition(c_cm, ldr).setValue(1)
+    doc.calculateAll(); run(); chk(f"9) 5860000: capital lines now on 1345000; architect 2.00 $/SF x {sf_:,.0f} SF on LEASE_DEALS in January", dacct(5860000), [a + (2.0 * sf_ if i == 0 else 0) for i, a in enumerate(before)])
+    ld.getCellByPosition(c_arch, ldr).setString(""); ld.getCellByPosition(c_cm, ldr).setString("")
     cash_check("9)")
     run(); print("\nOVERALL:", "ALL PASS" if ok_all else "FAILURES ABOVE", "| final status:", S())
     doc.close(True)

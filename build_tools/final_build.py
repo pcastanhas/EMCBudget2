@@ -50,7 +50,8 @@ def last_used_row(doc, sheet_name, rows=400):
 def export_font_colors(doc, path):
     """{sheet: {cell: rgb}} for the macro-built schedules that use coloured text (postprocess.py writes them into the styles)."""
     import json
-    out = {"DETAIL": font_colors(doc, "DETAIL", f"A1:U{last_used_row(doc, 'DETAIL') + 2}"),
+    out = {"REVENUE": font_colors(doc, "REVENUE", f"A1:Q{last_used_row(doc, 'REVENUE', 2000) + 2}"),
+           "DETAIL": font_colors(doc, "DETAIL", f"A1:U{last_used_row(doc, 'DETAIL') + 2}"),
            "PROFORMA": font_colors(doc, "PROFORMA", f"A1:J{last_used_row(doc, 'PROFORMA') + 2}")}
     json.dump(out, open(path, "w"))
     return {k: len(v) for k, v in out.items()}

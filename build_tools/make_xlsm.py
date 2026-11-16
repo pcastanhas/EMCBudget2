@@ -1,7 +1,7 @@
 import sys, os, re, uno
 from lo_driver import LO
 from paths import VBA_DIR
-MODS = ["modBuildCommon", "modFormat", "modBuildDetail", "modBuildProforma", "modBuildQtrly", "modBuildAll"]
+MODS = ["modBuildCommon", "modFormat", "modBuildRevenue", "modBuildDetail", "modBuildProforma", "modBuildQtrly", "modBuildAll"]
 
 def module_source(name):
     txt = open(os.path.join(VBA_DIR, f"{name}.bas")).read()

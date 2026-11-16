@@ -1,7 +1,7 @@
 Attribute VB_Name = "modBuildQtrly"
 Option Explicit
 '==============================================================================
-' BuildQtrlySum - creates the QTRLY SUM schedule straight from REVENUE
+' BuildQtrlySum - creates the QTRLY SUM schedule straight from LEASE_CALC
 ' (not from DETAIL cells, so a DETAIL rebuild can never break it).
 '==============================================================================
 Public Sub BuildQtrlySum()
@@ -76,13 +76,13 @@ Public Sub BuildQtrlySum()
         End If
     Next oi
     If n = 0 Then
-        ws.Cells(r, 1).Value = "No amounts found on REVENUE yet."
+        ws.Cells(r, 1).Value = "No amounts found on LEASE_CALC yet."
         r = r + 2
     End If
     endSched = r - 2
     If endSched < 6 Then endSched = 6
 
-    ' status (fixed cell B3): schedule rows must still match REVENUE
+    ' status (fixed cell B3): schedule rows must still match LEASE_CALC
     ws.Range("B3").Formula = "=IF(ABS(" & AcctTotalTerm() & "-SUMIFS($H$6:$H$" & endSched & ",$A$6:$A$" & endSched & ","">=1000000""))>=0.5,""REBUILD NEEDED - click Build Schedules"",""OK - schedules current"")"
     ws.Range("B3").Font.Bold = True
     ws.Range("B3").HorizontalAlignment = -4131
@@ -101,7 +101,7 @@ Private Sub QtrAccountRow(ByVal ws As Worksheet, ByVal r As Long, ByVal acct As 
     For q = 1 To 4
         f = "="
         For m = 1 To 3
-            rc = ColL(6 + (q - 1) * 3 + m)      ' REVENUE months start in column G (7)
+            rc = ColL(6 + (q - 1) * 3 + m)      ' LEASE_CALC months start in column G (7)
             If m > 1 Then f = f & "+"
             f = f & AcctMonthTerm(sec, rc, "$A" & r)
         Next m

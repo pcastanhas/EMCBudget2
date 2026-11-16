@@ -18,7 +18,7 @@ try:
     run = lambda: (lo.run_macro(doc, "VBAProject.modBuildAll.BuildAllSchedulesQuiet"), doc.calculateAll())
     sh = doc.Sheets.getByName
     S = lambda: cell(doc, "DETAIL", "B3").String
-    ld, ds, rv, inp = sh("LEASE_DEALS"), sh("DEAL_SCHEDULE"), sh("REVENUE"), sh("INPUT")
+    ld, ds, rv, inp = sh("LEASE_DEALS"), sh("DEAL_SCHEDULE"), sh("LEASE_CALC"), sh("INPUT")
     Y = int(inp.getCellRangeByName("C3").Value)
     # ---- layout read from the sheet (header row 12 labels, code row 13)
     hdr = ld.getCellRangeByPosition(0, 11, 40, 12).getDataArray()
@@ -127,8 +127,21 @@ try:
             chk(f"deal {n} {role}", rows[(n, role)][1], e[role])
         for c, v in e["OTH"].items():
             chk(f"deal {n} charge {c.replace('PICK:', '')}", rows[(n, code_role[c.replace('PICK:', '')])][1], v)
-    # ---- REVENUE section, DETAIL
-    run(); print("2) rebuilt ->", S())
+    # ---- purple REVENUE tab: stale until Build Schedules, then by lease / deal
+    print("   REVENUE status before rebuild:", cell(doc, "REVENUE", "B3").String)
+    chk("REVENUE says REBUILD NEEDED after deals are entered", 0 if cell(doc, "REVENUE", "B3").String.startswith("REBUILD") else 1, 0)
+    # ---- LEASE_CALC section, DETAIL
+    run(); print("2) rebuilt ->", S(), "| REVENUE:", cell(doc, "REVENUE", "B3").String)
+    chk("REVENUE status OK after rebuild", 0 if cell(doc, "REVENUE", "B3").String.startswith("OK") else 1, 0)
+    rvp = sh("REVENUE").getCellRangeByPosition(0, 0, 16, 2000).getDataArray()
+    tot_line = {str(x[0]): x[16] for x in rvp if isinstance(x[0], str) and x[0].startswith("TOTAL")}
+    inc_exp = sum(sum(exp(d)[k]) for d in deals for k in ("RENT", "FREE")) + sum(sum(v) for d in deals for v in exp(d)["OTH"].values())
+    cost_exp = sum(sum(exp(d)[k]) for d in deals for k in ("LEGAL", "ARCH", "PERMIT", "TI", "COMM", "EMC"))
+    chk("REVENUE total new leases / renewals = deal income", tot_line["TOTAL NEW LEASES / RENEWALS / EXPANSIONS"], inc_exp)
+    chk("REVENUE total leasing costs = deal costs", next(v for k, v in tot_line.items() if k.startswith("TOTAL LEASING COSTS")), cost_exp)
+    chk("REVENUE total tenant revenue = LEASE_CALC lease totals", tot_line["TOTAL TENANT REVENUE"], cell(doc, "LEASE_CALC", "S6").Value)
+    n_deal_hdr = sum(1 for x in rvp if str(x[1]).startswith("Deal "))
+    chk("REVENUE lists one block per entered deal", n_deal_hdr, len(deals))
     chk("status OK after rebuild", 0 if S().startswith("OK") else 1, 0)
     det = detail()
     tot = lambda key: sum(sum(exp(d)[key]) for d in deals)

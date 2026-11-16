@@ -46,7 +46,7 @@ try:
     doc = lo.load(sys.argv[1]); embed_vba(lo, doc)
     run = lambda: (lo.run_macro(doc, "VBAProject.modBuildAll.BuildAllSchedulesQuiet"), doc.calculateAll())
     run()
-    inp = doc.Sheets.getByName("INPUT"); rev = doc.Sheets.getByName("REVENUE"); det = doc.Sheets.getByName("DETAIL")
+    inp = doc.Sheets.getByName("INPUT"); rev = doc.Sheets.getByName("LEASE_CALC"); det = doc.Sheets.getByName("DETAIL")
     print("status after build:", cell(doc, "DETAIL", "B3").String, "| default option:", inp.getCellRangeByName("C31").String, inp.getCellRangeByName("C32").Value)
     def rev_by_acct():
         arr = rev.getCellRangeByPosition(0, 7, 19, 1500).getDataArray(); out = {}
@@ -74,7 +74,10 @@ try:
         if isinstance(r[20], float) and r[20] >= 1 and isinstance(r[5], float) and r[5] > (dt.date(YEAR, 1, 1) - dt.date(1899, 12, 30)).days and r[5] < (dt.date(YEAR, 12, 31) - dt.date(1899, 12, 30)).days:
             h = i + 8; break
     print("override lease:", rev.getCellRangeByName(f"C{h}").String, "| expires", rev.getCellRangeByName(f"F{h}").String)
-    rev.getCellRangeByName(f"G{h}").setString("Renew"); rev.getCellRangeByName(f"H{h}").setValue(0.10); doc.calculateAll()
+    ld = doc.Sheets.getByName("LEASE_DEALS"); lda = ld.getCellRangeByPosition(0, 0, 40, 300).getDataArray()
+    hdr_ = list(lda[11]); c_lease, c_if, c_pct = hdr_.index("MRI lease renewed"), hdr_.index("If expired (in-place)"), hdr_.index("Renewal % (in-place)")
+    ldr = [i for i, r in enumerate(lda) if r[0] == "MRI" and str(r[c_lease]).strip() == rev.getCellRangeByName(f"B{h}").String.strip()][0]
+    ld.getCellByPosition(c_if, ldr).setString("Renew"); ld.getCellByPosition(c_pct, ldr).setValue(0.10); doc.calculateAll()   # override typed on LEASE_DEALS
     after = rev_by_acct()
     print("override Renew 10% on that lease only: base rent", f"{base.get(4100000, 0):,.0f}", "->", f"{after.get(4100000, 0):,.0f}", "| applied cells:", rev.getCellRangeByName(f"I{h}").String, rev.getCellRangeByName(f"J{h}").Value, "| status", cell(doc, "DETAIL", "B3").String)
     # flag text on the first MRI row of that block

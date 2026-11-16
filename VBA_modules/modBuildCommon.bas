@@ -6,8 +6,9 @@ Option Explicit
 ' worksheet formulas, so the workbook calculates correctly with macros disabled;
 ' macros are needed only to rebuild the schedule layout (rows / sections).
 '==============================================================================
-Public Const REV_FIRST As Long = 8          ' first REVENUE row scanned
-Public Const REV_LAST As Long = 1500        ' last REVENUE row scanned
+Public Const REV_SHEET As String = "LEASE_CALC"   ' tenant-revenue calculation sheet (in-place leases + lease deals); the purple REVENUE tab only presents it
+Public Const REV_FIRST As Long = 8          ' first LEASE_CALC row scanned
+Public Const REV_LAST As Long = 1500        ' last LEASE_CALC row scanned
 Public Const OR_FIRST As Long = 9           ' first OTHER_REVENUE row scanned
 Public Const OR_LAST As Long = 600          ' last OTHER_REVENUE row scanned
 Public Const EXP_FIRST As Long = 9          ' first EXP_ sheet row scanned
@@ -18,7 +19,7 @@ Public Const RC_MCOL As Long = 28           ' REPAIRS_CAPITAL: column AB = first
 Public Const NUMFMT As String = "#,##0;(#,##0);""-"""
 Public Const NUMFMT2 As String = "#,##0.00;(#,##0.00);""-"""
 
-' Module-level copies of the chart of accounts used to classify accounts found on REVENUE / OTHER_REVENUE
+' Module-level copies of the chart of accounts used to classify accounts found on LEASE_CALC / OTHER_REVENUE
 ' (module-level declarations must stay above the first procedure)
 Private mvNo As Variant, mvTy As Variant, mvFG As Variant
 Private mwsI As Worksheet
@@ -34,21 +35,21 @@ Public Function ColL(ByVal c As Long) As String
     ColL = s
 End Function
 
-' Formula text: amount for one account in one month column, from REVENUE plus the
+' Formula text: amount for one account in one month column, from LEASE_CALC plus the
 ' OTHER_REVENUE input lines. revCol = month column letter (G..R on both sheets);
 ' acctRef = cell holding the GL number (e.g. $A9).
 Public Function RevSumTerm(ByVal revCol As String, ByVal acctRef As String) As String
-    RevSumTerm = "SUMIFS(REVENUE!" & revCol & "$" & REV_FIRST & ":" & revCol & "$" & REV_LAST & _
-        ",REVENUE!$D$" & REV_FIRST & ":$D$" & REV_LAST & "," & acctRef & ")" & _
+    RevSumTerm = "SUMIFS(" & REV_SHEET & "!" & revCol & "$" & REV_FIRST & ":" & revCol & "$" & REV_LAST & _
+        "," & REV_SHEET & "!$D$" & REV_FIRST & ":$D$" & REV_LAST & "," & acctRef & ")" & _
         "+SUMIFS(OTHER_REVENUE!" & revCol & "$" & OR_FIRST & ":" & revCol & "$" & OR_LAST & _
         ",OTHER_REVENUE!$D$" & OR_FIRST & ":$D$" & OR_LAST & "," & acctRef & _
         ",OTHER_REVENUE!$E$" & OR_FIRST & ":$E$" & OR_LAST & ",""INPUT"")"
 End Function
 
-' Formula text: total DETAIL should show = signed REVENUE amounts (REVENUE col W), the OTHER_REVENUE input lines and the section input lines
+' Formula text: total DETAIL should show = signed LEASE_CALC amounts (LEASE_CALC col W), the OTHER_REVENUE input lines and the section input lines
 Public Function AcctTotalTerm() As String
     Dim t As String, i As Long, sh As String
-    t = "SUM(REVENUE!$W$" & REV_FIRST & ":$W$" & REV_LAST & ")" & _
+    t = "SUM(" & REV_SHEET & "!$W$" & REV_FIRST & ":$W$" & REV_LAST & ")" & _
         "+SUMIFS(OTHER_REVENUE!$S$" & OR_FIRST & ":$S$" & OR_LAST & ",OTHER_REVENUE!$D$" & OR_FIRST & ":$D$" & OR_LAST & ","">=1000000"",OTHER_REVENUE!$E$" & OR_FIRST & ":$E$" & OR_LAST & ",""INPUT"")"
     For i = 1 To 12
         sh = ExpSheetName(i)
@@ -130,13 +131,13 @@ Public Function ExpSumTerm(ByVal sec As Long, ByVal revCol As String, ByVal acct
 End Function
 
 ' Budget-year amount for one account in one month, as DETAIL / QTRLY SUM show it:
-'   section 1 (income)           = amounts on REVENUE + OTHER_REVENUE input lines
-'   section 3 (leasing costs)    = cost lines on REVENUE less any tenant-billed amounts on the same account, plus REPAIRS_CAPITAL capital improvement lines and major repairs
-'   sections 4-14 (expenses etc) = amounts on the section sheet plus REPAIRS_CAPITAL major repairs, less tenant-billed amounts on REVENUE for the same account
+'   section 1 (income)           = amounts on LEASE_CALC + OTHER_REVENUE input lines
+'   section 3 (leasing costs)    = cost lines on LEASE_CALC less any tenant-billed amounts on the same account, plus REPAIRS_CAPITAL capital improvement lines and major repairs
+'   sections 4-14 (expenses etc) = amounts on the section sheet plus REPAIRS_CAPITAL major repairs, less tenant-billed amounts on LEASE_CALC for the same account
 Public Function AcctMonthTerm(ByVal sec As Long, ByVal revCol As String, ByVal acctRef As String) As String
     Dim rv As String
-    rv = "REVENUE!" & revCol & "$" & REV_FIRST & ":" & revCol & "$" & REV_LAST & ",REVENUE!$D$" & REV_FIRST & ":$D$" & REV_LAST & "," & acctRef & _
-         ",REVENUE!$V$" & REV_FIRST & ":$V$" & REV_LAST & ",""<>IGNORED*"",REVENUE!$E$" & REV_FIRST & ":$E$" & REV_LAST & ","
+    rv = "" & REV_SHEET & "!" & revCol & "$" & REV_FIRST & ":" & revCol & "$" & REV_LAST & "," & REV_SHEET & "!$D$" & REV_FIRST & ":$D$" & REV_LAST & "," & acctRef & _
+         "," & REV_SHEET & "!$V$" & REV_FIRST & ":$V$" & REV_LAST & ",""<>IGNORED*""," & REV_SHEET & "!$E$" & REV_FIRST & ":$E$" & REV_LAST & ","
     Select Case sec
         Case 1
             AcctMonthTerm = RevSumTerm(revCol, acctRef)
@@ -182,8 +183,8 @@ Private Function GroupSec(ByVal grp As String) As Long
     End Select
 End Function
 
-' DETAIL section for an account found on REVENUE / OTHER_REVENUE. 0 = ignored: the account is not on the
-' MRI Financial Format, or its format group has no DETAIL section yet (flagged on REVENUE column V).
+' DETAIL section for an account found on LEASE_CALC / OTHER_REVENUE. 0 = ignored: the account is not on the
+' MRI Financial Format, or its format group has no DETAIL section yet (flagged on LEASE_CALC column V).
 ' Public so PROFORMA can classify prior-year-only accounts; CollectAccounts must run first (it loads the chart of accounts).
 Public Function RevSec(ByVal a As Double) As Long
     Dim k As Long, j As Long, grp As String
@@ -251,11 +252,11 @@ Private Sub AddFromSheet(ByVal wsName As String, ByVal firstRow As Long, ByVal l
     Next i
 End Sub
 
-' Collect every GL account that has a non-zero annual amount on REVENUE, on an OTHER_REVENUE
+' Collect every GL account that has a non-zero annual amount on LEASE_CALC, on an OTHER_REVENUE
 ' input line, an EXP_ input line, TAXES, INSURANCE, PROF_FEES, DEBT, OTHER_PROF_FEES or REPAIRS_CAPITAL, sorted by account then section.
 ' sect(i): 1 = income, 3 = leasing costs (Imprvmts & commissions), 4-9 = the six expense sections,
 ' 10 = taxes, 11 = insurance, 12 = professional fees/G&A, 13 = debt service, 14 = other professional fees. An account is classified by its MRI Financial
-' Format group; tenant-billed amounts on REVENUE for an expense account land in that account's section
+' Format group; tenant-billed amounts on LEASE_CALC for an expense account land in that account's section
 ' as an offset. Accounts not on the Financial Format (or in a group with no section yet) are ignored.
 Public Function CollectAccounts(ByRef accts() As Double, ByRef sect() As Long) As Long
     Dim wsC As Worksheet
@@ -270,7 +271,7 @@ Public Function CollectAccounts(ByRef accts() As Double, ByRef sect() As Long) A
     mvTy = wsC.Range("E2:E2000").Value
     mvFG = wsC.Range("G2:G2000").Value
     Set mwsI = ThisWorkbook.Worksheets("INPUT")
-    AddFromSheet "REVENUE", REV_FIRST, REV_LAST, "", 0, "S", tmp, tsec, n
+    AddFromSheet REV_SHEET, REV_FIRST, REV_LAST, "", 0, "S", tmp, tsec, n
     AddFromSheet "OTHER_REVENUE", OR_FIRST, OR_LAST, "INPUT", 0, "S", tmp, tsec, n
     For i = 1 To 12
         AddFromSheet ExpSheetName(i), EXP_FIRST, EXP_LAST, ExpTag(i + 3), SheetSec(i), SheetTotCol(ExpSheetName(i)), tmp, tsec, n
