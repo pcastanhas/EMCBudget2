@@ -46,7 +46,7 @@ Public Sub BuildQtrlySum()
     BorderBottom ws, 5, 1, 9
 
     r = 7
-    For oi = 1 To 12
+    For oi = 1 To 14
         sec = SecOrder(oi)
         cnt = 0
         For i = 1 To n

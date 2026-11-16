@@ -13,6 +13,8 @@ Public Const OR_LAST As Long = 600          ' last OTHER_REVENUE row scanned
 Public Const EXP_FIRST As Long = 9          ' first EXP_ sheet row scanned
 Public Const EXP_LAST As Long = 1500        ' last EXP_ sheet row scanned
 Public Const ACCT_MIN As Double = 1000000   ' GL numbers are 7 digits (>= 1,000,000)
+Public Const RC_SHEET As String = "REPAIRS_CAPITAL"   ' major repairs + capital improvements input sheet
+Public Const RC_MCOL As Long = 28           ' REPAIRS_CAPITAL: column AB = first budget-by-month column (AB:AM), total in AN, check text in AO
 Public Const NUMFMT As String = "#,##0;(#,##0);""-"""
 Public Const NUMFMT2 As String = "#,##0.00;(#,##0.00);""-"""
 
@@ -48,14 +50,15 @@ Public Function AcctTotalTerm() As String
     Dim t As String, i As Long, sh As String
     t = "SUM(REVENUE!$W$" & REV_FIRST & ":$W$" & REV_LAST & ")" & _
         "+SUMIFS(OTHER_REVENUE!$S$" & OR_FIRST & ":$S$" & OR_LAST & ",OTHER_REVENUE!$D$" & OR_FIRST & ":$D$" & OR_LAST & ","">=1000000"",OTHER_REVENUE!$E$" & OR_FIRST & ":$E$" & OR_LAST & ",""INPUT"")"
-    For i = 1 To 9
+    For i = 1 To 12
         sh = ExpSheetName(i)
-        t = t & "+SUMIFS(" & sh & "!$S$" & EXP_FIRST & ":$S$" & EXP_LAST & "," & sh & "!$D$" & EXP_FIRST & ":$D$" & EXP_LAST & ","">=1000000""," & sh & "!$E$" & EXP_FIRST & ":$E$" & EXP_LAST & ",""" & ExpTag(i + 3) & """)"
+        t = t & "+SUMIFS(" & sh & "!$" & SheetTotCol(sh) & "$" & EXP_FIRST & ":$" & SheetTotCol(sh) & "$" & EXP_LAST & "," & sh & "!$D$" & EXP_FIRST & ":$D$" & EXP_LAST & ","">=1000000""," & sh & "!$E$" & EXP_FIRST & ":$E$" & EXP_LAST & ",""" & ExpTag(i + 3) & """)"
     Next i
+    t = t & "+SUMIFS(" & RC_SHEET & "!$" & SheetTotCol(RC_SHEET) & "$" & EXP_FIRST & ":$" & SheetTotCol(RC_SHEET) & "$" & EXP_LAST & "," & RC_SHEET & "!$D$" & EXP_FIRST & ":$D$" & EXP_LAST & ","">=1000000""," & RC_SHEET & "!$E$" & EXP_FIRST & ":$E$" & EXP_LAST & ",""REPAIR"")"
     AcctTotalTerm = t
 End Function
 
-' The six expense input sheets plus TAXES, INSURANCE and PROF_FEES, in DETAIL section order (section number = index + 3)
+' The six expense input sheets plus TAXES, INSURANCE, PROF_FEES, DEBT, OTHER_PROF_FEES and REPAIRS_CAPITAL (section number = index + 3, except REPAIRS_CAPITAL: see SheetSec)
 Public Function ExpSheetName(ByVal i As Long) As String
     Select Case i
         Case 1: ExpSheetName = "EXP_UTILITIES"
@@ -67,10 +70,48 @@ Public Function ExpSheetName(ByVal i As Long) As String
         Case 7: ExpSheetName = "TAXES"
         Case 8: ExpSheetName = "INSURANCE"
         Case 9: ExpSheetName = "PROF_FEES"
+        Case 10: ExpSheetName = "DEBT"
+        Case 11: ExpSheetName = "OTHER_PROF_FEES"
+        Case 12: ExpSheetName = RC_SHEET
     End Select
 End Function
 
-' Row tag that marks the budget-year amount lines on a section sheet (EXP_ sheets: INPUT lines; TAXES, INSURANCE and PROF_FEES: FINAL total rows)
+' DETAIL section that a section sheet feeds: index + 3, except REPAIRS_CAPITAL (index 12): its capital improvement lines list under section 3 (IMPRVMTS & COMMISSIONS)
+Public Function SheetSec(ByVal i As Long) As Long
+    If i = 12 Then
+        SheetSec = 3
+    Else
+        SheetSec = i + 3
+    End If
+End Function
+
+' Month column letter on a section sheet. Every section sheet keeps its months in G:R except REPAIRS_CAPITAL (AB:AM).
+Public Function SheetMonthCol(ByVal sh As String, ByVal revCol As String) As String
+    If sh = RC_SHEET Then
+        SheetMonthCol = ColL(RC_MCOL + Asc(revCol) - Asc("G"))
+    Else
+        SheetMonthCol = revCol
+    End If
+End Function
+
+' Total column letter on a section sheet (S everywhere except REPAIRS_CAPITAL: AN)
+Public Function SheetTotCol(ByVal sh As String) As String
+    If sh = RC_SHEET Then
+        SheetTotCol = ColL(RC_MCOL + 12)
+    Else
+        SheetTotCol = "S"
+    End If
+End Function
+
+' Formula text: major repair amount for one account in one month column (REPAIRS_CAPITAL lines tagged REPAIR)
+Public Function RepSumTerm(ByVal revCol As String, ByVal acctRef As String) As String
+    Dim mc As String
+    mc = SheetMonthCol(RC_SHEET, revCol)
+    RepSumTerm = "SUMIFS(" & RC_SHEET & "!" & mc & "$" & EXP_FIRST & ":" & mc & "$" & EXP_LAST & "," & RC_SHEET & "!$D$" & EXP_FIRST & ":$D$" & EXP_LAST & "," & acctRef & _
+        "," & RC_SHEET & "!$E$" & EXP_FIRST & ":$E$" & EXP_LAST & ",""REPAIR"")"
+End Function
+
+' Row tag that marks the budget-year amount lines on a section sheet (EXP_ sheets: INPUT lines; TAXES, INSURANCE, PROF_FEES and DEBT: FINAL total rows)
 Public Function ExpTag(ByVal sec As Long) As String
     If sec >= 10 Then
         ExpTag = "FINAL"
@@ -81,16 +122,17 @@ End Function
 
 ' Formula text: budget-year amount for one account in one month column, from the INPUT lines of its section sheet
 Public Function ExpSumTerm(ByVal sec As Long, ByVal revCol As String, ByVal acctRef As String) As String
-    Dim sh As String
+    Dim sh As String, mc As String
     sh = ExpSheetName(sec - 3)
-    ExpSumTerm = "SUMIFS(" & sh & "!" & revCol & "$" & EXP_FIRST & ":" & revCol & "$" & EXP_LAST & "," & sh & "!$D$" & EXP_FIRST & ":$D$" & EXP_LAST & "," & acctRef & _
+    mc = SheetMonthCol(sh, revCol)
+    ExpSumTerm = "SUMIFS(" & sh & "!" & mc & "$" & EXP_FIRST & ":" & mc & "$" & EXP_LAST & "," & sh & "!$D$" & EXP_FIRST & ":$D$" & EXP_LAST & "," & acctRef & _
         "," & sh & "!$E$" & EXP_FIRST & ":$E$" & EXP_LAST & ",""" & ExpTag(sec) & """)"
 End Function
 
 ' Budget-year amount for one account in one month, as DETAIL / QTRLY SUM show it:
 '   section 1 (income)           = amounts on REVENUE + OTHER_REVENUE input lines
-'   section 3 (leasing costs)    = cost lines on REVENUE less any tenant-billed amounts on the same account
-'   sections 4-12 (expenses etc) = amounts on the section sheet less tenant-billed amounts on REVENUE for the same account
+'   section 3 (leasing costs)    = cost lines on REVENUE less any tenant-billed amounts on the same account, plus REPAIRS_CAPITAL capital improvement lines and major repairs
+'   sections 4-14 (expenses etc) = amounts on the section sheet plus REPAIRS_CAPITAL major repairs, less tenant-billed amounts on REVENUE for the same account
 Public Function AcctMonthTerm(ByVal sec As Long, ByVal revCol As String, ByVal acctRef As String) As String
     Dim rv As String
     rv = "REVENUE!" & revCol & "$" & REV_FIRST & ":" & revCol & "$" & REV_LAST & ",REVENUE!$D$" & REV_FIRST & ":$D$" & REV_LAST & "," & acctRef & _
@@ -99,13 +141,13 @@ Public Function AcctMonthTerm(ByVal sec As Long, ByVal revCol As String, ByVal a
         Case 1
             AcctMonthTerm = RevSumTerm(revCol, acctRef)
         Case 3
-            AcctMonthTerm = "SUMIFS(" & rv & """COST"")-SUMIFS(" & rv & """<>COST"")"
+            AcctMonthTerm = "SUMIFS(" & rv & """COST"")-SUMIFS(" & rv & """<>COST"")+" & ExpSumTerm(15, revCol, acctRef) & "+" & RepSumTerm(revCol, acctRef)      ' + capital improvements (REPAIRS_CAPITAL FINAL rows) + major repairs
         Case Else
-            AcctMonthTerm = ExpSumTerm(sec, revCol, acctRef) & "-SUMIFS(" & rv & """<>COST"")"
+            AcctMonthTerm = ExpSumTerm(sec, revCol, acctRef) & "+" & RepSumTerm(revCol, acctRef) & "-SUMIFS(" & rv & """<>COST"")"
     End Select
 End Function
 
-' Section display order on DETAIL / QTRLY SUM: income, tenant charges, six expense sections, taxes, insurance, professional fees, leasing costs
+' Section display order on DETAIL / QTRLY SUM: income, tenant charges, six expense sections, taxes, insurance, professional fees, other professional fees, debt service, leasing costs
 Public Function SecOrder(ByVal i As Long) As Long
     Select Case i
         Case 1: SecOrder = 1
@@ -114,6 +156,8 @@ Public Function SecOrder(ByVal i As Long) As Long
         Case 9: SecOrder = 10
         Case 10: SecOrder = 11
         Case 11: SecOrder = 12
+        Case 12: SecOrder = 14
+        Case 13: SecOrder = 13
         Case Else: SecOrder = 3
     End Select
 End Function
@@ -132,6 +176,8 @@ Private Function GroupSec(ByVal grp As String) As Long
         Case "TAXES": GroupSec = 10
         Case "INSURANCE": GroupSec = 11
         Case "PROFESSIONAL FEES/G&A": GroupSec = 12
+        Case "DEBT SERVICE": GroupSec = 13
+        Case "OTHER PROFESSIONAL FEES": GroupSec = 14
         Case Else: GroupSec = 0
     End Select
 End Function
@@ -167,13 +213,13 @@ End Function
 ' (needTag <> "" = only lines with that tag in column E count). secFixed = DETAIL section for the sheet
 ' (0 = classified per account by RevSec; accounts classified 0 are ignored).
 Private Sub AddFromSheet(ByVal wsName As String, ByVal firstRow As Long, ByVal lastRow As Long, _
-                         ByVal needTag As String, ByVal secFixed As Long, _
+                         ByVal needTag As String, ByVal secFixed As Long, ByVal totCol As String, _
                          ByRef tmp() As Double, ByRef tsec() As Long, ByRef n As Long)
     Dim ws As Worksheet, vD As Variant, vS As Variant, vE As Variant
     Dim i As Long, j As Long, a As Double, found As Boolean, ok As Boolean, sc As Long
     Set ws = ThisWorkbook.Worksheets(wsName)
     vD = ws.Range("D" & firstRow & ":D" & lastRow).Value
-    vS = ws.Range("S" & firstRow & ":S" & lastRow).Value
+    vS = ws.Range(totCol & firstRow & ":" & totCol & lastRow).Value
     vE = ws.Range("E" & firstRow & ":E" & lastRow).Value
     For i = 1 To UBound(vD, 1)
         If VarType(vD(i, 1)) = vbDouble And VarType(vS(i, 1)) = vbDouble Then
@@ -205,9 +251,9 @@ Private Sub AddFromSheet(ByVal wsName As String, ByVal firstRow As Long, ByVal l
 End Sub
 
 ' Collect every GL account that has a non-zero annual amount on REVENUE, on an OTHER_REVENUE
-' input line, an EXP_ input line, TAXES, INSURANCE or PROF_FEES, sorted by account then section.
+' input line, an EXP_ input line, TAXES, INSURANCE, PROF_FEES, DEBT, OTHER_PROF_FEES or REPAIRS_CAPITAL, sorted by account then section.
 ' sect(i): 1 = income, 3 = leasing costs (Imprvmts & commissions), 4-9 = the six expense sections,
-' 10 = taxes, 11 = insurance, 12 = professional fees/G&A. An account is classified by its MRI Financial
+' 10 = taxes, 11 = insurance, 12 = professional fees/G&A, 13 = debt service, 14 = other professional fees. An account is classified by its MRI Financial
 ' Format group; tenant-billed amounts on REVENUE for an expense account land in that account's section
 ' as an offset. Accounts not on the Financial Format (or in a group with no section yet) are ignored.
 Public Function CollectAccounts(ByRef accts() As Double, ByRef sect() As Long) As Long
@@ -223,11 +269,12 @@ Public Function CollectAccounts(ByRef accts() As Double, ByRef sect() As Long) A
     mvTy = wsC.Range("E2:E2000").Value
     mvFG = wsC.Range("G2:G2000").Value
     Set mwsI = ThisWorkbook.Worksheets("INPUT")
-    AddFromSheet "REVENUE", REV_FIRST, REV_LAST, "", 0, tmp, tsec, n
-    AddFromSheet "OTHER_REVENUE", OR_FIRST, OR_LAST, "INPUT", 0, tmp, tsec, n
-    For i = 1 To 9
-        AddFromSheet ExpSheetName(i), EXP_FIRST, EXP_LAST, ExpTag(i + 3), i + 3, tmp, tsec, n
+    AddFromSheet "REVENUE", REV_FIRST, REV_LAST, "", 0, "S", tmp, tsec, n
+    AddFromSheet "OTHER_REVENUE", OR_FIRST, OR_LAST, "INPUT", 0, "S", tmp, tsec, n
+    For i = 1 To 12
+        AddFromSheet ExpSheetName(i), EXP_FIRST, EXP_LAST, ExpTag(i + 3), SheetSec(i), SheetTotCol(ExpSheetName(i)), tmp, tsec, n
     Next i
+    AddFromSheet RC_SHEET, EXP_FIRST, EXP_LAST, "REPAIR", 0, SheetTotCol(RC_SHEET), tmp, tsec, n      ' major repairs: section by the account's Financial Format group
 
     ' insertion sort ascending by account, then section
     For i = 2 To n
@@ -301,6 +348,8 @@ Public Function SectionTitle(ByVal sec As Long) As String
         Case 10: SectionTitle = "TAXES"
         Case 11: SectionTitle = "INSURANCE"
         Case 12: SectionTitle = "PROFESSIONAL FEES/G&A"
+        Case 13: SectionTitle = "DEBT SERVICE"
+        Case 14: SectionTitle = "OTHER PROFESSIONAL FEES"
     End Select
 End Function
 
@@ -317,5 +366,7 @@ Public Function SectionTotalTitle(ByVal sec As Long) As String
         Case 10: SectionTotalTitle = "TOTAL TAXES"
         Case 11: SectionTotalTitle = "TOTAL INSURANCE"
         Case 12: SectionTotalTitle = "TOTAL PROFESSIONAL FEES/G&A"
+        Case 13: SectionTotalTitle = "TOTAL DEBT SERVICE"
+        Case 14: SectionTotalTitle = "TOTAL OTHER PROFESSIONAL FEES"
     End Select
 End Function

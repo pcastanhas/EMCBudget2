@@ -1,7 +1,7 @@
 Attribute VB_Name = "modBuildDetail"
 Option Explicit
 '==============================================================================
-' BuildDetail - creates the DETAIL budget schedule from REVENUE, OTHER_REVENUE and the six EXP_ sheets.
+' BuildDetail - creates the DETAIL budget schedule from REVENUE, OTHER_REVENUE, the six EXP_ sheets, TAXES, INSURANCE, PROF_FEES, OTHER_PROF_FEES and DEBT.
 ' One row per GL account that has amounts, grouped into colour-coded sections,
 ' with live SUMIFS formulas (by GL account). Formatting comes from modFormat.
 ' Other sheets reference only DETAIL!B3 (status) and DETAIL!B4 (last built).
@@ -10,7 +10,7 @@ Public Sub BuildDetail()
     Dim ws As Worksheet
     Dim accts() As Double, sect() As Long, n As Long
     Dim r As Long, sec As Long, oi As Long, i As Long, c As Long, cnt As Long, k As Long
-    Dim secTot(1 To 12) As Long, rTE As Long, rTOE As Long, pl As String
+    Dim secTot(1 To 14) As Long, rTE As Long, rTOE As Long, rNOI As Long, rOI As Long, rNBC As Long, rNCF As Long, rDist As Long, rRes As Long, rNCA As Long, rMR As Long, rOC As Long, pl As String, ml As String
     Dim firstR As Long, lastR As Long, endSched As Long
     Dim dec As Boolean, pal As String, wM As Double
 
@@ -64,7 +64,7 @@ Public Sub BuildDetail()
 
     ' ---- sections
     r = 7
-    For oi = 1 To 12
+    For oi = 1 To 14
         sec = SecOrder(oi)
         cnt = 0
         For i = 1 To n
@@ -119,9 +119,44 @@ Public Sub BuildDetail()
             r = r + 2
             If secTot(1) > 0 Then pl = CStr(secTot(1)) Else pl = ""
             DetailSummaryRow ws, r, 1, "N.O.I. BEFORE OTHER PROFESSIONAL FEES & DEBT SERVICE", pl, CStr(rTOE), "NOI_HDR", False, dec
+            rNOI = r
+            r = r + 2
+        End If
+        If sec = 14 Then                               ' after other professional fees: OPERATING INCOME BEFORE DEBT SERVICE (N.O.I. less other professional fees)
+            If secTot(14) > 0 Then ml = CStr(secTot(14)) Else ml = ""
+            DetailSummaryRow ws, r, 1, "OPERATING INCOME BEFORE DEBT SERVICE", CStr(rNOI), ml, "NOI_HDR", False, dec
+            rOI = r
+            r = r + 2
+        End If
+        If sec = 13 Then                               ' after debt service: N.O.I. BEFORE CAPITAL (operating income before debt service less total debt service)
+            If secTot(13) > 0 Then ml = CStr(secTot(13)) Else ml = ""
+            DetailSummaryRow ws, r, 1, "N.O.I. BEFORE CAPITAL", CStr(rOI), ml, "NOI_HDR", False, dec
+            rNBC = r
             r = r + 2
         End If
     Next oi
+    ' ---- NET CASH FLOW (N.O.I. before capital less improvements & commissions), distributions and reserve additions (INPUT), then the reserve, operating cash and total cash balances
+    If secTot(3) > 0 Then ml = CStr(secTot(3)) Else ml = ""
+    DetailSummaryRow ws, r, 1, "NET CASH FLOW", CStr(rNBC), ml, "NOI_HDR", False, dec
+    rNCF = r
+    r = r + 2
+    DetailFlowRow ws, r, "Less: partner distributions", "=IF(DistOn=""Yes"",SUMIFS(DistAmt,DistMonth,#),0)", dec
+    rDist = r
+    r = r + 1
+    DetailFlowRow ws, r, "Less: additions to maintenance reserve", "=SUMIFS(ResAmt,ResMonth,#)", dec
+    rRes = r
+    r = r + 2
+    DetailSummaryRow ws, r, 1, "NET CASH FLOW AFTER DISTRIBUTIONS & RESERVES", CStr(rNCF), rDist & "," & rRes, "NOI_HDR", False, dec
+    rNCA = r
+    r = r + 2
+    DetailBalanceRow ws, r, "MAINTENANCE RESERVE BALANCE", "ResStart", rRes, dec
+    rMR = r
+    r = r + 1
+    DetailBalanceRow ws, r, "PROJECTED OPERATING CASH BALANCE", "StartCash-ResStart", rNCA, dec
+    rOC = r
+    r = r + 2
+    DetailTotalCashRow ws, r, rOC, rMR, dec
+    r = r + 2
     If n = 0 Then
         ws.Cells(r, 1).Value = "No amounts found on REVENUE yet."
         r = r + 2
@@ -141,11 +176,11 @@ End Sub
 ' Status text for DETAIL!B3. Reports the first problem found, in this order:
 '   1 the "show decimals" option changed since the build           -> rebuild
 '   2 schedule rows no longer match REVENUE / OTHER_REVENUE        -> rebuild
-'   3-13 data problems upstream of the schedules
+'   3-15 data problems upstream of the schedules
 Private Function DetailStatusFormula(ByVal endSched As Long, ByVal dec As Boolean) As String
     Dim sS As String, sD As String, sE As String, REVT As String
     Dim oS As String, oD As String, oE As String
-    Dim conds(1 To 13) As String, msgs(1 To 13) As String
+    Dim conds(1 To 15) As String, msgs(1 To 15) As String
     Dim expT As String, j As Long
     Dim i As Long, f As String
     sS = "REVENUE!$S$" & REV_FIRST & ":$S$" & REV_LAST
@@ -175,10 +210,11 @@ Private Function DetailStatusFormula(ByVal endSched As Long, ByVal dec As Boolea
     msgs(7) = "CHECK DATA - more MRI leases than lease blocks"
     conds(8) = "OR(COUNTIF(" & REVT & ",""MORE CODES*"")>0,SUMPRODUCT((DATA_TENANT_CHARGES!$K$2:$K$401<>"""")*(DATA_TENANT_CHARGES!$K$2:$K$401<>""M""))>0)"
     msgs(8) = "CHECK DATA - a lease has more MRI charge codes than lines (rebuild the workbook), or an MRI charge is not monthly"
-    conds(9) = "COUNTIF(OTHER_REVENUE!$T$" & OR_FIRST & ":$T$" & OR_LAST & ",""DUPLICATE*"")+COUNTIF(OTHER_REVENUE!$T$" & OR_FIRST & ":$T$" & OR_LAST & ",""NOT AN INCOME*"")>0"
-    msgs(9) = "CHECK DATA - a User block on OTHER_REVENUE has a duplicate or non-income account"
+    conds(9) = "COUNTIF(OTHER_REVENUE!$T$" & OR_FIRST & ":$T$" & OR_LAST & ",""DUPLICATE*"")+COUNTIF(OTHER_REVENUE!$T$" & OR_FIRST & ":$T$" & OR_LAST & ",""NOT AN INCOME*"")" & _
+        "+COUNTIF(OTHER_PROF_FEES!$T$" & EXP_FIRST & ":$T$" & EXP_LAST & ",""DUPLICATE*"")+COUNTIF(OTHER_PROF_FEES!$T$" & EXP_FIRST & ":$T$" & EXP_LAST & ",""NOT AN OTHER*"")>0"
+    msgs(9) = "CHECK DATA - a User block on OTHER_REVENUE or OTHER_PROF_FEES has a duplicate or invalid account"
     conds(10) = "SUM(EA_NOBLOCK)>0"
-    msgs(10) = "CHECK DATA - an expense account has activity but no block on the EXP_ sheets (rebuild the workbook)"
+    msgs(10) = "CHECK DATA - an expense or debt service account has activity but no block on the input sheets (rebuild the workbook)"
     expT = ""
     For j = 1 To 9
         If j <> 7 Then
@@ -192,12 +228,62 @@ Private Function DetailStatusFormula(ByVal endSched As Long, ByVal dec As Boolea
     msgs(12) = "CHECK DATA - a tax payment month on TAXES is missing or not 1 to 12"
     conds(13) = "COUNTIFS(REVENUE!$V$" & REV_FIRST & ":$V$" & REV_LAST & ",""IGNORED - NOT ON*"",REVENUE!$S$" & REV_FIRST & ":$S$" & REV_LAST & ",""<>0"")>0"
     msgs(13) = "CHECK DATA - a REVENUE charge posts to an account that is not on the MRI Financial Format (ignored) - see REVENUE column V"
+    conds(14) = "COUNTIF(" & RC_SHEET & "!$AO$" & EXP_FIRST & ":$AO$" & EXP_LAST & ",""CHECK*"")>0"
+    msgs(14) = "CHECK DATA - a line on REPAIRS_CAPITAL needs attention (account, start month or monthly amounts) - see the Line check column"
+    conds(15) = "SUMPRODUCT((DistAmt<>0)*((DistMonth<1)+(DistMonth>12)+(DistMonth<>INT(DistMonth))))+SUMPRODUCT((ResAmt<>0)*((ResMonth<1)+(ResMonth>12)+(ResMonth<>INT(ResMonth))))>0"
+    msgs(15) = "CHECK DATA - a distribution or reserve addition on INPUT has no valid month (1 to 12)"
     f = """OK - schedules current"""
-    For i = 13 To 1 Step -1
+    For i = 15 To 1 Step -1
         f = "IF(" & conds(i) & ",""" & msgs(i) & """," & f & ")"
     Next i
     DetailStatusFormula = "=" & f
 End Function
+
+' Plain monthly line (no band) whose month formulas come from a template; "#" is replaced by the month number 1-12.
+Private Sub DetailFlowRow(ByVal ws As Worksheet, ByVal r As Long, ByVal lbl As String, ByVal tmpl As String, ByVal dec As Boolean)
+    Dim c As Long
+    ws.Cells(r, 2).Value = lbl
+    For c = 4 To 15
+        ws.Cells(r, c).Formula = Replace(tmpl, "#", CStr(c - 3))
+        ws.Cells(r, c).NumberFormat = MoneyFormat(dec)
+    Next c
+    DetailTotalsCols ws, r, dec
+End Sub
+
+' Running balance: start expression (INPUT names) plus the cumulative flow row. Total and quarter columns show the balance at the period end.
+Private Sub DetailBalanceRow(ByVal ws As Worksheet, ByVal r As Long, ByVal lbl As String, ByVal startExpr As String, _
+                             ByVal flowRow As Long, ByVal dec As Boolean)
+    Dim c As Long
+    ws.Cells(r, 2).Value = lbl
+    ws.Cells(r, 4).Formula = "=" & startExpr & "+D" & flowRow
+    For c = 5 To 15
+        ws.Cells(r, c).Formula = "=" & ColL(c - 1) & r & "+" & ColL(c) & flowRow
+    Next c
+    BalanceEndCols ws, r, dec
+    ws.Range(ws.Cells(r, 2), ws.Cells(r, 21)).Font.Bold = True
+End Sub
+
+' PROJECTED CASH BALANCE = operating cash + maintenance reserve (reserve additions are transfers, so total cash only moves with net cash flow and distributions)
+Private Sub DetailTotalCashRow(ByVal ws As Worksheet, ByVal r As Long, ByVal rOC As Long, ByVal rMR As Long, ByVal dec As Boolean)
+    Dim c As Long
+    ws.Cells(r, 1).Value = "PROJECTED CASH BALANCE"
+    For c = 4 To 15
+        ws.Cells(r, c).Formula = "=" & ColL(c) & rOC & "+" & ColL(c) & rMR
+    Next c
+    BalanceEndCols ws, r, dec
+    PaintRow ws, r, 1, 21, "GRAND_HDR", True, True
+End Sub
+
+' Month columns D:O are set by the caller; this sets the number format and the period-end total / quarter columns for a balance row
+Private Sub BalanceEndCols(ByVal ws As Worksheet, ByVal r As Long, ByVal dec As Boolean)
+    ws.Cells(r, 16).Formula = "=O" & r
+    ws.Cells(r, 18).Formula = "=F" & r
+    ws.Cells(r, 19).Formula = "=I" & r
+    ws.Cells(r, 20).Formula = "=L" & r
+    ws.Cells(r, 21).Formula = "=O" & r
+    ws.Range(ws.Cells(r, 4), ws.Cells(r, 16)).NumberFormat = MoneyFormat(dec)
+    ws.Range(ws.Cells(r, 18), ws.Cells(r, 21)).NumberFormat = MoneyFormat(dec)
+End Sub
 
 Private Sub DetailAccountRow(ByVal ws As Worksheet, ByVal r As Long, ByVal acct As Double, ByVal dec As Boolean, ByVal sec As Long)
     Dim c As Long, rc As String

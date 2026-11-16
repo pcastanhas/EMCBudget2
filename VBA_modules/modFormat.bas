@@ -41,7 +41,7 @@ Public Function PalColor(ByVal key As String) As Long
     End Select
 End Function
 
-' Palette used by each DETAIL section (1 income, 2 tenant-charge offsets, 3 leasing costs, 4-9 expense sections)
+' Palette used by each DETAIL section (1 income, 2 tenant-charge offsets, 3 leasing costs, 4-9 expense sections, 10 taxes, 11 insurance, 12 professional fees, 13 debt service, 14 other professional fees)
 Public Function SecPalette(ByVal sec As Long) As String
     Select Case sec
         Case 1: SecPalette = "INC"
@@ -51,6 +51,8 @@ Public Function SecPalette(ByVal sec As Long) As String
         Case 10: SecPalette = "TAX"
         Case 11: SecPalette = "INS"
         Case 12: SecPalette = "PRO"
+        Case 13: SecPalette = "INS"
+        Case 14: SecPalette = "PRO"
         Case Else: SecPalette = "INC"
     End Select
 End Function
