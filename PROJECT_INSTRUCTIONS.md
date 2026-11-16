@@ -1,7 +1,7 @@
 # Project Instructions — Budget Redesign
 
 ## Purpose
-Redesign the property budget workbook for budget year 2027 and every year after, as a **template**: budget preparers supply MRI data for a building and Claude produces a ready-to-use workbook for that building (target request: *"Create the 2027 budget file for <building name>"*). The legacy file (`Allwood-2026_Budget-FINAL_xlsm_v2.xlsm`, in project files) is a read-only reference. Audience of the finished workbook: property accountants and property managers.
+Redesign the property budget workbook for budget year 2027 and every year after, as a **template**: budget preparers supply MRI data for a building and Claude produces a ready-to-use workbook for that building (target request: *"Create the 2027 budget file for <building name>"*). The legacy file (`Allwood-2026_Budget-FINAL_xlsm_v2.xlsm`, kept in the repository under `reference/`) is a read-only reference. Audience of the finished workbook: property accountants and property managers.
 
 ## Goals
 1. Fix broken or unused references and formulas.
@@ -10,11 +10,27 @@ Redesign the property budget workbook for budget year 2027 and every year after,
 4. Document the current and future state (technical record = `continuation.md`; preparer-facing = the User Guide, a Claude Doc).
 5. **VBA is allowed only to build the budget presentation schedules** (DETAIL, QTRLY SUM, future schedules). Entry sheets stay VBA-free. Macros write formulas and formatting, never values, so the workbook calculates correctly with macros disabled.
 
+## Environment and repository
+The project lives in the GitHub repository `pcastanhas/EMCBudget2` and is worked on with Claude Code (cloud sessions). The repository is the single source of truth; there are no Claude-chat project files or hand-off zips any more. Each cloud session starts from a fresh clone, so **anything not committed and pushed is lost** when the session ends.
+
+| Folder | Contents |
+|--------|----------|
+| `/` | `PROJECT_INSTRUCTIONS.md` (this file), `continuation.md` (technical record) |
+| `workbook/` | The current deliverable `.xlsm` (one version only; older versions live in git history) |
+| `VBA_modules/` | The five `.bas` modules (must match the VBA embedded in the workbook) |
+| `build_tools/` | Build, post-process, test, render and lint scripts; `fin_groups.json`, `fin_layout.txt`, `colors_detail.json` |
+| `MRI_Files_2027/` | MRI extracts (all buildings) and building photos (`building_<id>_image.jpg`) used to build the 2027 workbooks |
+| `reference/` | Legacy workbook (read-only) |
+
+The repository holds tenant and financial data and must stay **private**.
+
+Tools the sessions need: Python 3 with `openpyxl`, `lxml`, `pandas`, `Pillow`, `oletools`; LibreOffice with Python UNO; `pdftotext`/`pdftoppm`. All except `oletools` are pre-installed in the cloud image; `oletools` is installed by the environment setup script (`pip install oletools`), or by hand at the start of a session if it is missing.
+
 ## Session protocol
-- **Start of every session:** read `continuation.md` and every other project file first. Confirm the latest workbook matches the continuation file (version and sheet list) and report any mismatch before doing anything else. Do not re-ask questions the continuation file shows as settled. Re-create the build folder from the project files (continuation §0).
+- **Start of every session:** read `continuation.md` and every other file in the repository first. Confirm the workbook in `workbook/` matches the continuation file (version and sheet list) and report any mismatch before doing anything else. Do not re-ask questions the continuation file shows as settled. Check the tools are present (continuation §0).
 - **Do not create or change any file until we agree on the change and I say go.** Discuss the design first (what the data is, what the input should look like, what the schedule will show), then build. A "can you…?" question is a request to explain and propose, not to build.
 - **During work:** one area at a time. Be concise, ask at most one question per reply, state assumptions and open decisions plainly. Tell me what a change affects (other sheets, totals) before building it.
-- **End of every session: Check documentation and code for consistency updated `PROJECT_INSTRUCTIONS.md` (if the working agreement changed), updated `continuation.md` (decisions, what is done, open to-do list, lessons learned, notes), the latest workbook, every changed build/test/render/lint script, `colors_detail.json`, and `VBA_modules/*.bas`
+- **End of every session:** check documentation and code for consistency, then **commit and push** to the session's working branch: updated `PROJECT_INSTRUCTIONS.md` (if the working agreement changed), updated `continuation.md` (decisions, what is done, open to-do list, lessons learned, notes), the latest workbook, every changed build/test/render/lint script, `colors_detail.json`, and `VBA_modules/*.bas`. Pull requests and merges to `main` only when the user asks.
 
 ## Workbook conventions (agreed, do not deviate)
 - **Tabs:** COVER first (navy); orange = input sheets, then purple = budget schedules, then blue = MRI reference or derived data.
@@ -38,11 +54,11 @@ COVER → INPUT → REVENUE (tenant, via TENANT_SCHEDULE; lease options) and OTH
 5. Reopen the finished file, import its VBA, and rerun the build macro.
 6. Check tab order, colours, protection, fonts and fills; confirm the Build Schedules button macro is still assigned; render and look at changed sheets.
 7. Say plainly what could not be tested without Excel. Ask me to open the file, click Build Schedules, and report any message verbatim.
-8. Version every deliverable (vX.Y), remove superseded versions, and keep `VBA_modules/*.bas` and `build_tools/` in sync with the delivered workbook.
+8. Version every deliverable (vX.Y) in the file name, delete the superseded version from `workbook/` (git history keeps it), and keep `VBA_modules/*.bas` and `build_tools/` in sync with the delivered workbook in the same commit.
 
 ## Technical notes
 - The workbook is built with openpyxl (`build_v2.py --building …`), passed through LibreOffice (UNO) to embed and run the VBA and save `.xlsm`, then post-processed (tab colours, button assignment, font colours). Details, pipeline order and known pitfalls are in `continuation.md` §9–§10.
-- Before any LibreOffice test delete `.~lock.*` files; never `pkill -f soffice`; a tool call is limited to 300 s, so run tests one at a time with `timeout`.
+- Before any LibreOffice test delete `.~lock.*` files; never `pkill -f soffice` (use `pkill -x soffice.bin`). A foreground command is limited to 600 s (default 120 s), so run the slow tests one per call with `timeout`, or as background commands.
 - MRI extracts come as Excel files (`MRIQRY` sheet plus a query tab) and now contain **all buildings**; the build filters to the selected building. Check each extract against the accounts the budget uses. Parameterize queries (entity, periods) for other buildings and years.
 - Dynamic-array formulas (`FILTER`, spill) are avoided. Notes written into cells must never start with `=`.
 

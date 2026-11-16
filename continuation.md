@@ -1,25 +1,26 @@
 # Budget Redesign — Continuation File
 
-**Written:** end of Session 4 (system date 11/12/2026)
+**Written:** end of Session 4 (system date 11/12/2026). **Session 5 (11/16/2026): project moved from Claude chat to Claude Code + GitHub (`pcastanhas/EMCBudget2`); environment sections (§0, §4, §9, §12, §13) updated. No workbook change.**
 **Current deliverable:** `E42_ALLWOOD_ASSOCIATES_2027_Budget_TEST_v3.13.xlsm` (entity 42 only; **29 sheets**). **Session 4: v3.12 replaced CAPITAL_PROJECTS with REPAIRS_CAPITAL (major repairs grid + capital improvements grid; §5.4); v3.13 adds collapsible detail rows on the 11 section sheets (§5.4). Neither is confirmed in Excel by the user yet.** Session 3 versions: v3.8 DEBT sheet + DEBT SERVICE section + N.O.I. BEFORE CAPITAL; v3.9 OTHER_PROF_FEES sheet + OPERATING INCOME BEFORE DEBT SERVICE; v3.10 CAPITAL_PROJECTS sheet + NET CASH FLOW / PROJECTED CASH BALANCE + starting-cash input; v3.11 payroll, partner distributions and maintenance reserve inputs + new cash lines. **User confirmed in Excel:** v3.8 ("looks good"), v3.9 ("it worked"), v3.11 ("that worked"); v3.10 was used on the way (not separately confirmed).
 **User guide (draft v0.1):** a Claude Doc named "Budget Template User Guide (Preliminary)" (claude.ai artifact; link in the Session 2 chat). It has no file; ask the user for the link if you need to edit it.
-**Legacy reference (project file, read-only):** `Allwood-2026_Budget-FINAL_xlsm_v2.xlsm`
-**Supporting files (in the latest hand-off zip):** `build_tools/` (build, test, render and lint scripts), `VBA_modules/*.bas` (5 modules), `workbook/` (latest `.xlsm`)
+**Legacy reference (read-only):** `reference/Allwood-2026_Budget-FINAL_xlsm_v2.xlsm` (**not yet uploaded to the repository**)
+**Repository layout:** `build_tools/` (build, test, render and lint scripts), `VBA_modules/*.bas` (5 modules), `workbook/` (latest `.xlsm`), `MRI_Files_2027/` (MRI extracts + building photos; **not yet uploaded**), `reference/` (legacy workbook). See `PROJECT_INSTRUCTIONS.md` → Environment and repository.
 
-> **STANDING INSTRUCTION (user, Session 2): at the end of every session, give the user the latest versions of ALL files to attach to the project** — updated `PROJECT_INSTRUCTIONS.md`, updated `continuation.md`, the latest workbook, every changed build/test/render/lint script, `colors_detail.json`, and `VBA_modules/*.bas` — packaged as one zip. The sandbox resets between sessions, so anything not in that zip is lost.
+> **STANDING INSTRUCTION (user, Session 2; updated Session 5 for GitHub): at the end of every session, commit and push ALL changed files** — `PROJECT_INSTRUCTIONS.md`, `continuation.md`, the latest workbook, every changed build/test/render/lint script, `colors_detail.json`, and `VBA_modules/*.bas` — to the session's working branch. Each cloud session starts from a fresh clone, so anything not pushed is lost. (The Session 2–4 zip hand-off is retired.)
 
 ---
 
 ## 0. How to resume (do this first)
 
-1. Read this file and `PROJECT_INSTRUCTIONS.md`, then the other project files.
+1. Read this file and `PROJECT_INSTRUCTIONS.md`, then the other files in the repository.
 2. Confirm the latest workbook is v3.13 and that its sheet list matches §2 (29 sheets, COVER first). Report any mismatch before doing anything else.
-3. The sandbox resets between sessions. Unpack the project files into `/home/claude/build/`: all `*.py`, `fin_groups.json`, `fin_layout.txt`, `colors_detail.json`, `building_42_image.jpg` go in `/home/claude/build/`; the five `.bas` files go in `/home/claude/build/vba/`. Project files may arrive **flat** (no sub-folders) — copy by name.
-4. Install tools: `pip install oletools --break-system-packages` (LibreOffice 24.2 + Python UNO, `openpyxl`, `lxml`, `pandas`, `Pillow`, `pdftotext` are normally present).
-5. Before any LibreOffice test: `rm -f /home/claude/build/.~lock.*` (stale lock files make `load()` return `None`; see §10). Never run `pkill -f soffice` (it kills your own shell because the command line contains "soffice"); use `pkill -x soffice.bin`.
-6. Run tests in small batches with `timeout 70`–`150` each; a single tool call is limited to 300 s.
-7. Do not create or change files until the change is agreed and the user says go (standing rule). Ask at most one question per reply.
-8. Start with the open items in §7 unless told otherwise. The user said the rest of Session 2 was entity 42 only; confirm before building other entities.
+3. The repository is cloned fresh for each cloud session; work in place (no build folder to unpack). Check that `MRI_Files_2027/` holds the MRI extracts listed in §4 — without them nothing builds or tests.
+4. Check tools: `python3 -c "import oletools, uno, openpyxl, lxml, pandas, PIL"`. LibreOffice + Python UNO, `openpyxl`, `lxml`, `pandas`, `Pillow`, `pdftotext` are in the cloud image; `oletools` comes from the environment setup script — if it is missing, `pip install oletools`.
+5. **Script paths (open, §7):** the scripts still contain the old chat-sandbox paths (`/home/claude/build/` in `make_xlsm.py`, `final_build.py`, `parse_fin.py`, `render*.py`; `/mnt/project/` and `/mnt/user-data/uploads` in `build_v2.py` and seven `test_*.py`). Until they are changed to repo-relative paths, pass `--src MRI_Files_2027` to `build_v2.py`; the LibreOffice steps and tests will not run as-is.
+6. Before any LibreOffice test: `rm -f .~lock.*` in the folder of every file being loaded (stale lock files make `load()` return `None`; see §10). Never run `pkill -f soffice` (it kills your own shell because the command line contains "soffice"); use `pkill -x soffice.bin`.
+7. Run tests in small batches with `timeout`; a foreground command is limited to 600 s (default 120 s — pass a larger timeout), and long tests can run as background commands.
+8. Do not create or change files until the change is agreed and the user says go (standing rule). Ask at most one question per reply.
+9. Start with the open items in §7 unless told otherwise. The user said the rest of Session 2 was entity 42 only; confirm before building other entities.
 
 ---
 
@@ -78,7 +79,7 @@ All sheets protected, no password. Input cells unlocked. DATA tabs are protected
 
 ## 4. MRI data
 
-Source extracts now contain **all buildings** (user changed them in Session 2); the build filters to one building. Project file names (the build also accepts the old names):
+Source extracts now contain **all buildings** (user changed them in Session 2); the build filters to one building. They go in `MRI_Files_2027/` in the repository (**not yet uploaded as of Session 5**). File names (the build also accepts the old names):
 
 | File | Contents / facts |
 |------|------------------|
@@ -163,6 +164,11 @@ Navy title band (`=BuildingName`), year band, photo (`--image` or `building_<id>
 
 ## 7. Open items
 
+### Session 5 (migration to Claude Code + GitHub)
+- **Done:** documents updated for the repository workflow (commit/push replaces the zip hand-off). `oletools` installed in the session; gate check on v3.13: embedded VBA identical to `VBA_modules/*.bas` (all 5), no `VBASupport`, `vba_lint.py` clean on both; workbook has the 29 sheets in §2.
+- **Open (user):** upload the ten MRI extracts (§4) and `building_42_image.jpg` to `MRI_Files_2027/`, and the legacy workbook to `reference/`; add `pip install oletools` to the cloud environment's setup script so new sessions have it; keep the repository private.
+- **Open (next build task, needs go):** change the hard-coded chat-sandbox paths in the scripts to repo-relative paths (scripts dir = `build_tools/`, VBA = `VBA_modules/`, default MRI source = `MRI_Files_2027/`, `colors_detail.json` next to the scripts; tests take the source folder from an argument or the same default), then rebuild and run all tests once to confirm the pipeline works in the new environment.
+
 ### Waiting on a user decision
 1. **July reset rule** for OE/electric reimbursement (flat in-place today).
 2. **Crowe concession end date** (−$15,589.17 from 8/1/2027, open-ended).
@@ -182,7 +188,7 @@ Navy title band (`=BuildingName`), year band, photo (`--image` or `building_<id>
 - Legacy facts (reference): debt rows 150–164 (interest = ROUND(balance × rate/360 × 30, 2), principal = 61,499.97 − interest hardcoded, 5857000 row dead); OTHER PROFESSIONAL FEES rows 135–148 (typed monthly BAIT installments, annual/12, fixed monthly, prior-year-month lookup, a `=row21*0.4` BAIT formula pointing at an empty row, Fit Ctr = 40% of fitness revenue); IMPRVMTS rows 166–173 (1345000 from REPAIRS-CAPITAL capital list rows 37–49 with month flags; 1365000/2105000/5390000/5820400/5860000 from REVENUE cost rows fed by LEASPROJ per-suite assumptions); NET CASH FLOW row 176 = N.O.I. before capital − total imprvmts; PROJECTED CASH BALANCE row 179 = STCASH (PVExecSum J37) + cumulative; legacy payroll OP_EX row 44 (5340000) = ANNPAY/52 × (5 if month in PAYMOS else 4) + SUMMER in Jun–Aug; snow removal OP_EX row 55 = annual × month % (Jan/Feb/Mar/Apr/Dec).
 
 ### Build next (suggested order)
-1. **`make_budget.py` wrapper**: one command (building name/ID, year, source folder) → build → LibreOffice → post-process → gates → output named by building and year; regenerates `colors_detail.json` per building (it is a per-build file; **re-run `final_build.py` on the Allwood base before zipping, because smoke tests on other buildings overwrite it**).
+1. **`make_budget.py` wrapper**: one command (building name/ID, year, source folder) → build → LibreOffice → post-process → gates → output named by building and year; regenerates `colors_detail.json` per building (it is a per-build file; **re-run `final_build.py` on the Allwood base before committing, because smoke tests on other buildings overwrite it**).
 2. **Format QTRLY SUM** and add its summary and cash lines (TOTAL EXPENSES, TOTAL OPERATING EXPENSES, N.O.I. lines, net cash flow, distributions, reserves) — user has not answered whether to add them.
 3. Remaining legacy inputs the user parks/approves: Snow Removal seasonal spread, executive-summary and leasing-rate inputs, display items; **audit OP_EX / LEASPROJ / REPAIRS-CAPITAL inputs**; per-lease leasing-cost assumptions (legacy LEASPROJ) if the user wants them in place of typed REVENUE cost lines.
 4. **Sections for DISTRIBUTIONS/(CONTRIBUTIONS), OTHER DISB/(RECEIPTS), CASH BALANCES** (so flagged tenant accounts such as 1527000 land somewhere).
@@ -208,7 +214,7 @@ Navy title band (`=BuildingName`), year band, photo (`--image` or `building_<id>
 
 ## 9. Build pipeline
 
-Scripts live in `build_tools/` (copy to `/home/claude/build/`; `.bas` to `/home/claude/build/vba/`):
+Scripts live in `build_tools/`; VBA source in `VBA_modules/`; MRI extracts in `MRI_Files_2027/` (old chat-sandbox paths still hard-coded in the scripts — see §0 step 5 and §7):
 
 | Script | Purpose |
 |--------|---------|
@@ -223,9 +229,9 @@ Scripts live in `build_tools/` (copy to `/home/claude/build/`; `.bas` to `/home/
 | `render.py`, `render_cover.py` | Older fixed-area renderers (kept for reference) |
 | Tests (all take the base `.xlsx` path; they embed the VBA themselves) | `test_flow2` (status flips, rebuild), `test_dec` (show decimals), `test_or` (OTHER_REVENUE), `test_capacity` (lease/code capacity flags), `test_user_blocks`, `test_lease_option` (Terminate/MTM/Renew vs independent calc), `test_expenses` (vendor tie-out, flow, new-vendor/no-block flags), `test_taxes`, `test_insurance`, `test_proffees`, `test_offsets` (offset netting, not-on-format flag), `test_totals` (TOTAL EXPENSES / OPERATING EXPENSES / N.O.I.), **`test_debt`** (roll-forward vs independent calc from the raw extracts; rate, payment, balance override, day count, Use calc, actuals-through, maturity flag, DETAIL/QTRLY flow) |
 | Session 4 tests | `test_outline` (reads the finished .xlsm, no LibreOffice: reference/VEND rows grouped+hidden, input/total rows visible, summary rows collapsed, vendor budget labels) — run as `python3 test_outline.py FILE.xlsm` (takes the finished workbook, not the base .xlsx) |
-| More tests (Session 3) | `test_fees` (OTHER_PROF_FEES: defaults, increase %, override, Use calc, adjustments, User blocks, flags, the two N.O.I. lines), `test_repairs` (Session 4; replaces `test_capital`: repairs → DETAIL accounts + EXP_ memo lines, capital → section 3, rebuild flips, all-or-nothing months, Include = No, flags, duplicate note, capital account change, protection), `test_cashflow` (payroll, distributions, reserves → cash lines); `test_debt` and `test_fees` take ~4 min each, so run them alone (tool calls are limited to 300 s) |
+| More tests (Session 3) | `test_fees` (OTHER_PROF_FEES: defaults, increase %, override, Use calc, adjustments, User blocks, flags, the two N.O.I. lines), `test_repairs` (Session 4; replaces `test_capital`: repairs → DETAIL accounts + EXP_ memo lines, capital → section 3, rebuild flips, all-or-nothing months, Include = No, flags, duplicate note, capital account change, protection), `test_cashflow` (payroll, distributions, reserves → cash lines); `test_debt` and `test_fees` take ~4 min each, so run them alone (chat tool calls were limited to 300 s; Claude Code allows up to 600 s per foreground command) |
 
-Run order: `build_v2.py base.xlsx --building 42 --billing-sf 157500 --src /mnt/project` → `final_build.py base.xlsx lo.xlsm` → `postprocess.py lo.xlsm out.xlsm colors_detail.json` → gates (§12) → copy to outputs with the next version number, remove the superseded version, sync scripts.
+Run order: `build_v2.py base.xlsx --building 42 --billing-sf 157500 --src MRI_Files_2027` → `final_build.py base.xlsx lo.xlsm` → `postprocess.py lo.xlsm out.xlsm colors_detail.json` → gates (§12) → save to `workbook/` with the next version number, delete the superseded version, sync scripts → commit and push.
 
 ---
 
@@ -242,6 +248,10 @@ Run order: `build_v2.py base.xlsx --building 42 --billing-sf 157500 --src /mnt/p
 - Accounts that the status checks count (`D` ≥ 1,000,000 with a tag) must also be accounts DETAIL can show: make the helper blank when the account is invalid (capital D = account only if in `COA_ACCTNO`; repair tag = IGNORED), otherwise the status shows REBUILD NEEDED instead of CHECK DATA.
 - `test_flow2`, `test_or`, `test_cashflow`, `test_fees` exceed 90 s: run them one per call with `timeout 280`.
 
+
+**Session 5:**
+- Claude Code cloud sessions start from a fresh clone each time: only what is committed and pushed survives. Packages installed by hand (e.g. `oletools`) do not persist; put them in the environment setup script.
+- Foreground commands may run up to 600 s (pass `timeout`); long tests can also run as background commands.
 
 **Packaging (earlier sessions):** no `Option VBASupport 1` in exported VBA (feed module source with `\n`); LibreOffice drops tab colours on protected sheets (postprocess sets them; never add a second `<tabColor>`); stale theme colours (export live colours); VBA project must be created with `VBACompatibilityMode`, `ProjectName = "VBAProject"`, modules registered `ModuleType = 1`; UNO writes bypass protection (but see below).
 
@@ -311,18 +321,18 @@ Run order: `build_v2.py base.xlsx --building 42 --billing-sf 157500 --src /mnt/p
 
 1. Rebuild from scripts; recalculate; zero formula errors (`#…` and `Err:`).
 2. Key totals tie to independent calculations (§6) — the tests do this for lease options, taxes, insurance, fees, offsets, totals, vendor lines.
-3. Run all 16 tests (batches, with `timeout`; `pkill -x soffice.bin` and remove lock files first; slow ones one per call).
-4. Embedded VBA identical to `vba/*.bas`, no `VBASupport`; **`vba_lint.py` clean on both**.
+3. Run all 17 tests (batches, with `timeout`; `pkill -x soffice.bin` and remove lock files first; slow ones one per call).
+4. Embedded VBA identical to `VBA_modules/*.bas` (extract with `oletools.olevba`), no `VBASupport`; **`vba_lint.py` clean on both**.
 5. Validate every worksheet/workbook/styles XML part against `sml.xsd`; exactly one `<tabColor>` per sheet.
 6. Reopen the finished file, import its VBA, rerun the build.
 7. Check tab order, colours, protection, fonts/fills; confirm the button macro is still assigned (drawing found by name).
 8. Render changed sheets and look (`render_sheets.py`).
 9. Say plainly what cannot be tested without Excel; ask the user to open the file, click Build Schedules, and report any message verbatim.
 10. Version every deliverable, remove superseded versions, sync `VBA_modules/` and `build_tools/`.
-11. **At the end of the session: zip PROJECT_INSTRUCTIONS.md, continuation.md, the latest workbook, scripts, tests, `colors_detail.json`, VBA modules for the user to attach to the project.**
+11. **At the end of the session: commit and push PROJECT_INSTRUCTIONS.md, continuation.md, the latest workbook, changed scripts and tests, `colors_detail.json` and VBA modules to the working branch.**
 
 ---
 
-## 13. Hand-off zip inventory
+## 13. Repository inventory
 
-`PROJECT_INSTRUCTIONS.md`, `continuation.md`, `workbook/E42_ALLWOOD_ASSOCIATES_2027_Budget_TEST_v3.13.xlsm`, `VBA_modules/` (5 `.bas`), `build_tools/` (`build_v2.py`, `postprocess.py`, `final_build.py`, `final_reopen.py`, `lo_driver.py`, `make_xlsm.py`, `parse_fin.py`, `vba_lint.py`, `render_sheets.py`, `render.py`, `render_cover.py`, 17 `test_*.py` (incl. `test_debt.py`, `test_fees.py`, `test_capital.py`, `test_cashflow.py`), `fin_groups.json`, `fin_layout.txt`, `colors_detail.json`, `building_42_image.jpg`). The legacy workbook and the MRI extracts are already project files and are not in the zip.
+`PROJECT_INSTRUCTIONS.md`, `continuation.md`, `workbook/E42_ALLWOOD_ASSOCIATES_2027_Budget_TEST_v3.13.xlsm`, `VBA_modules/` (5 `.bas`), `build_tools/` (`build_v2.py`, `postprocess.py`, `final_build.py`, `final_reopen.py`, `lo_driver.py`, `make_xlsm.py`, `parse_fin.py`, `vba_lint.py`, `render_sheets.py`, `render.py`, `render_cover.py`, 17 `test_*.py` (incl. `test_debt.py`, `test_fees.py`, `test_repairs.py` (replaced `test_capital.py`), `test_cashflow.py`, `test_outline.py`), `fin_groups.json`, `fin_layout.txt`, `colors_detail.json`). **Missing as of Session 5 (user to upload):** `MRI_Files_2027/` — the ten MRI extracts in §4 and `building_42_image.jpg`; `reference/Allwood-2026_Budget-FINAL_xlsm_v2.xlsm`. The user guide is a Claude Doc (not in the repository; ask the user for the link).
