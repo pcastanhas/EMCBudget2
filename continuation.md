@@ -6,7 +6,7 @@
 **Legacy reference (read-only):** `reference/Allwood-2026_Budget-FINAL_xlsm_v2.xlsm` (**not yet uploaded to the repository**)
 **Repository layout:** `build_tools/` (build, test, render and lint scripts), `VBA_modules/*.bas` (5 modules), `workbook/` (latest `.xlsm`), `MRI_Files_2027/` (MRI extracts + building photos; **not yet uploaded**), `reference/` (legacy workbook). See `PROJECT_INSTRUCTIONS.md` → Environment and repository.
 
-> **STANDING INSTRUCTION (user, Session 2; updated Session 5 for GitHub): at the end of every session, commit and push ALL changed files** — `PROJECT_INSTRUCTIONS.md`, `continuation.md`, the latest workbook, every changed build/test/render/lint script, `colors_detail.json`, and `VBA_modules/*.bas` — to the session's working branch. Each cloud session starts from a fresh clone, so anything not pushed is lost. (The Session 2–4 zip hand-off is retired.)
+> **STANDING INSTRUCTION (user, Session 2; updated Session 5 for GitHub): at the end of every session, commit and push ALL changed files** — `PROJECT_INSTRUCTIONS.md`, `continuation.md`, the latest workbook, every changed build/test/render/lint script, `colors_detail.json`, and `VBA_modules/*.bas` — **directly to `main` (no pull requests; user instruction, Session 5)**. Each cloud session starts from a fresh clone, so anything not pushed is lost. (The Session 2–4 zip hand-off is retired.)
 
 ---
 
@@ -231,7 +231,7 @@ Scripts live in `build_tools/`; VBA source in `VBA_modules/`; MRI extracts in `M
 | Session 4 tests | `test_outline` (reads the finished .xlsm, no LibreOffice: reference/VEND rows grouped+hidden, input/total rows visible, summary rows collapsed, vendor budget labels) — run as `python3 test_outline.py FILE.xlsm` (takes the finished workbook, not the base .xlsx) |
 | More tests (Session 3) | `test_fees` (OTHER_PROF_FEES: defaults, increase %, override, Use calc, adjustments, User blocks, flags, the two N.O.I. lines), `test_repairs` (Session 4; replaces `test_capital`: repairs → DETAIL accounts + EXP_ memo lines, capital → section 3, rebuild flips, all-or-nothing months, Include = No, flags, duplicate note, capital account change, protection), `test_cashflow` (payroll, distributions, reserves → cash lines); `test_debt` and `test_fees` take ~4 min each, so run them alone (chat tool calls were limited to 300 s; Claude Code allows up to 600 s per foreground command) |
 
-Run order: `build_v2.py base.xlsx --building 42 --billing-sf 157500 --src MRI_Files_2027` → `final_build.py base.xlsx lo.xlsm` → `postprocess.py lo.xlsm out.xlsm colors_detail.json` → gates (§12) → save to `workbook/` with the next version number, delete the superseded version, sync scripts → commit and push.
+Run order: `build_v2.py base.xlsx --building 42 --billing-sf 157500 --src MRI_Files_2027` → `final_build.py base.xlsx lo.xlsm` → `postprocess.py lo.xlsm out.xlsm colors_detail.json` → gates (§12) → save to `workbook/` with the next version number, delete the superseded version, sync scripts → commit and push to `main`.
 
 ---
 
@@ -329,7 +329,7 @@ Run order: `build_v2.py base.xlsx --building 42 --billing-sf 157500 --src MRI_Fi
 8. Render changed sheets and look (`render_sheets.py`).
 9. Say plainly what cannot be tested without Excel; ask the user to open the file, click Build Schedules, and report any message verbatim.
 10. Version every deliverable, remove superseded versions, sync `VBA_modules/` and `build_tools/`.
-11. **At the end of the session: commit and push PROJECT_INSTRUCTIONS.md, continuation.md, the latest workbook, changed scripts and tests, `colors_detail.json` and VBA modules to the working branch.**
+11. **At the end of the session: commit and push PROJECT_INSTRUCTIONS.md, continuation.md, the latest workbook, changed scripts and tests, `colors_detail.json` and VBA modules directly to `main` (no pull request).**
 
 ---
 
