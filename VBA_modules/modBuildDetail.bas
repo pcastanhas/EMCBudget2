@@ -176,11 +176,11 @@ End Sub
 ' Status text for DETAIL!B3. Reports the first problem found, in this order:
 '   1 the "show decimals" option changed since the build           -> rebuild
 '   2 schedule rows no longer match REVENUE / OTHER_REVENUE        -> rebuild
-'   3-15 data problems upstream of the schedules
+'   3-16 data problems upstream of the schedules
 Private Function DetailStatusFormula(ByVal endSched As Long, ByVal dec As Boolean) As String
     Dim sS As String, sD As String, sE As String, REVT As String
     Dim oS As String, oD As String, oE As String
-    Dim conds(1 To 15) As String, msgs(1 To 15) As String
+    Dim conds(1 To 16) As String, msgs(1 To 16) As String
     Dim expT As String, j As Long
     Dim i As Long, f As String
     sS = "REVENUE!$S$" & REV_FIRST & ":$S$" & REV_LAST
@@ -232,8 +232,10 @@ Private Function DetailStatusFormula(ByVal endSched As Long, ByVal dec As Boolea
     msgs(14) = "CHECK DATA - a line on REPAIRS_CAPITAL needs attention (account, start month or monthly amounts) - see the Line check column"
     conds(15) = "SUMPRODUCT((DistAmt<>0)*((DistMonth<1)+(DistMonth>12)+(DistMonth<>INT(DistMonth))))+SUMPRODUCT((ResAmt<>0)*((ResMonth<1)+(ResMonth>12)+(ResMonth<>INT(ResMonth))))>0"
     msgs(15) = "CHECK DATA - a distribution or reserve addition on INPUT has no valid month (1 to 12)"
+    conds(16) = "COUNTIF(DEAL_CHECK,""CHECK*"")>0"
+    msgs(16) = "CHECK DATA - a line on LEASE_DEALS needs attention - see its Line status column"
     f = """OK - schedules current"""
-    For i = 15 To 1 Step -1
+    For i = 16 To 1 Step -1
         f = "IF(" & conds(i) & ",""" & msgs(i) & """," & f & ")"
     Next i
     DetailStatusFormula = "=" & f
